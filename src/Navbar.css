@@ -3,3 +3,25 @@
     height: auto;
     width: 100%;
 }
+.top-nav-left{
+    width: 50%;
+    height: 50px;
+    align-items: flex-start;
+}
+.top-nav-right{
+    width: 50%;
+    height: 50px;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+.logo-holder{
+    height: 100%;
+    width: 150px;
+    margin: 20px;
+}
+.nav-item-custom{
+    margin-top: 20px;
+    color: white;
+    padding:5px;
+    font-weight:500;
+}
