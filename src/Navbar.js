@@ -1,6 +1,7 @@
 import React from 'react';
 import './Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import IndiaFlag from "./StaticImages/Indiaflag.png";
 
 function Navbar() {
     return (
@@ -22,7 +23,9 @@ function Navbar() {
                             INR
                         </div>
                         <div class="nav-item-custom">
-                            INDIA
+                            <div class="navbar-picture">
+                                <img src={IndiaFlag} alt=""></img>
+                            </div>
                         </div>
                         <div class="nav-item-custom">
                             ?
