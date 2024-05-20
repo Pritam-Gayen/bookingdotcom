@@ -19,8 +19,7 @@
 .top-nav-right{
     width: 50%;
     height: 50px;
-    align-items: flex-end;
-    justify-content: space-around;
+    align-items:flex-end;
 }
 .logo-holder{
     height: 100%;
@@ -56,3 +55,23 @@
     margin-left: 12px;
 }
 
+.user-icon-holder{
+    color: white;
+    height: 24px;
+    width: 24px;
+    margin-left: 10px;
+}
+.hamburger-menu{
+    color: white;
+    height: 24px;
+    width: 24px;
+    margin-left: 10px;
+}
+.hidden-nav{
+    width: 100%;
+
+}
+.top-nav-right-hidden{
+    align-items: flex-end;
+
+}
