@@ -32,7 +32,7 @@
 .nav-item-custom{
     color: white;
     font-size: 20px;
-    padding: 20px 0 20px 20px;
+    padding: 10px 0 20px 20px;
 }
 .navbar-picture{
     height: 28px;
@@ -60,13 +60,13 @@
     color: white;
     height: 24px;
     width: 24px;
-    margin-left: 10px;
+    /* margin-left: 10px; */
 }
 .hamburger-menu{
     color: white;
     height: 24px;
     width: 24px;
-    margin-left: 10px;
+    /* margin-left: 10px; */
 }
 .hidden-nav{
     height: auto;
@@ -75,11 +75,12 @@
 }
 .top-nav-right-hidden{
     width: 50%;
+    height: auto;
     justify-content: flex-end;
     align-items: center;
 }
 /* -------------------responsive navbar----------------------- */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     .hidden-nav{
         display: flex;
     }
@@ -87,7 +88,7 @@
         display: none;;
     }
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1025px) {
     .hidden-nav{
         display: none;
     }
