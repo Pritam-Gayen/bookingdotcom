@@ -13,7 +13,7 @@
     width: 50%;
     height: auto;
     justify-content: flex-start;
-    /* align-items: center; */
+    align-items: center;
     padding-left: 0;
     margin-left: 0;
 }
@@ -24,9 +24,9 @@
     align-items:center;
 }
 .logo-holder{
-    height: 100%;
-    width: 200px;
-    margin: 20px 0 20px 0;
+    height: auto;
+    width: 170px;
+    margin: 0;
     padding: 0;
 }
 .nav-item-custom{
