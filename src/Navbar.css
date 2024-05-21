@@ -78,3 +78,21 @@
     justify-content: flex-end;
     align-items: center;
 }
+/* -------------------responsive navbar----------------------- */
+@media screen and (max-width: 768px) {
+    .hidden-nav{
+        display: flex;
+    }
+    .top-nav{
+        display: none;;
+    }
+}
+@media screen and (min-width: 769px) {
+    .hidden-nav{
+        display: none;
+    }
+    .top-nav{
+        display: flex;
+    }
+}
+/* -------------------responsive navbar end----------------------- */
