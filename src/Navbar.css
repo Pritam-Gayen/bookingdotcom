@@ -11,8 +11,9 @@
 }
 .top-nav-left{
     width: 50%;
-    /* height: 50px; */
+    height: auto;
     justify-content: flex-start;
+    /* align-items: center; */
     padding-left: 0;
     margin-left: 0;
 }
