@@ -108,6 +108,15 @@
     margin-right: 10px;
     font-size: 20px;
 }
+.bottom-nav-button-holder{
+    overflow-x: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; 
+}
+.bottom-nav-button-holder::-webkit-scrollbar {
+    display: none;
+}
+
 /* -------------------responsive navbar----------------------- */
 @media screen and (max-width: 1024px) {
     .hidden-nav{
