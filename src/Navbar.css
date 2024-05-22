@@ -126,6 +126,20 @@
     .top-nav{
         display: none;;
     }
+    .logo-holder{
+        width: 120px;
+    }
+    .bottom-nav-button-word{
+        font-size: 15px;
+    }
+    .bottom-nav-button-icon{
+        width: 18px;
+        height: 18px;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
 }
 @media screen and (min-width: 1025px) {
     .hidden-nav{
