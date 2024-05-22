@@ -41,12 +41,12 @@ function Navbar() {
                             List Your Property
                         </div>
                         <div class="d-flex register-sign-in">
-                            <div class="nav-item-custom">
+                            <div class="nav-item-white-btn">
                                 <div class="navbar-button">
                                     Register
                                 </div>
                             </div>
-                            <div class="nav-item-custom">
+                            <div class="nav-item-white-btn">
                                 <div class="navbar-button">
                                     Sign In
                                 </div>

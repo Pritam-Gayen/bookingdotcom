@@ -33,10 +33,25 @@ body{
     margin: 0;
     padding: 0;
 }
+.nav-item-white-btn{
+    color: white;
+    font-size: 17px;
+    padding-top: 12px;
+    padding-bottom: 16px;
+    padding-left: 10px;
+    white-space: nowrap;
+    border-radius: 5px;
+}
+
 .nav-item-custom{
     color: white;
     font-size: 20px;
-    padding: 10px 0 20px 20px;
+    padding: 12px;
+    white-space: nowrap;
+    border-radius: 5px;
+}
+.nav-item-custom:hover{
+    background-color: rgba(255, 255, 255, 0.1);
 }
 .navbar-picture{
     height: 28px;
@@ -59,7 +74,9 @@ body{
     color: rgb(0, 123, 255);
     border-radius: 3px;
 }
-
+.navbar-button:hover{
+    background-color: rgba(255, 255, 255, 0.9);
+}
 .user-icon-holder{
     color: white;
     height: 24px;
