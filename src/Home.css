@@ -4,6 +4,10 @@
     height: 300px;
     color: white;
     padding-top: 100px;
+    height: fit-content;
+}
+.heading-holder{
+    margin-bottom: 50px;
 }
 .heading-holder h1{
     font-size: 50px;
@@ -12,4 +16,107 @@
 }
 .heading-holder h3{
     text-align: left;
+}
+.calender{
+    display: flex;
+    background-color: #ffb700;
+    height: 70px;
+    width: 97%;
+    border-radius: 10px;
+    padding: 5px;
+}
+.search-btn{
+    background-color: #006ce4;
+    color: white;
+    border-radius: 8px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 25px;
+    width:10%;
+}
+.box-filling-holder{
+    width: 90%;
+    display: flex;
+}
+.box-filling{
+    width: 32.8%;
+    background-color: white;
+    border-radius: 8px;
+    margin-right: 5px;
+    align-items: center;
+    justify-content: left;
+    padding-left: 20px;
+}
+.box-filling-icon{
+    height: 28px;
+    width: 28px;
+}
+.box-filling-input{
+    border:none;
+    margin-left: 10px;
+    font-size: 20px;
+}
+.check-in-input{
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: black;
+    padding-left: 10px;
+    font-size: 20px;
+}
+.dash{
+    align-self: center;
+    color: black;
+    padding-left: 10px;
+}
+.check-out-input{
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: black;
+    padding-left: 10px;
+    font-size: 20px;
+}
+.person-count-input{
+    display: inline-block;
+    color: black;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-left: 10px;
+    font-size: 20px;
+}
+@media screen and (max-width: 1024px) {
+    .box-filling-holder{
+        display: block;
+        width: 100%;
+    }
+    .box-filling{
+        width: 100%;
+        margin-bottom: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .search-btn{
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .calender{
+        display: block;
+    }
+    .calender{
+        height: fit-content;
+    }
+    .container{
+        margin-left: 1.5vw !important;
+    }
+    .heading-holder{
+        margin-bottom: 50px !important;
+    }
 }
