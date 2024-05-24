@@ -136,6 +136,7 @@ body{
     overflow-x: scroll;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none; 
+    transform: translateX(-18px);
 }
 .bottom-nav-button-holder::-webkit-scrollbar {
     display: none;
