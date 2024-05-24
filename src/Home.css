@@ -110,6 +110,70 @@
     padding-left: 10px;
     font-size: 20px;
 }
+
+/* ----------------------list box for where are you going?------------------------------ */
+
+.list-box {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 500px;
+    max-height: 500px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    background-color: white;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 10px rgba(111, 111, 111, 0.5);
+    z-index: 1000;
+    text-align: left;
+    transform: translateY(5px);
+}
+#list-box h4{
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 20px;
+}
+.location-holder {
+    padding: 10px;
+    cursor: pointer;
+    color: black;
+    border-bottom: 1px solid #eceaea;
+}
+
+.location-holder:hover {
+    background-color: #eceaea;
+}
+.location-holder{
+    display: flex;
+}
+.location-icon-holder{
+    height: 30px;
+    width: 30px;
+    justify-self: center;
+    align-self: center;
+}
+.townname{
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+.countryname{
+    color: black;
+    font-size: 15px;
+}
+.location-place-holder{
+    padding-left: 20px;
+}
+/* --------------------------------------------------------- */
+
+
+
 @media screen and (max-width: 1024px) {
     .box-filling-holder{
         display: block;
