@@ -89,6 +89,7 @@ document.addEventListener('click', function (event) {
 
 const Home = () => {
   return (
+  <div>
     <div class="calender-holder">
       <div class="container heading-holder">
         <h1>Find your next stay</h1>
@@ -125,6 +126,9 @@ const Home = () => {
           Search
         </div>
       </div>
+    </div>
+    <br></br>
+    <h2>Hello this is testing</h2>
     </div>
   );
 };

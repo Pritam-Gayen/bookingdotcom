@@ -120,6 +120,7 @@
     left: 0;
     width: 500px;
     max-height: 500px;
+    max-width: 500px;
     overflow-y: auto;
     border: 1px solid #ccc;
     background-color: white;
@@ -201,5 +202,9 @@
     }
     .heading-holder{
         margin-bottom: 50px !important;
+    }
+    .list-box{
+        transform: translateY(-175px);
+        width: 100%;
     }
 }
