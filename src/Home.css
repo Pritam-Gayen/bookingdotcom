@@ -37,6 +37,10 @@
     padding-right: 20px;
     font-size: 25px;
     width:10%;
+    cursor: pointer;
+}
+.search-btn:hover{
+    background-color: #0751c0;
 }
 .box-filling-holder{
     width: 90%;
@@ -50,6 +54,11 @@
     align-items: center;
     justify-content: left;
     padding-left: 20px;
+    cursor: pointer;
+}
+.box-filling:hover{
+    border: 1px solid rgb(255, 123, 0);
+    box-shadow: 1px 1px 2px rgba(255, 123, 0, 0.8);
 }
 .box-filling-icon{
     height: 28px;
