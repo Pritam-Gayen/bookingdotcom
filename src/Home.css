@@ -69,6 +69,15 @@
     margin-left: 10px;
     font-size: 20px;
 }
+.box-filling-input:focus{
+    outline: none;
+}
+.box-filling-input:focus::placeholder{
+    color: gray;
+}
+.box-filling-input::placeholder{
+    color: black;
+}
 .check-in-input{
     display: block;
     overflow: hidden;
