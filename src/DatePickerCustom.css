@@ -1,0 +1,33 @@
+/* DatePickerCustom.css */
+
+/* Change the background color of the datepicker */
+.datepicker-dropdown {
+  background-color: #f0f0f0;
+}
+
+/* Change the color of the date cells */
+.datepicker table tr td {
+  color: #333;
+}
+
+/* Highlight the selected date */
+.datepicker table tr td.active,
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active:focus {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Style the datepicker input field */
+#datepicker input {
+  border: 2px solid #007bff;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+/* Style the datepicker icon */
+.input-group-text {
+  background-color: #007bff;
+  border: none;
+  color: white;
+}
