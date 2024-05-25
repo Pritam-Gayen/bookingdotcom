@@ -81,10 +81,13 @@ function showList() {
 document.addEventListener('click', function (event) {
   const inputContainer = document.querySelector('.box-filling-input');
   const listBox = document.getElementById('list-box');
-  if (!inputContainer.contains(event.target)) {
+
+  // Check if the click happened outside both the input container and the list box
+  if (!inputContainer.contains(event.target) && !listBox.contains(event.target)) {
     listBox.style.display = 'none';
   }
 });
+
 
 function showCalenderHolder() {
   const relativeContainer = document.getElementById('box-filling-holder');
