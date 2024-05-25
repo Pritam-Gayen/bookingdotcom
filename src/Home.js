@@ -106,10 +106,13 @@ function showCalenderHolder() {
 document.addEventListener('click', function (event) {
   const showCalender = document.querySelector('.show-calender');
   const showCalenderHolderDiv = document.getElementById('show-calender-holder');
-  if (!showCalender.contains(event.target)) {
+
+  // Check if the click happened outside both the showCalender and the showCalenderHolderDiv
+  if (!showCalender.contains(event.target) && !showCalenderHolderDiv.contains(event.target)) {
     showCalenderHolderDiv.style.display = 'none';
   }
 });
+
 
 const Home = () => {
   const [startDate, setStartDate] = useState(new Date());
