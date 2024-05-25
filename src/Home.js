@@ -23,7 +23,6 @@ function showList() {
   const heading = document.createElement('h4');
   heading.innerHTML = 'Popular nearby destinations';
   listBox.appendChild(heading);
-  console.log(listBox);
   // Select 5 random places
   const randomPlaces = places.sort(() => 0.5 - Math.random()).slice(0, 5);
 
