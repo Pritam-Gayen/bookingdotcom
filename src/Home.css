@@ -192,7 +192,11 @@
     transform: translate(5px, 15px);
     color: black;
 }
-
+.react-datepicker-popper{
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+}
 
 
 @media screen and (max-width: 1024px) {
