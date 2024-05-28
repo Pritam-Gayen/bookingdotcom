@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Home.css';
+import { DateRangePicker } from 'rsuite';
 
 
 const places = [
@@ -113,6 +114,7 @@ document.addEventListener('click', function (event) {
 
 
 const Home = () => {
+  const [value, setValue] = useState([new Date(), new Date()]);
   return (
     <div>
       <div class="calender-holder">
@@ -141,7 +143,12 @@ const Home = () => {
               <span class="check-out-input">Check-out date</span>
             </div>
             <div id="show-calender-holder">
-              
+              <DateRangePicker
+                value={value}
+                onChange={setValue}
+                placeholder="Select Date Range"
+                style={{ width: 500 }}
+              />
             </div>
             <div class="box-filling d-flex">
               <div class="box-filling-icon">
