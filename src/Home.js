@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Home.css';
-import { DateRangePicker } from 'rsuite';
+import AlwaysOpenDateRangePicker from './AlwaysOpenDateRangePicker';
 
 
 const places = [
@@ -87,34 +87,71 @@ document.addEventListener('click', function (event) {
   }
 });
 
+// hide the show-calender-holder div when clicking outside
+// document.addEventListener('click', function (event) {
+//   const showCalendarDiv = document.getElementById('show-calender');
+//   const showCalenderHolderDiv = document.getElementById('show-calender-holder');
 
-function showCalenderHolder() {
-  const relativeContainer = document.getElementById('box-filling-holder');
-  const relativeContainerRect = relativeContainer.getBoundingClientRect();
-  const showCalenderHolderDiv = document.getElementById('show-calender-holder');
-  const showCalender = document.getElementById('show-calender');
-  const showCalenderRect = showCalender.getBoundingClientRect();
-  showCalenderHolderDiv.style.left = `${showCalenderRect.left - relativeContainerRect.left}px`;
-  console.log(relativeContainerRect.left)
-  showCalenderHolderDiv.style.top = `${showCalenderRect.bottom - relativeContainerRect.top}px`;
-  console.log(relativeContainerRect.top)
-  showCalenderHolderDiv.style.display = 'block';
-}
+//   // Check if the click happened outside both the input container and the list box
+//   if (!showCalendarDiv.contains(event.target) && !showCalenderHolderDiv.contains(event.target)) {
+//     showCalenderHolderDiv.style.display = 'none';
+//   }
+// });
 
-// Hide the showCalenderHolderDiv when clicking outside
-document.addEventListener('click', function (event) {
-  const showCalender = document.querySelector('.show-calender');
-  const showCalenderHolderDiv = document.getElementById('show-calender-holder');
 
-  // Check if the click happened outside both the showCalender and the showCalenderHolderDiv
-  if (!showCalender.contains(event.target) && !showCalenderHolderDiv.contains(event.target)) {
-    showCalenderHolderDiv.style.display = 'none';
-  }
-});
+
 
 
 const Home = () => {
-  const [value, setValue] = useState([new Date(), new Date()]);
+  const [value, setValue] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const showCalenderHolderDivRef = useRef(null);
+
+
+  const showCalenderHolder = () => {
+    const relativeContainer = document.getElementById('box-filling-holder');
+    // const relativeContainerRect = relativeContainer.getBoundingClientRect();
+    const showCalenderHolderDiv = showCalenderHolderDivRef.current;
+    const showCalender = document.getElementById('show-calender');
+    // const showCalenderRect = showCalender.getBoundingClientRect();
+    // showCalenderHolderDiv.style.left = `${showCalenderRect.left - relativeContainerRect.left}px`;
+    // showCalenderHolderDiv.style.top = `${showCalenderRect.bottom - relativeContainerRect.top}px`;
+    // setIsVisible(true);
+    if (relativeContainer && showCalender && showCalenderHolderDiv) {
+      const relativeContainerRect = relativeContainer.getBoundingClientRect();
+      const showCalenderRect = showCalender.getBoundingClientRect();
+      showCalenderHolderDiv.style.left = `${showCalenderRect.left - relativeContainerRect.left}px`;
+      showCalenderHolderDiv.style.top = `${showCalenderRect.bottom - relativeContainerRect.top}px`;
+      setIsVisible(true);
+    }
+  };
+
+
+  const handleClickOutside = (event) => {
+    const showCalendarDiv = document.getElementById('show-calender');
+    const showCalenderHolderDiv = document.getElementById('show-calender-holder');
+
+    // Check if the click happened outside both the input container and the list box
+    if (!showCalendarDiv.contains(event.target) && !showCalenderHolderDiv.contains(event.target)) {
+      showCalenderHolderDiv.style.display = 'none';
+      setIsVisible(false)
+    }
+  };
+
+  useEffect(() => {
+    if (isVisible) {
+      document.addEventListener('click', handleClickOutside);
+    } else {
+      document.removeEventListener('click', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isVisible]);
+
+
+
   return (
     <div>
       <div class="calender-holder">
@@ -142,13 +179,16 @@ const Home = () => {
               <span class="dash"> — </span>
               <span class="check-out-input">Check-out date</span>
             </div>
-            <div id="show-calender-holder">
-              <DateRangePicker
+            <div id="show-calender-holder" ref={showCalenderHolderDivRef}
+              style={{ display: isVisible ? 'block' : 'none' }}
+            >
+              {isVisible && (<AlwaysOpenDateRangePicker
                 value={value}
                 onChange={setValue}
                 placeholder="Select Date Range"
-                style={{ width: 500 }}
-              />
+                format="MMMM dd, yyyy"
+                class="relative-position"
+              />)}
             </div>
             <div class="box-filling d-flex">
               <div class="box-filling-icon">

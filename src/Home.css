@@ -197,7 +197,30 @@
     height: 100% !important;
     border: none !important;
 }
-
+.rs-picker-daterange-header{
+    border-radius: 0 !important;
+}
+.rs-input{
+    border-radius: 0 !important;
+    border: none !important;
+}
+.rs-date-range-input{
+    border-radius: 0 !important;
+    border: none !important;
+}
+.rs-input-group-addon{
+    display: none !important;
+}
+.rs-picker-daterange-calendar-group{
+    border-radius: 0;
+    width: 800px !important;
+}
+.rs-calendar{
+    border: none !important;
+}
+.rs-calendar-body{
+    width: 400px !important;
+}
 
 @media screen and (max-width: 1024px) {
     .box-filling-holder{
