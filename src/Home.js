@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css';
-
+import DateRangePicker from './DateRangePicker';
 const places = [
   'New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix',
   'Philadelphia', 'San Antonio', 'San Diego', 'Dallas', 'San Jose'
@@ -92,10 +92,20 @@ function showCalenderHolder(){
 document.addEventListener('click', function (event) {
   const showCalender = document.querySelector('.show-calender');
   const showCalenderHolderDiv = document.getElementById('show-calender-holder');
-  if (!showCalender.contains(event.target)) {
+  const showCalenderHolderDivChildren = document.querySelectorAll('#show-calender-holder *');
+  let isChild = false;
+
+  showCalenderHolderDivChildren.forEach(child => {
+    if (child.contains(event.target)) {
+      isChild = true;
+    }
+  });
+
+  if (!isChild && !showCalender.contains(event.target)) {
     showCalenderHolderDiv.style.display = 'none';
   }
 });
+
 
 const Home = () => {
   return (
@@ -126,7 +136,7 @@ const Home = () => {
               <span class="check-out-input">Check-out date</span>
             </div>
             <div id="show-calender-holder">
-              this is calender holder
+              <DateRangePicker/>
             </div>
             <div class="box-filling d-flex">
               <div class="box-filling-icon">

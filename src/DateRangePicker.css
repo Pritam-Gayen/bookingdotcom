@@ -1,0 +1,74 @@
+.date-range-picker {
+  position: relative;
+  display: inline-block;
+}
+
+.date-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.calendar-container {
+  display: flex;
+  gap: 20px;
+}
+
+.calendar {
+  background: white;
+  border: 1px solid #ccc;
+  z-index: 1000;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: #f9f9f9;
+  border-bottom: 1px solid #ccc;
+}
+
+.calendar-body {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.calendar-weekdays, .calendar-days {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.calendar-weekday, .calendar-day {
+  width: calc(100% / 7);
+  text-align: center;
+  padding: 10px;
+}
+
+.calendar-day {
+  cursor: pointer;
+}
+
+.calendar-day.selected {
+  background: #007bff;
+  color: white;
+}
+
+.calendar-day.empty {
+  pointer-events: none;
+}
+
+.box-filling {
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.show-calender {
+  display: flex;
+  align-items: center;
+}
+
+.check-in-input, .check-out-input {
+  margin: 0 5px;
+}
