@@ -130,13 +130,26 @@ const Home = () => {
   const handleClickOutside = (event) => {
     const showCalendarDiv = document.getElementById('show-calender');
     const showCalenderHolderDiv = document.getElementById('show-calender-holder');
-
+    const showCalenderHolderChildren = document.querySelectorAll('.rs-picker-daterange-calendar-group *')
+    let isClickInside = showCalendarDiv.contains(event.target) || showCalenderHolderDiv.contains(event.target);
     // Check if the click happened outside both the input container and the list box
-    if (!showCalendarDiv.contains(event.target) && !showCalenderHolderDiv.contains(event.target)) {
+    // if (!showCalendarDiv.contains(event.target) && !showCalenderHolderDiv.contains(event.target)) {
+    //   showCalenderHolderDiv.style.display = 'none';
+    //   setIsVisible(false)
+    // }
+    showCalenderHolderChildren.forEach(child => {
+      console.log(child);
+      if (child.contains(event.target)) {
+        isClickInside = true;
+      }
+    });
+    console.log(isClickInside);
+    if (!isClickInside) {
       showCalenderHolderDiv.style.display = 'none';
-      setIsVisible(false)
+      setIsVisible(false);
     }
   };
+  
 
   useEffect(() => {
     if (isVisible) {
