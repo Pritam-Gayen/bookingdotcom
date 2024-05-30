@@ -199,7 +199,7 @@ const Home = () => {
                 value={value}
                 onChange={setValue}
                 placeholder="Select Date Range"
-                format="MMMM dd, yyyy"
+                format="MMM dd, yyyy"
                 class="relative-position"
               />)}
             </div>

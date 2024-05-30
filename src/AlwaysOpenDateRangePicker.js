@@ -17,6 +17,8 @@ const AlwaysOpenDateRangePicker = ({ value, onChange }) => {
       className="date-range-picker"
       style={{ width: 500 }}
       open={open}
+      format="MMM dd, yyyy"
+      showHeader={false}
       onOpen={() => setOpen(true)}
       onClose={() => setOpen(false)} // Keep it open
     />
