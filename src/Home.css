@@ -176,10 +176,8 @@
 #show-calender-holder{
     position: absolute;
     display: none;
-    width: 500px;
+    width: 800px;
     height: 400px;
-    max-height: 500px;
-    max-width: 500px;
     overflow-y: auto;
     border: 1px solid #ccc;
     background-color: white;
@@ -192,17 +190,14 @@
     transform: translate(5px, 15px);
     color: black;
 }
-.react-datepicker-popper{
-    width: 100% !important;
-    height: 100% !important;
-    border: none !important;
+.rs-picker-popup{
+    transform: translateX(-150px);
 }
 .rs-picker-daterange-header{
     border-radius: 0 !important;
 }
 .rs-input{
-    border-radius: 0 !important;
-    border: none !important;
+    display: none !important;
 }
 .rs-date-range-input{
     border-radius: 0 !important;
@@ -212,8 +207,10 @@
     display: none !important;
 }
 .rs-picker-daterange-calendar-group{
-    border-radius: 0;
-    width: 800px !important;
+    position: relative !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 .rs-calendar{
     border: none !important;
