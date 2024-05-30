@@ -195,6 +195,7 @@
 }
 .rs-picker-daterange-header{
     border-radius: 0 !important;
+    display: none;
 }
 .rs-input{
     display: none !important;
