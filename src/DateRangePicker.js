@@ -6,8 +6,8 @@ const DateRangePicker = ({ dateRange, setDateRange }) => {
   const [endDate, setEndDate] = useState(null);
   const [selectedDate, setSelectedDate] = useState(new Date());
 
- useEffect(() => {
-    if (startDate && endDate) {
+  useEffect(() => {
+    if (startDate || endDate) {
       setDateRange({ startDate, endDate });
     }
   }, [startDate, endDate, setDateRange]);
@@ -82,17 +82,21 @@ const DateRangePicker = ({ dateRange, setDateRange }) => {
         <div className="box-filling-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"></svg>
         </div>
-        <span className="check-in-input"><input
-          type="date"
-          value={startDate ? startDate.toISOString().substring(0, 10) : ''}
-          onChange={handleStartDateChange}
-        /></span>
+        <span className="check-in-input">
+          <input
+            type="date"
+            value={startDate ? startDate.toISOString().substring(0, 10) : ''}
+            onChange={handleStartDateChange}
+          />
+        </span>
         <span className="dash"> — </span>
-        <span className="check-out-input"><input
-          type="date"
-          value={endDate ? endDate.toISOString().substring(0, 10) : ''}
-          onChange={handleEndDateChange}
-        /></span>
+        <span className="check-out-input">
+          <input
+            type="date"
+            value={endDate ? endDate.toISOString().substring(0, 10) : ''}
+            onChange={handleEndDateChange}
+          />
+        </span>
       </div>
       <div id="show-calender-holder" style={{ display: 'block' }}>
         <div className="calendar-container">
