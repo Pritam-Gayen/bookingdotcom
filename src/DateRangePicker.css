@@ -26,13 +26,22 @@
   background: #f9f9f9;
   border-bottom: 1px solid #ccc;
 }
-
+.calendar-header-button{
+  width: 5%;
+  border: none;
+}
+.calendar-header-span{
+  width: 95%;
+  text-align: center;
+}
 .calendar-body {
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
 }
-
+.calendar-weekdays{
+  width: 100%;
+}
 .calendar-weekdays, .calendar-days {
   display: flex;
   flex-wrap: wrap;
@@ -63,9 +72,10 @@
   cursor: pointer;
 }
 
-.show-calender {
+.show-calender-date-range {
   display: flex;
   align-items: center;
+  background-color: #007bff;
 }
 #show-calender{
   display: none !important;
