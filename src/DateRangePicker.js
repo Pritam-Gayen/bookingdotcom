@@ -1,15 +1,23 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './DateRangePicker.css'; // You'll need to style the component using CSS
 
-const DateRangePicker = () => {
+const DateRangePicker = ({ dateRange, setDateRange }) => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
-  const [isCalendarVisible, setIsCalendarVisible] = useState(false);
   const [selectedDate, setSelectedDate] = useState(new Date());
-  const calendarRef = useRef(null);
 
-  const toggleCalendar = () => {
-    setIsCalendarVisible(!isCalendarVisible);
+ useEffect(() => {
+    if (startDate && endDate) {
+      setDateRange({ startDate, endDate });
+    }
+  }, [startDate, endDate, setDateRange]);
+
+  const handleStartDateChange = (event) => {
+    setStartDate(new Date(event.target.value));
+  };
+
+  const handleEndDateChange = (event) => {
+    setEndDate(new Date(event.target.value));
   };
 
   const handleDateClick = (date) => {
@@ -25,26 +33,6 @@ const DateRangePicker = () => {
       }
     }
   };
-
-  const handleClickOutside = (event) => {
-    const showCalendarDiv = document.getElementById('show-calender');
-    const showCalenderHolderDiv = document.getElementById('show-calender-holder');
-    if (showCalenderHolderDiv && !showCalenderHolderDiv.contains(event.target) && !showCalendarDiv.contains(event.target)) {
-      setIsCalendarVisible(false);
-    }
-  };
-
-  useEffect(() => {
-    if (isCalendarVisible) {
-      document.addEventListener('click', handleClickOutside);
-    } else {
-      document.removeEventListener('click', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, [isCalendarVisible]);
 
   const renderCalendar = (monthOffset = 0) => {
     const currentMonth = new Date(selectedDate.getFullYear(), selectedDate.getMonth() + monthOffset, 1);
@@ -90,21 +78,27 @@ const DateRangePicker = () => {
 
   return (
     <div>
-      <div className="box-filling d-flex show-calender" id="show-calender" onClick={toggleCalendar}>
+      <div className="box-filling d-flex show-calender" id="show-calender">
         <div className="box-filling-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"></svg>
         </div>
-        <span className="check-in-input">{startDate ? startDate.toLocaleDateString() : 'Check-in date'}</span>
+        <span className="check-in-input"><input
+          type="date"
+          value={startDate ? startDate.toISOString().substring(0, 10) : ''}
+          onChange={handleStartDateChange}
+        /></span>
         <span className="dash"> — </span>
-        <span className="check-out-input">{endDate ? endDate.toLocaleDateString() : 'Check-out date'}</span>
+        <span className="check-out-input"><input
+          type="date"
+          value={endDate ? endDate.toISOString().substring(0, 10) : ''}
+          onChange={handleEndDateChange}
+        /></span>
       </div>
-      <div id="show-calender-holder" ref={calendarRef} style={{ display: isCalendarVisible ? 'block' : 'none' }}>
-        {isCalendarVisible && (
-          <div className="calendar-container">
-            {renderCalendar(0)}
-            {renderCalendar(1)}
-          </div>
-        )}
+      <div id="show-calender-holder" style={{ display: 'block' }}>
+        <div className="calendar-container">
+          {renderCalendar(0)}
+          {renderCalendar(1)}
+        </div>
       </div>
     </div>
   );

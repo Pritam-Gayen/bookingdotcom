@@ -17,7 +17,6 @@
 .calendar {
   background: white;
   border: 1px solid #ccc;
-  z-index: 1000;
 }
 
 .calendar-header {
@@ -68,7 +67,9 @@
   display: flex;
   align-items: center;
 }
-
+#show-calender{
+  display: none !important;
+}
 .check-in-input, .check-out-input {
   margin: 0 5px;
 }

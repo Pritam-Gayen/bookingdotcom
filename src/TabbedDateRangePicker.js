@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import DateRangePicker from './DateRangePicker';
 import './TabbedDateRangePicker.css';
 
-const TabbedDateRangePicker = () => {
+const TabbedDateRangePicker = ({ dateRange, setDateRange }) => {
     const [activeTab, setActiveTab] = useState('calendar');
 
     const renderTabContent = () => {
         switch (activeTab) {
             case 'calendar':
-                return <DateRangePicker />;
+                return <DateRangePicker dateRange={dateRange} setDateRange={setDateRange} />;
             case 'flexible':
                 return <div>I'm flexible content goes here</div>;
             default:
