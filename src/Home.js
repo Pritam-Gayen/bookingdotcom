@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.css';
-import DateRangePicker from './DateRangePicker';
+// import DateRangePicker from './DateRangePicker';
+import TabbedDateRangePicker from './TabbedDateRangePicker';
 const places = [
   'New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix',
   'Philadelphia', 'San Antonio', 'San Diego', 'Dallas', 'San Jose'
@@ -136,7 +137,7 @@ const Home = () => {
               <span class="check-out-input">Check-out date</span>
             </div>
             <div id="show-calender-holder">
-              <DateRangePicker/>
+              <TabbedDateRangePicker />
             </div>
             <div class="box-filling d-flex">
               <div class="box-filling-icon">
