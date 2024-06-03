@@ -5,7 +5,7 @@
 
 .date-input {
   padding: 10px;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   cursor: pointer;
 }
 
@@ -16,15 +16,15 @@
 
 .calendar {
   background: white;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
 }
 
 .calendar-header {
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  background: #f9f9f9;
-  border-bottom: 1px solid #ccc;
+  /* background: #f9f9f9;s */
+  /* border-bottom: 1px solid #ccc; */
 }
 .calendar-header-button{
   width: 5%;

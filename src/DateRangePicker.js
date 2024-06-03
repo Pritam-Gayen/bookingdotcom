@@ -106,7 +106,7 @@ const DateRangePicker = ({ dateRange, setDateRange }) => {
           />
         </span>
       </div>
-      <div id="show-calender-holder" style={{ display: 'block' }}>
+      <div id="show-calender-holder-inside" style={{ display: 'block' }}>
         <div className="calendar-container">
           {renderCalendar(0)}
           {renderCalendar(1)}
