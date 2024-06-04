@@ -8,8 +8,10 @@
     cursor: pointer;
     background-color: white;
     margin:0;
-    border: none;
     color: black;
+    border: none;
+    border-bottom: 2px solid rgba(228, 224, 224, 0.5);
+    
 }
 .tab:hover{
     background-color: rgba(219, 216, 216, 0.5);
@@ -24,7 +26,7 @@
 }
 .underline {
   position: relative;
-  bottom: 0;
+  bottom: 3px;
   left: 0;
   width: 50%;
   height: 3px;
