@@ -30,7 +30,7 @@
   border: none;
   cursor: pointer;
   padding: 10px 15px 15px 15px;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 .calendar-header-button:hover{
   background-color: rgba(228, 224, 224, 0.5);
@@ -49,6 +49,7 @@
 }
 .calendar-weekdays{
   width: 100%;
+  color: rgb(72, 71, 71);
 }
 .calendar-weekdays, .calendar-days {
   display: flex;
