@@ -72,7 +72,8 @@ const DateRangePicker = ({ dateRange, setDateRange }) => {
             {days.map(day => (
               <div
                 key={day}
-                className={`calendar-day ${startDate && endDate && day >= startDate && day <= endDate ? 'selected' : ''}`}
+                // className={`calendar-day ${startDate && endDate && day >= startDate && day <= endDate ? 'selected' : ''}`}
+                className={`calendar-day ${day > startDate && day < endDate ? 'selected-middle' : ''} ${day === startDate? 'selected-start' : ''} ${day === endDate ? 'selected-end' : ''} `}
                 onClick={() => handleDateClick(day)}
               >
                 {day.getDate()}
