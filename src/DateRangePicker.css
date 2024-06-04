@@ -22,17 +22,25 @@
 .calendar-header {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
   /* background: #f9f9f9;s */
   /* border-bottom: 1px solid #ccc; */
 }
 .calendar-header-button{
-  width: 5%;
+  width: 15%;
   border: none;
+  cursor: pointer;
+  padding: 10px 15px 15px 15px;
+  border-radius: 2px;
+}
+.calendar-header-button:hover{
+  background-color: rgba(228, 224, 224, 0.5);
 }
 .calendar-header-span{
-  width: 95%;
+  width: 85%;
   text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  padding-top: 10px;
 }
 .calendar-body {
   display: flex;
