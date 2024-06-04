@@ -85,11 +85,26 @@ document.addEventListener('click', function (event) {
   }
 });
 
-function showCalenderHolder() {
+// function showCalenderHolder() {
+//   const showCalenderHolderDiv = document.getElementById('show-calender-holder');
+//   showCalenderHolderDiv.style.display = 'block';
+// }
+const showCalenderHolder = () => {
+  const relativeContainer = document.getElementsByClassName('box-filling-holder');
+  // const relativeContainerRect = relativeContainer.getBoundingClientRect();
   const showCalenderHolderDiv = document.getElementById('show-calender-holder');
-  showCalenderHolderDiv.style.display = 'block';
-}
+  const showCalender = document.getElementsByClassName('show-calender');
+  // const showCalenderRect = showCalender.getBoundingClientRect();
+  // showCalenderHolderDiv.style.left = `${showCalenderRect.left - relativeContainerRect.left}px`;
+  // showCalenderHolderDiv.style.top = `${showCalenderRect.bottom - relativeContainerRect.top}px`;
+  // setIsVisible(true);
 
+  const relativeContainerRect = relativeContainer[0].getBoundingClientRect();
+  const showCalenderRect = showCalender[0].getBoundingClientRect();
+  showCalenderHolderDiv.style.left = `${showCalenderRect.left - relativeContainerRect.left + 5}px`;
+  showCalenderHolderDiv.style.top = `${showCalenderRect.bottom - relativeContainerRect.top + 10}px`;
+  showCalenderHolderDiv.style.display = 'block';
+};
 // Hide the showCalenderHolderDiv when clicking outside
 document.addEventListener('click', function (event) {
   const showCalender = document.querySelector('.show-calender');
