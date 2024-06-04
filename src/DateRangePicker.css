@@ -64,8 +64,11 @@
 
 .calendar-day {
   cursor: pointer;
+  border-radius: 4px;
 }
-
+.calendar-day:hover{
+  background-color: rgba(228, 224, 224, 0.5);
+}
 .calendar-day.selected {
   background: #007bff;
   color: white;
