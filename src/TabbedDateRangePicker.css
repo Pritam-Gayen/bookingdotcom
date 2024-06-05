@@ -57,6 +57,7 @@
     justify-content: space-around;
     color: rgb(67, 65, 65);
     font-weight: 600;
+    cursor: pointer;
 }
 .five-btn span{
     padding-left: 10px;
@@ -65,4 +66,12 @@
 .plus-minus{
     height: 20px;
     width: 20px;
+}
+.five-btn-active{
+    border-color: rgba(40, 131, 200, 0.8);
+    color: rgba(40, 131, 200, 0.8);
+    background-color: rgba(40, 131, 200, 0.1);
+}
+.five-btn-active .plus-minus path{
+    fill: rgba(40, 131, 200, 0.8);
 }
