@@ -90,6 +90,9 @@
 .selected-middle{
   background-color: rgba(228, 224, 224, 0.5);
 }
+.hovered{
+  background-color: rgba(228, 224, 224, 0.5);
+}
 .calendar-day.empty {
   pointer-events: none;
 }

@@ -5,6 +5,7 @@ const DateRangePicker = ({ dateRange, setDateRange }) => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const [hoveredDate, setHoveredDate] = useState(null);
 
   useEffect(() => {
     if (startDate || endDate) {
@@ -33,6 +34,18 @@ const DateRangePicker = ({ dateRange, setDateRange }) => {
       }
     }
   };
+
+
+const handleMouseEnter = (date) => {
+  if (startDate && !endDate) {
+    setHoveredDate(date);
+  }
+};
+
+const handleMouseLeave = () => {
+  setHoveredDate(null);
+};
+
 
   const renderCalendar = (monthOffset = 0) => {
     const currentMonth = new Date(selectedDate.getFullYear(), selectedDate.getMonth() + monthOffset, 1);
@@ -73,8 +86,11 @@ const DateRangePicker = ({ dateRange, setDateRange }) => {
               <div
                 key={day}
                 // className={`calendar-day ${startDate && endDate && day >= startDate && day <= endDate ? 'selected' : ''}`}
-                className={`calendar-day ${day > startDate && day < endDate ? 'selected-middle' : ''} ${startDate && day.getTime() === startDate.getTime()? 'selected-start' : ''} ${endDate && day.getTime() === endDate.getTime() ? 'selected-end' : ''} `}
+                className={`calendar-day ${day > startDate && day < endDate ? 'selected-middle' : ''} ${startDate && day.getTime() === startDate.getTime()? 'selected-start' : ''} 
+                ${endDate && day.getTime() === endDate.getTime() ? 'selected-end' : ''} ${startDate && hoveredDate && day.getTime() <= hoveredDate.getTime() && day.getTime() > startDate.getTime() ? 'hovered' : ''}`}
                 onClick={() => handleDateClick(day)}
+                onMouseEnter={() => handleMouseEnter(day)}
+                onMouseLeave={handleMouseLeave}
               >
                 {day.getDate()}
               </div>
