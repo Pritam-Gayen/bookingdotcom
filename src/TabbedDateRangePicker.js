@@ -8,7 +8,28 @@ const TabbedDateRangePicker = ({ dateRange, setDateRange }) => {
     const renderTabContent = () => {
         switch (activeTab) {
             case 'calendar':
-                return <DateRangePicker dateRange={dateRange} setDateRange={setDateRange} />;
+                return <div>
+                    <DateRangePicker dateRange={dateRange} setDateRange={setDateRange} />
+                    <div class="five-btn-holder">
+                        <div class="five-btn">Exact dates</div>
+                        <div class="five-btn">
+                            <svg class="plus-minus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.14 22.94a1 1 0 0 1-1 1H3.86a1 1 0 1 1 0-2h16.28a1 1 0 0 1 1 1M4 10h7v7a1 1 0 0 0 2 0v-7h7a1 1 0 0 0 0-2h-7V1a1 1 0 0 0-2 0v7H4a1 1 0 0 0 0 2"></path></svg>
+                            <span>1 day</span>
+                        </div>
+                        <div class="five-btn">
+                            <svg class="plus-minus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.14 22.94a1 1 0 0 1-1 1H3.86a1 1 0 1 1 0-2h16.28a1 1 0 0 1 1 1M4 10h7v7a1 1 0 0 0 2 0v-7h7a1 1 0 0 0 0-2h-7V1a1 1 0 0 0-2 0v7H4a1 1 0 0 0 0 2"></path></svg>
+                            <span>2 days</span>
+                        </div>
+                        <div class="five-btn">
+                            <svg class="plus-minus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.14 22.94a1 1 0 0 1-1 1H3.86a1 1 0 1 1 0-2h16.28a1 1 0 0 1 1 1M4 10h7v7a1 1 0 0 0 2 0v-7h7a1 1 0 0 0 0-2h-7V1a1 1 0 0 0-2 0v7H4a1 1 0 0 0 0 2"></path></svg>
+                            <span>3 days</span>
+                        </div>
+                        <div class="five-btn">
+                            <svg class="plus-minus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.14 22.94a1 1 0 0 1-1 1H3.86a1 1 0 1 1 0-2h16.28a1 1 0 0 1 1 1M4 10h7v7a1 1 0 0 0 2 0v-7h7a1 1 0 0 0 0-2h-7V1a1 1 0 0 0-2 0v7H4a1 1 0 0 0 0 2"></path></svg>
+                            <span>7 days</span>
+                        </div>
+                    </div>
+                </div>;
             case 'flexible':
                 return <div>I'm flexible content goes here</div>;
             default:
