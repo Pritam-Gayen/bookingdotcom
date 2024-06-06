@@ -29,50 +29,59 @@ body{
 }
 .logo-holder{
     height: auto;
-    width: 170px;
+    width: 130px;
     margin: 0;
     padding: 0;
 }
 .nav-item-white-btn{
     color: white;
     font-size: 17px;
-    padding-top: 12px;
+    padding-top: 10px;
     padding-bottom: 16px;
     padding-left: 10px;
     white-space: nowrap;
     border-radius: 5px;
 }
-
+.register-sign-in{
+    margin-top: 8px;
+}
 .nav-item-custom{
     color: white;
-    font-size: 20px;
+    font-size: 17px;
     padding: 12px;
     white-space: nowrap;
     border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
 }
 .nav-item-custom:hover{
     background-color: rgba(255, 255, 255, 0.1);
 }
 .navbar-picture{
+    display: flex;
     height: 28px;
     width: 28px;
     border-radius: 50%;
+    align-items: center;
+    justify-content: center;
 }
 .navbar-picture img{
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     object-fit:cover;
     border-radius: 50%;
 }
 .questionmark-holder{
-    height: 28px;
-    width: 28px;
+    height: 24px;
+    width: 24px;
 }
 .navbar-button{
     padding: 8px;
     background-color: white;
     color: rgb(0, 123, 255);
     border-radius: 3px;
+    font-size: 15px;
+    cursor: pointer;
 }
 .navbar-button:hover{
     background-color: rgba(255, 255, 255, 0.9);
