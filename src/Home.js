@@ -125,7 +125,7 @@ document.addEventListener('click', function (event) {
 
 
 const Home = () => {
-  const [dateRange, setDateRange] = useState({ startDate: null, endDate: null });
+  const [dateRange, setDateRange] = useState({ startDate: null, endDate: null, count: ''});
 
   const formatDate = (date) => {
     if (!date) return 'Check-in date';
@@ -134,7 +134,7 @@ const Home = () => {
     const month = date.toLocaleDateString('en-US', { month: 'short' });
     return `${dayOfWeek} ${day} ${month}`;
   };
-
+  
   return (
     <div>
       <div class="calender-holder">
@@ -164,6 +164,9 @@ const Home = () => {
               <span class="dash"> — </span>
               <span class="check-out-input">
                 {dateRange.endDate ? formatDate(dateRange.endDate) : 'Check-out date'}
+              </span>
+              <span class="date-count-show">
+                {(dateRange.count && dateRange.endDate) ? dateRange.count : ''}
               </span>
             </div>
             <div id="show-calender-holder">

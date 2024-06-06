@@ -4,14 +4,15 @@ import './DateRangePicker.css'; // You'll need to style the component using CSS
 const DateRangePicker = ({ dateRange, setDateRange }) => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+  const count = `${dateRange.count}`;
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [hoveredDate, setHoveredDate] = useState(null);
-
+  
   useEffect(() => {
     if (startDate || endDate) {
-      setDateRange({ startDate, endDate });
+      setDateRange({ startDate, endDate, count});
     }
-  }, [startDate, endDate, setDateRange]);
+  }, [startDate, endDate, count, setDateRange]);
 
   const handleStartDateChange = (event) => {
     setStartDate(new Date(event.target.value));

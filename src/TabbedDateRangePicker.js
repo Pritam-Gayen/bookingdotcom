@@ -8,6 +8,43 @@ const TabbedDateRangePicker = ({ dateRange, setDateRange }) => {
 
     const handleButtonClick = (buttonLabel) => {
         setActiveButton(buttonLabel);
+        switch (buttonLabel) {
+            case "1 day":
+                setDateRange({
+                    startDate: dateRange.startDate,
+                    endDate: dateRange.endDate,
+                    count: '(±1)'
+                });
+                break;
+            case "2 days":
+                setDateRange({
+                    startDate: dateRange.startDate,
+                    endDate: dateRange.endDate,
+                    count: '(±2)'
+                });
+                break;
+            case "3 days":
+                setDateRange({
+                    startDate: dateRange.startDate,
+                    endDate: dateRange.endDate,
+                    count: '(±3)'
+                });
+                break;
+            case "7 days":
+                setDateRange({
+                    startDate: dateRange.startDate,
+                    endDate: dateRange.endDate,
+                    count: '(±7)'
+                });
+                break;
+            default:
+                setDateRange({
+                    startDate: dateRange.startDate,
+                    endDate: dateRange.endDate,
+                    count: ''
+                });
+                break;
+        }
     };
 
 
