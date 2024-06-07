@@ -100,7 +100,51 @@ const TabbedDateRangePicker = ({ dateRange, setDateRange }) => {
 
                 </div>;
             case 'flexible':
-                return <div>I'm flexible content goes here</div>;
+                return <div>
+                    <div class="bullet-div">
+                        <h3>How long do you want to stay?</h3>
+                        <div class="d-flex">
+                                <div className="radio">
+                                    <label>
+                                        <input type="radio" value="option1" checked={true} />
+                                        A weekend
+                                    </label>
+                                </div>
+                                <div className="radio">
+                                    <label>
+                                        <input type="radio" value="option1" checked={true} />
+                                        A week
+                                    </label>
+                                </div>
+                                <div className="radio">
+                                    <label>
+                                        <input type="radio" value="option1" checked={true} />
+                                       A month
+                                    </label>
+                                </div>
+                                <div className="radio">
+                                    <label>
+                                        <input type="radio" value="option1" checked={true} />
+                                        Other
+                                    </label>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="month-select-div">
+                        <h3>When do you want to go?</h3>
+                        <h4>Select up to 3 months</h4>
+                        <div class="months-holder">
+                            <div class="select-month">
+                                <div class="month-icon-holder"></div>
+                                <p>Month Name</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-div d-flex">
+                        <p>Selected month</p>
+                        <div class="select-dates-btn">Select dates</div>
+                    </div>
+                </div>;
             default:
                 return null;
         }
