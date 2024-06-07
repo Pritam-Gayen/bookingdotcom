@@ -105,7 +105,7 @@
 
 .box-filling {
   padding: 10px;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   cursor: pointer;
 }
 
