@@ -52,15 +52,12 @@
 }
 .bed-icon-div{
     width: 40%;
-    border: none !important;
 }
 .calendar-icon-div{
     width: 30%;
-    border: none !important;
 }
 .person-icon-div{
     width: 30%;
-    border: none !important;
 }
 .box-filling{
     display: flex;
@@ -138,7 +135,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    width: 500px;
+    width: 460px;
     max-height: 500px;
     max-width: 500px;
     overflow-y: auto;
@@ -147,7 +144,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    border-radius: 10px;
+    border-radius: 8px;
     border: none;
     box-shadow: 0 2px 10px rgba(111, 111, 111, 0.5);
     z-index: 1000;
@@ -157,11 +154,14 @@
 #list-box h4{
     color: black;
     font-weight: bold;
-    font-size: 20px;
-    padding: 20px;
+    font-size: 14px;
+    padding: 12px;
 }
 .location-holder {
-    padding: 10px;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    padding-left: 10px;
     cursor: pointer;
     color: black;
     border-bottom: 1px solid #eceaea;
@@ -170,26 +170,25 @@
 .location-holder:hover {
     background-color: #eceaea;
 }
-.location-holder{
-    display: flex;
-}
+
 .location-icon-holder{
-    height: 30px;
-    width: 30px;
+    height: 20px;
+    width: 25px;
     justify-self: center;
     align-self: center;
+    margin-bottom: 5px;
 }
 .townname{
     color: black;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: bold;
 }
 .countryname{
     color: black;
-    font-size: 15px;
+    font-size: 12px;
 }
 .location-place-holder{
-    padding-left: 20px;
+    padding-left: 10px;
 }
 .date-count-show{
     color: black;
