@@ -89,12 +89,66 @@
     padding-left: 20px;
 }
 .radio{
+    align-items: center;
+    justify-content: center;
     padding-left: 20px;
     font-size: 14px;
 }
-.radio-span{
-    padding-left: 5px;
+.custom-radio{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
 }
+.custom-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.radio-mark{
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #b4b2b2;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 10px;
+}
+.custom-radio input:checked ~ .radio-mark {
+    border: 2px solid #007bff;
+}
+
+.radio-mark::after {
+    content: "";
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #007bff;
+}
+
+.custom-radio input:checked ~ .radio-mark::after {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .month-select-div{
     margin-bottom: 32px;
 }
@@ -191,3 +245,4 @@ button:disabled {
     color: gray;
     border-radius: 4px;
 }
+

@@ -198,30 +198,35 @@ const TabbedDateRangePicker = ({ dateRange, setDateRange }) => {
                     <div class="bullet-div">
                         <h3>How long do you want to stay?</h3>
                         <div class="d-flex">
-                            <div className="radio">
-                                <label>
-                                    <input type="radio" value="option1" checked={true} />
-                                    <span class="radio-span">A weekend</span>
+                            <div className="radio d-flex">
+                                <label className="custom-radio">
+                                    <input id="option-weekend" type="radio" name="options" value="option1"></input>
+                                    <span className="radio-mark"></span>
+                                    A weekend
                                 </label>
                             </div>
-                            <div className="radio">
-                                <label>
-                                    <input type="radio" value="option1" checked={true} />
-                                    <span class="radio-span">A week</span>
+                            <div className="radio d-flex">
+                                <label className="custom-radio">
+                                    <input id="option-week" type="radio" name="options" value="option2"></input>
+                                    <span className="radio-mark"></span>
+                                    A week
                                 </label>
                             </div>
-                            <div className="radio">
-                                <label>
-                                    <input type="radio" value="option1" checked={true} />
-                                    <span class="radio-span">A month</span>
+                            <div className="radio d-flex">
+                                <label className="custom-radio">
+                                    <input id="option-month" type="radio" name="options" value="option3"></input>
+                                    <span className="radio-mark"></span>
+                                    A month
                                 </label>
                             </div>
-                            <div className="radio">
-                                <label>
-                                    <input type="radio" value="option1" checked={true} />
-                                    <span class="radio-span">Other</span>
+                            <div className="radio d-flex">
+                                <label className="custom-radio">
+                                    <input id="option-other" type="radio" name="options" value="option4"></input>
+                                    <span className="radio-mark"></span>
+                                    Other
                                 </label>
                             </div>
+
                         </div>
                     </div>
                     <div class="month-select-div">
