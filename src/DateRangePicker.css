@@ -1,0 +1,126 @@
+.date-range-picker {
+  position: relative;
+  display: inline-block;
+}
+
+.date-input {
+  padding: 10px;
+  /* border: 1px solid #ccc; */
+  cursor: pointer;
+}
+
+.calendar-container {
+  display: flex;
+  /* gap: 30px; */
+}
+
+.calendar {
+  background: white;
+  /* border: 1px solid #ccc; */
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  /* background: #f9f9f9;s */
+  /* border-bottom: 1px solid #ccc; */
+}
+.calendar-header-button{
+  width: 50px;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px 15px 15px;
+  border-radius: 4px;
+}
+.invisible-div{
+  width: 50px;
+}
+.calendar-header-button:hover{
+  background-color: rgba(228, 224, 224, 0.5);
+}
+.calendar-header-span{
+  width: calc(100% - 100px);
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  padding-top: 10px;
+}
+.calendar-body {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+.calendar-weekdays{
+  width: 100%;
+  color: rgb(72, 71, 71);
+}
+.calendar-weekdays, .calendar-days {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.calendar-weekday, .calendar-day {
+  width: calc(100% / 7);
+  text-align: center;
+  /* padding: 10px; */
+  font-size: 14px;
+}
+
+.calendar-day {
+  height: 44px;
+  display: flex;
+  cursor: pointer;
+  margin-bottom: 4px;
+  align-items: center;
+  justify-content: center;
+}
+.calendar-day:hover{
+  background-color: rgba(228, 224, 224, 0.5);
+}
+.calendar-day.selected {
+  background: #007bff;
+  color: white;
+}
+.selected-start{
+  background-color: #007bff;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  color: white;
+}
+.selected-end{
+  background-color: #007bff;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  color: white;
+}
+.selected-middle{
+  background-color: rgba(228, 224, 224, 0.5);
+}
+.hovered{
+  background-color: rgba(228, 224, 224, 0.5);
+}
+.calendar-day.empty {
+  pointer-events: none;
+}
+
+.box-filling {
+  padding: 10px;
+  /* border: 1px solid #ccc; */
+  cursor: pointer;
+}
+
+.show-calender-date-range {
+  display: flex;
+  align-items: center;
+  background-color: #007bff;
+}
+#show-calender{
+  display: none !important;
+}
+.check-in-input, .check-out-input {
+  margin: 0 5px;
+}

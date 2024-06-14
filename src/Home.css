@@ -1,13 +1,13 @@
 .calender-holder{
     background-color: #003b95;
     width: 100%;
-    height: 300px;
+    height: 150px;
     color: white;
-    padding-top: 100px;
+    padding-top: 70px;
     height: fit-content;
 }
 .heading-holder{
-    margin-bottom: 50px;
+    margin-bottom: 0px;
 }
 .heading-holder h1{
     font-size: 50px;
@@ -16,41 +16,53 @@
 }
 .heading-holder h3{
     text-align: left;
+    font-size: 25px;
 }
 .calender{
+    position: relative;
     display: flex;
     background-color: #ffb700;
-    height: 70px;
-    width: 97%;
-    border-radius: 10px;
-    padding: 5px;
-    transform: translateY(35px);
+    height: 62px;
+    width: 100%;
+    border-radius: 8px;
+    padding: 4px;
+    transform: translateY(32px);
+    gap: 4px;
 }
 .search-btn{
     background-color: #006ce4;
     color: white;
-    border-radius: 8px;
+    border-radius: 5px;
     justify-content: center;
     text-align: center;
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
-    font-size: 25px;
-    width:10%;
+    font-size: 20px;
+    width:110px;
     cursor: pointer;
 }
 .search-btn:hover{
     background-color: #0751c0;
 }
 .box-filling-holder{
-    width: 90%;
+    width: 100%;
     display: flex;
+    gap: 4px;
+}
+.bed-icon-div{
+    width: 40%;
+}
+.calendar-icon-div{
+    width: 30%;
+}
+.person-icon-div{
+    width: 30%;
 }
 .box-filling{
-    width: 32.8%;
+    display: flex;
     background-color: white;
-    border-radius: 8px;
-    margin-right: 5px;
+    border-radius: 5px;
     align-items: center;
     justify-content: left;
     padding-left: 20px;
@@ -61,13 +73,18 @@
     box-shadow: 1px 1px 2px rgba(255, 123, 0, 0.8);
 }
 .box-filling-icon{
-    height: 28px;
-    width: 28px;
+    height: 26px;
+    width: 20px;
+    margin-left: 5px;
+}
+.bed-icon-div .box-filling-icon{
+    height: 24px;
+    width: 24px;
 }
 .box-filling-input{
     border:none;
     margin-left: 10px;
-    font-size: 20px;
+    font-size: 15px;
 }
 .box-filling-input:focus{
     outline: none;
@@ -84,13 +101,13 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     color: black;
-    padding-left: 10px;
-    font-size: 20px;
+    padding-left: 5px;
+    font-size: 15px;
 }
 .dash{
     align-self: center;
     color: black;
-    padding-left: 10px;
+    padding-left: 5px;
 }
 .check-out-input{
     display: block;
@@ -98,8 +115,8 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     color: black;
-    padding-left: 10px;
-    font-size: 20px;
+    padding-left: 5px;
+    font-size: 15px;
 }
 .person-count-input{
     display: inline-block;
@@ -108,7 +125,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     padding-left: 10px;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 /* ----------------------list box for where are you going?------------------------------ */
@@ -118,7 +135,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    width: 500px;
+    width: 460px;
     max-height: 500px;
     max-width: 500px;
     overflow-y: auto;
@@ -127,7 +144,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    border-radius: 10px;
+    border-radius: 8px;
     border: none;
     box-shadow: 0 2px 10px rgba(111, 111, 111, 0.5);
     z-index: 1000;
@@ -137,11 +154,14 @@
 #list-box h4{
     color: black;
     font-weight: bold;
-    font-size: 20px;
-    padding: 20px;
+    font-size: 14px;
+    padding: 12px;
 }
 .location-holder {
-    padding: 10px;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    padding-left: 10px;
     cursor: pointer;
     color: black;
     border-bottom: 1px solid #eceaea;
@@ -150,35 +170,36 @@
 .location-holder:hover {
     background-color: #eceaea;
 }
-.location-holder{
-    display: flex;
-}
+
 .location-icon-holder{
-    height: 30px;
-    width: 30px;
+    height: 20px;
+    width: 25px;
     justify-self: center;
     align-self: center;
+    margin-bottom: 5px;
 }
 .townname{
     color: black;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: bold;
 }
 .countryname{
     color: black;
-    font-size: 15px;
+    font-size: 12px;
 }
 .location-place-holder{
-    padding-left: 20px;
+    padding-left: 10px;
+}
+.date-count-show{
+    color: black;
 }
 /* --------------------------------------------------------- */
 
 #show-calender-holder{
     position: absolute;
-    display: none;
-    width: 800px;
-    height: 400px;
-    overflow-y: auto;
+    top: 100px;
+    width: 660px;
+    height: fit-content;
     border: 1px solid #ccc;
     background-color: white;
     list-style: none;
@@ -187,38 +208,14 @@
     border: none;
     box-shadow: 0 2px 10px rgba(111, 111, 111, 0.5);
     z-index: 1000;
-    transform: translate(5px, 15px);
+    transform: translate(5px, 2px);
     color: black;
+    overflow: hidden;
+    padding-left: 20px;
+    padding-right: 20px;
 }
-.rs-picker-popup{
-    transform: translateX(-150px);
-}
-.rs-picker-daterange-header{
-    border-radius: 0 !important;
-    display: none;
-}
-.rs-input{
-    display: none !important;
-}
-.rs-date-range-input{
-    border-radius: 0 !important;
-    border: none !important;
-}
-.rs-input-group-addon{
-    display: none !important;
-}
-.rs-picker-daterange-calendar-group{
-    position: relative !important;
-    border-radius: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-.rs-calendar{
-    border: none !important;
-}
-.rs-calendar-body{
-    width: 400px !important;
-}
+
+
 
 @media screen and (max-width: 1024px) {
     .box-filling-holder{
