@@ -208,7 +208,7 @@
     border: none;
     box-shadow: 0 2px 10px rgba(111, 111, 111, 0.5);
     z-index: 1000;
-    transform: translate(5px, 2px);
+    transform: translate(0px, 2px);
     color: black;
     overflow: hidden;
     padding-left: 20px;
