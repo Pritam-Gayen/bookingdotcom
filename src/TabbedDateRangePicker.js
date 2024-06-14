@@ -228,7 +228,25 @@ const TabbedDateRangePicker = ({ dateRange, setDateRange }) => {
                             </div>
 
                         </div>
+                        <div class="other-hidden-div">
+                        <div class="num-of-dates d-flex">
+                            <input class="num-of-dates-input" type="number" min="1" max="90"></input>
+                            <div class="nights">nights</div>
+                        </div>
+                        <div class="from-day d-flex">
+                            <select class="from-day-select">
+                                <option value="1">From Monday</option>
+                                <option value="2">From Tuesday</option>
+                                <option value="3">From Wednesday</option>
+                                <option value="4">From Thrusday</option>
+                                <option value="5">From Friday</option>
+                                <option value="6">From Saturday</option>
+                                <option value="7">From Sunday</option>
+                            </select>
+                        </div>
                     </div>
+                    </div>
+                    
                     <div class="month-select-div">
                         <h3>When do you want to go?</h3>
                         <h4>Select up to 3 months</h4>

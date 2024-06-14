@@ -87,6 +87,7 @@
     font-size: 16px;
     font-weight: bold;
     padding-left: 20px;
+    text-align: left;
 }
 .radio{
     align-items: center;
@@ -136,19 +137,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 .month-select-div{
     margin-bottom: 32px;
 }
@@ -156,11 +144,15 @@
     font-size: 16px;
     font-weight: bold;
     padding-left: 20px;
+    text-align: left;
 }
 .month-select-div h4{
     font-size: 14px;
+    font-weight: 300;
     padding-left: 20px;
+    margin-top: -5px;
     color: gray;
+    text-align: left;
 }
 .month-display-container{
     align-items: center;
@@ -245,4 +237,52 @@ button:disabled {
     color: gray;
     border-radius: 4px;
 }
-
+/* ---------------------------------------------------------- */
+.other-hidden-div{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin: 10px 20px 10px 20px;
+}
+.num-of-dates{
+    width: 120px;   
+    border: 1px solid gray;
+    border-radius: 5px;
+    height: 36px;
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.from-day{
+    width: 150px;   
+    border: 1px solid gray;
+    border-radius: 5px;
+    height: 36px;
+}
+.num-of-dates-input{
+    width: 50px;
+    margin-right: 5px;
+    border: none;
+    color: #7d7e7e;
+}
+.num-of-dates-input:focus{
+    border: none;
+    outline: none;
+}
+.nights{
+    height: 20px;
+    padding-left: 8px;
+    border-left: 1px solid rgb(217, 216, 216);
+    color: #7d7e7e;
+}
+.from-day-select{
+    margin-left: 5px;
+    border: none;
+    outline: none;
+    background-color: white;
+    color: #7d7e7e;
+}
+.from-day-select:focus{
+    border: none;
+    outline: none;
+}
