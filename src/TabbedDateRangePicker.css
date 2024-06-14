@@ -7,37 +7,41 @@
     padding: 15px 0 15px 0;
     cursor: pointer;
     background-color: white;
-    margin:0;
+    margin: 0;
     color: black;
     border: none;
     font-size: 14px;
     border-bottom: 2px solid rgba(228, 224, 224, 0.5);
-    
+
 }
-.tab:hover{
+
+.tab:hover {
     background-color: rgba(219, 216, 216, 0.5);
 }
+
 .tab.active {
     color: #007bff;
 }
 
 .tab-content {
     padding: 0;
-    border:none;
+    border: none;
 }
+
 .underline {
-  position: relative;
-  bottom: 3px;
-  left: 0;
-  width: 50%;
-  height: 2px;
-  background-color: #007bff;
-  transition: transform 0.25s;
-  padding: 0;
-  margin: 0;
+    position: relative;
+    bottom: 3px;
+    left: 0;
+    width: 50%;
+    height: 2px;
+    background-color: #007bff;
+    transition: transform 0.25s;
+    padding: 0;
+    margin: 0;
 }
+
 /* ---------------------------------------------------------------------- */
-.five-btn-holder{
+.five-btn-holder {
     display: flex;
     align-items: flex-start;
     gap: 8px;
@@ -47,7 +51,8 @@
     margin-left: 10px;
     margin-right: 10px;
 }
-.five-btn{
+
+.five-btn {
     display: flex;
     white-space: nowrap;
     border: 1px solid rgba(163, 162, 162, 0.8);
@@ -60,53 +65,62 @@
     cursor: pointer;
     font-size: 14px;
 }
-.five-btn span{
+
+.five-btn span {
     padding-left: 5px;
     padding-right: 5px;
 }
-.plus-minus{
+
+.plus-minus {
     height: 20px;
     width: 15px;
 }
-.five-btn-active{
+
+.five-btn-active {
     border-color: #006ce4;
     color: #006ce4;
     background-color: rgba(40, 131, 200, 0.1);
 }
-.five-btn-active .plus-minus path{
+
+.five-btn-active .plus-minus path {
     fill: rgba(40, 131, 200, 0.8);
 }
 
 
 /* ---------------------------------I'm Flexible styles--------------------------------------------------- */
-.bullet-div{
+.bullet-div {
     margin-top: 32px;
     margin-bottom: 32px;
 }
-.bullet-div h3{
+
+.bullet-div h3 {
     font-size: 16px;
     font-weight: bold;
     padding-left: 20px;
     text-align: left;
 }
-.radio{
+
+.radio {
     align-items: center;
     justify-content: center;
     padding-left: 20px;
     font-size: 14px;
 }
-.custom-radio{
+
+.custom-radio {
     display: flex;
     align-items: center;
     cursor: pointer;
     font-size: 14px;
 }
+
 .custom-radio input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
 }
-.radio-mark{
+
+.radio-mark {
     display: inline-block;
     height: 20px;
     width: 20px;
@@ -115,7 +129,8 @@
     position: relative;
     margin-right: 10px;
 }
-.custom-radio input:checked ~ .radio-mark {
+
+.custom-radio input:checked~.radio-mark {
     border: 2px solid #007bff;
 }
 
@@ -132,21 +147,23 @@
     background: #007bff;
 }
 
-.custom-radio input:checked ~ .radio-mark::after {
+.custom-radio input:checked~.radio-mark::after {
     display: block;
 }
 
 
-.month-select-div{
+.month-select-div {
     margin-bottom: 32px;
 }
-.month-select-div h3{
+
+.month-select-div h3 {
     font-size: 16px;
     font-weight: bold;
     padding-left: 20px;
     text-align: left;
 }
-.month-select-div h4{
+
+.month-select-div h4 {
     font-size: 14px;
     font-weight: 300;
     padding-left: 20px;
@@ -154,13 +171,15 @@
     color: gray;
     text-align: left;
 }
-.month-display-container{
+
+.month-display-container {
     align-items: center;
     justify-content: center;
     margin-left: 20px;
     margin-right: 20px;
 }
-.months-holder{
+
+.months-holder {
     position: relative;
     width: 100%;
     padding-top: 5px;
@@ -172,7 +191,8 @@
     /* justify-content: center; */
     scroll-behavior: smooth;
 }
-.select-month{
+
+.select-month {
     min-width: 84px;
     border: 1px solid rgb(224, 221, 221);
     border-radius: 10px;
@@ -183,20 +203,25 @@
     align-items: center;
     justify-content: center;
 }
-.month-icon-holder{
+
+.month-icon-holder {
     height: 16px;
     width: 16px;
     margin-top: 5px;
     margin-bottom: 5px;
 }
-.select-month .month{
+
+.select-month .month {
     font-size: 14px;
 }
-.select-month .year{
+
+.select-month .year {
     font-size: 14px;
     color: rgb(94, 93, 93);
 }
-.month-display-right, .month-display-left{
+
+.month-display-right,
+.month-display-left {
     position: absolute;
     z-index: 2;
     background-color: white;
@@ -206,22 +231,28 @@
     width: 35px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.month-display-right{
+
+.month-display-right {
     right: 20px;
 }
-.month-display-right:hover{
+
+.month-display-right:hover {
     background-color: rgb(244, 240, 240);
 }
-.month-display-left{
+
+.month-display-left {
     left: 25px;
 }
-.month-display-left:hover{
+
+.month-display-left:hover {
     background-color: rgb(244, 240, 240);
 }
+
 button:disabled {
     display: none;
 }
-.btn-div{
+
+.btn-div {
     width: 100%;
     border-top: 1px solid rgb(224, 221, 221);
     padding-top: 16px;
@@ -231,21 +262,23 @@ button:disabled {
     font-size: 14px;
     align-items: center;
 }
-.select-dates-btn{
+
+.select-dates-btn {
     padding: 10px;
     background-color: #dadbdd;
     color: gray;
     border-radius: 4px;
 }
+
 /* ---------------------------------------------------------- */
-.other-hidden-div{
+.other-hidden-div {
     display: flex;
     width: 100%;
     height: fit-content;
     margin: 10px 20px 10px 20px;
 }
-.num-of-dates{
-    width: 120px;   
+.num-of-dates {
+    width: 120px;
     border: 1px solid gray;
     border-radius: 5px;
     height: 36px;
@@ -253,49 +286,49 @@ button:disabled {
     align-items: center;
     justify-content: center;
 }
-.from-day{
-    width: 150px;   
+.from-day {
+    width: 150px;
     border: 1px solid gray;
     border-radius: 5px;
     height: 36px;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
     cursor: pointer;
 }
-.num-of-dates-input{
+.num-of-dates-input {
     width: 50px;
     margin-right: 5px;
     border: none;
     color: #7d7e7e;
 }
-.num-of-dates-input:focus{
+.num-of-dates-input:focus {
     border: none;
     outline: none;
 }
-.nights{
+.nights {
     height: 20px;
     padding-left: 8px;
     border-left: 1px solid rgb(217, 216, 216);
     color: #7d7e7e;
 }
-.from-day-select{
-    margin-left: 5px;
+.from-day-select {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding-left: 5px;
     border: none;
     outline: none;
     background-color: white;
     color: #7d7e7e;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
     cursor: pointer;
 }
-.from-day-select:focus{
+.from-day-select:focus {
     border: none;
     outline: none;
 }
-.down-arrow{
-    width: 25px;
-    padding-left: 5px;
-    margin-right: 5px;
-    cursor: pointer;
+.no-arrow {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="-20 -8 40 40" stroke="black"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>') no-repeat right 10px center;
 }

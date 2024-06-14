@@ -234,7 +234,7 @@ const TabbedDateRangePicker = ({ dateRange, setDateRange }) => {
                             <div class="nights">nights</div>
                         </div>
                         <div class="from-day d-flex">
-                            <select class="from-day-select">
+                            <select class="from-day-select no-arrow">
                                 <option value="1">From Monday</option>
                                 <option value="2">From Tuesday</option>
                                 <option value="3">From Wednesday</option>
@@ -243,9 +243,6 @@ const TabbedDateRangePicker = ({ dateRange, setDateRange }) => {
                                 <option value="6">From Saturday</option>
                                 <option value="7">From Sunday</option>
                             </select>
-                            <span class="down-arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.268 8.913a.9.9 0 0 1-.266.642l-6.057 6.057A1.3 1.3 0 0 1 12 16c-.35.008-.69-.123-.945-.364L4.998 9.58a.91.91 0 0 1 0-1.284.897.897 0 0 1 1.284 0L12 13.99l5.718-5.718a.897.897 0 0 1 1.284 0 .88.88 0 0 1 .266.642"></path></svg>
-                            </span>
                         </div>
                     </div>
                     </div>
