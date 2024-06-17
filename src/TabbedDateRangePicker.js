@@ -99,6 +99,11 @@ const MonthDisplay = () => {
 const TabbedDateRangePicker = ({ dateRange, setDateRange }) => {
     const [activeTab, setActiveTab] = useState('calendar');
     const [activeButton, setActiveButton] = useState("Exact dates");
+    const [selectedOption, setSelectedOption] = useState('');
+
+    const handleRadioChange = (event) => {
+        setSelectedOption(event.target.value);
+    };
 
     const handleButtonClick = (buttonLabel) => {
         setActiveButton(buttonLabel);
@@ -200,53 +205,63 @@ const TabbedDateRangePicker = ({ dateRange, setDateRange }) => {
                         <div class="d-flex">
                             <div className="radio d-flex">
                                 <label className="custom-radio">
-                                    <input id="option-weekend" type="radio" name="options" value="option1"></input>
+                                    <input id="option-weekend" type="radio" name="options" value="option1" checked={selectedOption === 'option1'}
+                                        onChange={handleRadioChange}>
+                                    </input>
                                     <span className="radio-mark"></span>
                                     A weekend
                                 </label>
                             </div>
                             <div className="radio d-flex">
                                 <label className="custom-radio">
-                                    <input id="option-week" type="radio" name="options" value="option2"></input>
+                                    <input id="option-week" type="radio" name="options" value="option2" checked={selectedOption === 'option2'}
+                                        onChange={handleRadioChange}>
+                                    </input>
                                     <span className="radio-mark"></span>
                                     A week
                                 </label>
                             </div>
                             <div className="radio d-flex">
                                 <label className="custom-radio">
-                                    <input id="option-month" type="radio" name="options" value="option3"></input>
+                                    <input id="option-month" type="radio" name="options" value="option3" checked={selectedOption === 'option3'}
+                                        onChange={handleRadioChange}>
+                                    </input>
                                     <span className="radio-mark"></span>
                                     A month
                                 </label>
                             </div>
                             <div className="radio d-flex">
                                 <label className="custom-radio">
-                                    <input id="option-other" type="radio" name="options" value="option4"></input>
+                                    <input id="option-other" type="radio" name="options" value="option4"  checked={selectedOption === 'option4'}
+                                        onChange={handleRadioChange}>
+                                    </input>
                                     <span className="radio-mark"></span>
                                     Other
                                 </label>
                             </div>
 
                         </div>
-                        <div class="other-hidden-div">
-                        <div class="num-of-dates d-flex">
-                            <input class="num-of-dates-input" type="number" min="1" max="90"></input>
-                            <div class="nights">nights</div>
-                        </div>
-                        <div class="from-day d-flex">
-                            <select class="from-day-select no-arrow">
-                                <option value="1">From Monday</option>
-                                <option value="2">From Tuesday</option>
-                                <option value="3">From Wednesday</option>
-                                <option value="4">From Thrusday</option>
-                                <option value="5">From Friday</option>
-                                <option value="6">From Saturday</option>
-                                <option value="7">From Sunday</option>
-                            </select>
-                        </div>
+                        {selectedOption === 'option4' && (
+                            <div class="other-hidden-div">
+                                <div class="num-of-dates d-flex">
+                                    <input class="num-of-dates-input" type="number" min="1" max="90"></input>
+                                    <div class="nights">nights</div>
+                                </div>
+                                <div class="from-day d-flex">
+                                    <select class="from-day-select no-arrow">
+                                        <option value="1">From Monday</option>
+                                        <option value="2">From Tuesday</option>
+                                        <option value="3">From Wednesday</option>
+                                        <option value="4">From Thrusday</option>
+                                        <option value="5">From Friday</option>
+                                        <option value="6">From Saturday</option>
+                                        <option value="7">From Sunday</option>
+                                    </select>
+                                </div>
+                            </div>
+                        )}
                     </div>
-                    </div>
-                    
+
                     <div class="month-select-div">
                         <h3>When do you want to go?</h3>
                         <h4>Select up to 3 months</h4>
