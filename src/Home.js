@@ -135,14 +135,28 @@ const showGuestCount = () => {
   const searchBtn = document.getElementsByClassName('search-btn');
   const searchBtnRect = searchBtn[0].getBoundingClientRect();
 
-  console.log(personIconDivRect.left);
-  console.log(personIconDivRect.right);
-  console.log(searchBtnRect.right)
-
   guestCountDiv.style.right = `${searchBtnRect.right - personIconDivRect.right + 5}px`;
   guestCountDiv.style.top = `${boxFillingHolderRect.bottom - boxFillingHolderRect.top + 12}px`;
   guestCountDiv.style.display = 'block';
 };
+
+// Hide the showGuestCountDiv when clicking outside
+document.addEventListener('click', function (event) {
+  const personIconDiv = document.querySelector('.person-icon-div');
+  const guestCountDiv = document.getElementById('guest-count-div');
+  const showGuestCountDivChildren = document.querySelectorAll('#guest-count-div *');
+  let isChild = false;
+
+  showGuestCountDivChildren.forEach(child => {
+    if (child.contains(event.target)) {
+      isChild = true;
+    }
+  });
+
+  if (!isChild && !personIconDiv.contains(event.target)) {
+    guestCountDiv.style.display = 'none';
+  }
+});
 
 
 const Home = () => {
@@ -200,7 +214,8 @@ const Home = () => {
               <span class="person-count-input">2 adults · 0 children · 1 room</span>
             </div>
             <div id="guest-count-div">
-            
+              <div>
+              </div>
             </div>
           </div>
           <div class="search-btn d-flex">
