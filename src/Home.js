@@ -126,6 +126,25 @@ document.addEventListener('click', function (event) {
 });
 
 
+const showGuestCount = () => {
+  const personIconDiv = document.getElementsByClassName('person-icon-div');
+  const guestCountDiv = document.getElementById('guest-count-div');
+  const boxFillingHolder = document.getElementsByClassName('box-filling-holder');
+  const personIconDivRect = personIconDiv[0].getBoundingClientRect();
+  const boxFillingHolderRect = boxFillingHolder[0].getBoundingClientRect();
+  const searchBtn = document.getElementsByClassName('search-btn');
+  const searchBtnRect = searchBtn[0].getBoundingClientRect();
+
+  console.log(personIconDivRect.left);
+  console.log(personIconDivRect.right);
+  console.log(searchBtnRect.right)
+
+  guestCountDiv.style.right = `${searchBtnRect.right - personIconDivRect.right + 5}px`;
+  guestCountDiv.style.top = `${boxFillingHolderRect.bottom - boxFillingHolderRect.top + 12}px`;
+  guestCountDiv.style.display = 'block';
+};
+
+
 const Home = () => {
   const [dateRange, setDateRange] = useState({ startDate: null, endDate: null, count: ''});
 
@@ -174,11 +193,14 @@ const Home = () => {
             <div id="show-calender-holder">
               <TabbedDateRangePicker dateRange={dateRange} setDateRange={setDateRange} />
             </div>
-            <div class="box-filling d-flex person-icon-div">
+            <div class="box-filling d-flex person-icon-div" onClick={showGuestCount}>
               <div class="box-filling-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#595959" d="M16.5 6a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0M18 6A6 6 0 1 0 6 6a6 6 0 0 0 12 0M3 23.25a9 9 0 1 1 18 0 .75.75 0 0 0 1.5 0c0-5.799-4.701-10.5-10.5-10.5S1.5 17.451 1.5 23.25a.75.75 0 0 0 1.5 0"></path></svg>
               </div>
               <span class="person-count-input">2 adults · 0 children · 1 room</span>
+            </div>
+            <div id="guest-count-div">
+            
             </div>
           </div>
           <div class="search-btn d-flex">
