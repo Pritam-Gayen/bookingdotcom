@@ -214,7 +214,22 @@ const Home = () => {
               <span class="person-count-input">2 adults · 0 children · 1 room</span>
             </div>
             <div id="guest-count-div">
-              <div>
+              <div class="guest-count-child">
+                <div class="d-flex">
+                  Adults
+                  <div class="plus-minus-btn">
+                  </div>
+                </div>
+                <div class="d-flex">
+                  Children
+                  <div class="plus-minus-btn">
+                  </div>
+                </div>
+                <div class="d-flex">
+                  Romms
+                  <div class="plus-minus-btn">
+                  </div>
+                </div>
               </div>
             </div>
           </div>
