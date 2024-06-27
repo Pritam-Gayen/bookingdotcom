@@ -160,7 +160,7 @@ document.addEventListener('click', function (event) {
 
 
 const Home = () => {
-  const [dateRange, setDateRange] = useState({ startDate: null, endDate: null, count: ''});
+  const [dateRange, setDateRange] = useState({ startDate: null, endDate: null, count: '' });
 
   const formatDate = (date) => {
     if (!date) return 'Check-in date';
@@ -169,7 +169,7 @@ const Home = () => {
     const month = date.toLocaleDateString('en-US', { month: 'short' });
     return `${dayOfWeek} ${day} ${month}`;
   };
-  
+
   return (
     <div>
       <div class="calender-holder">
@@ -215,19 +215,46 @@ const Home = () => {
             </div>
             <div id="guest-count-div">
               <div class="guest-count-child">
-                <div class="d-flex">
-                  Adults
-                  <div class="plus-minus-btn">
+                <div class="d-flex guest-count-child-inner-div">
+                  <div>Adults</div>
+                  <div class="plus-minus-btn d-flex">
+                    <div class="btn-minus" id="guest-count-minus">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.25 12.75H3.75a.75.75 0 0 1 0-1.5h16.5a.75.75 0 0 1 0 1.5"></path></svg>
+                    </div>
+                    <div class="btn-num" id="guest-count-num">
+                      1
+                    </div>
+                    <div class="btn-plus" id="guest-count-plus">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.25 11.25h-7.5v-7.5a.75.75 0 0 0-1.5 0v7.5h-7.5a.75.75 0 0 0 0 1.5h7.5v7.5a.75.75 0 0 0 1.5 0v-7.5h7.5a.75.75 0 0 0 0-1.5"></path></svg>
+                    </div>
                   </div>
                 </div>
-                <div class="d-flex">
-                  Children
-                  <div class="plus-minus-btn">
+                <div class="d-flex guest-count-child-inner-div">
+                  <div>Children</div>
+                  <div class="plus-minus-btn d-flex">
+                    <div class="btn-minus" id="children-count-minus">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.25 12.75H3.75a.75.75 0 0 1 0-1.5h16.5a.75.75 0 0 1 0 1.5"></path></svg>
+                    </div>
+                    <div class="btn-num" id="children-count-num">
+                      1
+                    </div>
+                    <div class="btn-plus" id="children-count-plus">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.25 11.25h-7.5v-7.5a.75.75 0 0 0-1.5 0v7.5h-7.5a.75.75 0 0 0 0 1.5h7.5v7.5a.75.75 0 0 0 1.5 0v-7.5h7.5a.75.75 0 0 0 0-1.5"></path></svg>
+                    </div>
                   </div>
                 </div>
-                <div class="d-flex">
-                  Romms
-                  <div class="plus-minus-btn">
+                <div class="d-flex guest-count-child-inner-div">
+                  <div>Rooms</div>
+                  <div class="plus-minus-btn d-flex">
+                    <div class="btn-minus" id="room-count-minus">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.25 12.75H3.75a.75.75 0 0 1 0-1.5h16.5a.75.75 0 0 1 0 1.5"></path></svg>
+                    </div>
+                    <div class="btn-num" id="room-count-num">
+                      1
+                    </div>
+                    <div class="btn-plus" id="room-count-plus">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.25 11.25h-7.5v-7.5a.75.75 0 0 0-1.5 0v7.5h-7.5a.75.75 0 0 0 0 1.5h7.5v7.5a.75.75 0 0 0 1.5 0v-7.5h7.5a.75.75 0 0 0 0-1.5"></path></svg>
+                    </div>
                   </div>
                 </div>
               </div>
