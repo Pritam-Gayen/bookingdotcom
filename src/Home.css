@@ -281,7 +281,21 @@
 .children-text{
     width: 100px;
 }
-
+.done-btn{
+    width: 100%;
+    height: 36px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #0751c0;
+    color: #0751c0;
+    padding: 4px 12px 4px 12px;
+    margin-top: 12px;
+    cursor: pointer;
+}
+.done-btn:hover{
+    background-color: #ecf0f7;
+}
 @media screen and (max-width: 1024px) {
     .box-filling-holder{
         display: block;

@@ -257,6 +257,7 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
+                <div class="done-btn d-flex">Done</div>
               </div>
             </div>
           </div>
