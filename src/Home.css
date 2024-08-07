@@ -1,10 +1,15 @@
+.parent-home{
+    position: relative;
+}
 .calender-holder{
+    position: relative;
     background-color: #003b95;
     width: 100%;
     height: 150px;
     color: white;
     padding-top: 70px;
     height: fit-content;
+    z-index: 200;
 }
 .heading-holder{
     margin-bottom: 0px;
@@ -46,6 +51,7 @@
     background-color: #0751c0;
 }
 .box-filling-holder{
+    position:static;
     width: 100%;
     display: flex;
     gap: 4px;
@@ -60,6 +66,7 @@
     width: 30%;
 }
 .box-filling{
+    position: relative;
     display: flex;
     background-color: white;
     border-radius: 5px;
@@ -147,9 +154,9 @@
     border-radius: 8px;
     border: none;
     box-shadow: 0 2px 10px rgba(111, 111, 111, 0.5);
-    z-index: 1000;
     text-align: left;
     transform: translateY(5px);
+    z-index: 1000;
 }
 #list-box h4{
     color: black;
@@ -219,13 +226,14 @@
 #guest-count-div{
     position: absolute;
     display: none;
+    background-color: white;
     width: 350px;
     height: fit-content;
     box-shadow: 0 2px 10px rgba(111, 111, 111, 0.5);
-    z-index: 1000;
     border-radius: 10px;
     overflow: hidden;
     padding: 32px;
+    z-index: 1000;
 }
 .guest-count-child{
     display: flex;
@@ -328,4 +336,13 @@
         transform: translateY(-175px);
         width: 100%;
     }
+}
+
+.checkbox-holder {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  margin-top: 50px;
+  
+  z-index: 1;
 }

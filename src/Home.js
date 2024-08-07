@@ -171,7 +171,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div class="parent-home">
       <div class="calender-holder">
         <div class="container heading-holder">
           <h1>Find your next stay</h1>
@@ -265,6 +265,14 @@ const Home = () => {
             Search
           </div>
         </div>
+      </div>
+      <div class="container checkbox-holder">
+        <input
+          type="checkbox"
+          id="custom-checkbox"
+          className="custom-checkbox"
+        />
+        <label>I’m looking for flights</label>
       </div>
     </div>
   );
