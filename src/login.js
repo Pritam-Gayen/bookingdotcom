@@ -23,10 +23,12 @@ const LoginButton = () => {
   };
 
   return (
+  <div class="d-flex justify-content-center align-items-center" style={{ marginTop: '100px' }}>
     <GoogleLogin
       onSuccess={onSuccess}
       onError={onFailure}
     />
+    </div>
   );
 };
 
