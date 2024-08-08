@@ -19,6 +19,7 @@ const countries = {
   'Dallas': 'USA',
   'San Jose': 'USA'
 };
+
 function showList() {
   const listBox = document.getElementById('list-box');
   listBox.innerHTML = ''
@@ -274,6 +275,26 @@ const Home = () => {
         />
         <label htmlFor="custom-checkbox" className="custom-checkbox-label"></label>
         I’m looking for flights
+      </div>
+      <div class="container offer-container">
+        <h3>Offers</h3>
+        <p>Promotions, deals and special offers for you</p>
+        <div class="offers-card-container">
+          <div class="card1">
+            <div class="left-div">
+              <h4>Fly away to your dream holiday</h4>
+              <p>Get inspired, compare and book flights with more flexibility</p>
+              <div class="left-div-btn">Search for flights</div>
+            </div>
+            <div class="right-div">
+            </div>
+          </div>
+          <div class="card2">
+            <h4>Seize the moment</h4>
+            <p>Save 15% or more when you book and stay before 1 October 2024</p>
+            <div class="left-div-btn">Find Gateway Deals</div>
+          </div>
+        </div>
       </div>
     </div>
   );
