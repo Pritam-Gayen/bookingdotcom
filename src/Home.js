@@ -266,13 +266,14 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div class="container checkbox-holder">
+      <div className="custom-checkbox-container container">
         <input
           type="checkbox"
           id="custom-checkbox"
           className="custom-checkbox"
         />
-        <label>I’m looking for flights</label>
+        <label htmlFor="custom-checkbox" className="custom-checkbox-label"></label>
+        I’m looking for flights
       </div>
     </div>
   );
