@@ -205,7 +205,7 @@ const Home = () => {
                 {(dateRange.count && dateRange.endDate) ? dateRange.count : ''}
               </span>
             </div>
-            <div id="show-calender-holder">
+            <div id="show-calender-holder" style={{ display: 'none' }}>
               <TabbedDateRangePicker dateRange={dateRange} setDateRange={setDateRange} />
             </div>
             <div class="box-filling d-flex person-icon-div" onClick={showGuestCount}>
