@@ -482,3 +482,64 @@
     }
     
 }
+/* -------------------------------------------------------- */
+.trip-planner{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100vw;
+    margin-top: 30px !important;
+}
+.trip-planner p{
+    color: grey;
+}
+.trip-planner-icons-holder{
+    overflow-x: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; 
+    margin-top: 16px;
+    width: 100vw;
+}
+.trip-planner-button{
+    width:fit-content;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border: white solid 1px; */
+    border-radius: 50px;
+    padding: 7px;
+    margin-right: 5px;
+    white-space:nowrap;
+    cursor: pointer;
+    color: black;
+}
+.trip-planner-button-word{
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+.trip-planner-active{
+    background-color: rgba(192, 223, 247, 0.615);
+    border: 1px solid rgb(80, 139, 241);
+    color: rgb(80, 139, 241);
+}
+.trip-planner-active .trip-planner-button-icon svg{
+    fill: rgb(80, 139, 241);
+}
+.trip-planner-button:hover{
+    background-color: rgba(212, 207, 207, 0.333);
+}
+.trip-planner-button-icon{
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    margin-top: -5px;
+}
+.trip-planner-button-icon svg{
+    fill: black;
+}
+.trip-planner-icons-holder::-webkit-scrollbar {
+    display: none;
+}
