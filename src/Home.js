@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import './Home.css';
 // import DateRangePicker from './DateRangePicker';
 import TabbedDateRangePicker from './TabbedDateRangePicker';
@@ -159,95 +159,6 @@ document.addEventListener('click', function (event) {
   }
 });
 
-const getNextMonths = () => {
-    const months = [];
-    const currentDate = new Date();
-
-    for (let i = 0; i < 12; i++) {
-        const futureDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + i, 1);
-        const month = futureDate.toLocaleString('default', { month: 'short' });
-        const year = futureDate.getFullYear();
-        months.push({ month, year });
-    }
-
-    return months;
-};
-const MonthDisplay = () => {
-    const months = getNextMonths();
-    const containerRef = useRef(null);
-    const [scrollable, setScrollable] = useState({ left: false, right: true });
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (containerRef.current) {
-                const { scrollLeft, scrollWidth, clientWidth } = containerRef.current;
-                setScrollable({
-                    left: scrollLeft > 0,
-                    right: scrollLeft < scrollWidth - clientWidth
-                });
-            }
-        };
-
-        if (containerRef.current) {
-            containerRef.current.addEventListener('scroll', handleScroll);
-        }
-
-        return () => {
-            const currentRef = containerRef.current;
-            if (currentRef) {
-                currentRef.removeEventListener('scroll', handleScroll);
-            }
-        };
-    }, []);
-
-
-    const handleScrollLeft = () => {
-        if (containerRef.current) {
-            containerRef.current.scrollBy({
-                left: -(containerRef.current.clientWidth / 6),
-                behavior: 'smooth'
-            });
-        }
-    };
-
-    const handleScrollRight = () => {
-        if (containerRef.current) {
-            containerRef.current.scrollBy({
-                left: (containerRef.current.clientWidth / 6),
-                behavior: 'smooth'
-            });
-        }
-    };
-
-    return (
-        <div className="month-display-container d-flex">
-            {scrollable.left && (
-                <button class="month-display-left" onClick={handleScrollLeft}>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-rtl-flip="true"><path d="M15.087 19.236a.9.9 0 0 1-.642-.266l-6.057-6.057A1.3 1.3 0 0 1 8 11.968c-.008-.35.123-.69.364-.945l6.057-6.057a.91.91 0 0 1 1.284 0 .895.895 0 0 1 0 1.284l-5.694 5.718 5.718 5.718a.896.896 0 0 1 0 1.284.88.88 0 0 1-.642.266"></path></svg>
-                </button>
-            )}
-            <div className="months-holder d-flex" ref={containerRef}>
-
-                {months.map(({ month, year }, index) => (
-                    <div className="select-month" key={index}>
-                        <div className="month-icon-holder">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M22.502 13.5v8.25a.75.75 0 0 1-.75.75h-19.5a.75.75 0 0 1-.75-.75V5.25a.75.75 0 0 1 .75-.75h19.5a.75.75 0 0 1 .75.75zm1.5 0V5.25A2.25 2.25 0 0 0 21.752 3h-19.5a2.25 2.25 0 0 0-2.25 2.25v16.5A2.25 2.25 0 0 0 2.252 24h19.5a2.25 2.25 0 0 0 2.25-2.25zm-23.25-3h22.5a.75.75 0 0 0 0-1.5H.752a.75.75 0 0 0 0 1.5M7.502 6V.75a.75.75 0 0 0-1.5 0V6a.75.75 0 0 0 1.5 0m10.5 0V.75a.75.75 0 0 0-1.5 0V6a.75.75 0 0 0 1.5 0"></path>
-                            </svg>
-                        </div>
-                        <span className="month">{month}</span>
-                        <span className="year">{year}</span>
-                    </div>
-                ))}
-            </div>
-            {scrollable.right && (
-                <button class="month-display-right" onClick={handleScrollRight}>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-rtl-flip="true"><path d="M8.913 19.236a.9.9 0 0 0 .642-.266l6.057-6.057a1.3 1.3 0 0 0 .388-.945c.008-.35-.123-.69-.364-.945L9.58 4.966a.91.91 0 0 0-1.284 0 .896.896 0 0 0 0 1.284l5.694 5.718-5.718 5.718a.896.896 0 0 0 0 1.284.88.88 0 0 0 .642.266"></path></svg>
-                </button>
-            )}
-        </div>
-    );
-};
 
 const Home = () => {
   const [dateRange, setDateRange] = useState({ startDate: null, endDate: null, count: '' });
@@ -409,9 +320,6 @@ const Home = () => {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" ><path d="M2.75 6h9.5a.25.25 0 0 1-.25-.25v17.5l.75-.75H2.25l.75.75V5.75a.25.25 0 0 1-.25.25m0-1.5c-.69 0-1.25.56-1.25 1.25v17.5c0 .414.336.75.75.75h10.5a.75.75 0 0 0 .75-.75V5.75c0-.69-.56-1.25-1.25-1.25zm3-1.5h3.5A.25.25 0 0 1 9 2.75v2.5l.75-.75h-4.5l.75.75v-2.5a.25.25 0 0 1-.25.25m0-1.5c-.69 0-1.25.56-1.25 1.25v2.5c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-2.5c0-.69-.56-1.25-1.25-1.25zM5.25 9h4.5a.75.75 0 0 0 0-1.5h-4.5a.75.75 0 0 0 0 1.5m0 3h4.5a.75.75 0 0 0 0-1.5h-4.5a.75.75 0 0 0 0 1.5m0 3h4.5a.75.75 0 0 0 0-1.5h-4.5a.75.75 0 0 0 0 1.5m0 3h4.5a.75.75 0 0 0 0-1.5h-4.5a.75.75 0 0 0 0 1.5m0 3h4.5a.75.75 0 0 0 0-1.5h-4.5a.75.75 0 0 0 0 1.5M7.5.75v1.5a.75.75 0 0 0 1.5 0V.75a.75.75 0 0 0-1.5 0M15.75 24h6a.75.75 0 0 0 .75-.75V10.5A1.5 1.5 0 0 0 21 9h-4.5a1.5 1.5 0 0 0-1.5 1.5v12.75a.75.75 0 0 0 1.5 0V10.5H21v12.75l.75-.75h-6a.75.75 0 0 0 0 1.5M19.5 8.25v1.5a.75.75 0 0 0 1.5 0v-1.5a.75.75 0 0 0-1.5 0M.75 24h22.5a.75.75 0 0 0 0-1.5H.75a.75.75 0 0 0 0 1.5"></path></svg>            </div>
             <div class="trip-planner-button-word">City</div>
           </div>
-        </div>
-        <div class="trip-planner-swiper-holder container">
-          <MonthDisplay />
         </div>
       </div>
     </div>
