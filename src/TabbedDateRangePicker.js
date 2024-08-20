@@ -50,7 +50,7 @@ const MonthDisplay = () => {
     const handleScrollLeft = () => {
         if (containerRef.current) {
             containerRef.current.scrollBy({
-                left: -(containerRef.current.clientWidth / 6),
+                left: -((containerRef.current.clientWidth -80) / 6 + 16),
                 behavior: 'smooth'
             });
         }
@@ -59,7 +59,7 @@ const MonthDisplay = () => {
     const handleScrollRight = () => {
         if (containerRef.current) {
             containerRef.current.scrollBy({
-                left: (containerRef.current.clientWidth / 6),
+                left: ((containerRef.current.clientWidth -80) / 6 + 16),
                 behavior: 'smooth'
             });
         }
