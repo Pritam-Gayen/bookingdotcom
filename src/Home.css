@@ -543,3 +543,62 @@
 .trip-planner-icons-holder::-webkit-scrollbar {
     display: none;
 }
+/* -------------------------------------------- */
+.cities-display-container {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+.cities-holder {
+    position: relative;
+    width: 100%;
+    gap: 20px;
+    overflow: hidden;
+    /* padding-left: 20px;
+    padding-right: 20px; */
+    align-items: center;
+    /* justify-content: center; */
+    scroll-behavior: smooth;
+    margin-top: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+}
+.city-image{
+    position: relative;
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+}
+.select-city {
+    min-width: 200px;
+    min-height: 94px;
+    padding: 7px 11px 7px 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cities-display-right,
+.cities-display-left {
+    position:absolute;
+    z-index: 2;
+    background-color: white;
+    border-radius: 50%;
+    border: none;
+    height: 35px;
+    width: 35px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.cities-display-right{
+    right: -17px;
+}
+.cities-display-left{
+    left: -17px;
+}
+.cities-display-left:hover{
+    background-color: rgb(244, 240, 240);
+}
+.cities-display-right:hover{
+    background-color: rgb(244, 240, 240);
+}
