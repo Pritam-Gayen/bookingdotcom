@@ -29,13 +29,13 @@ const countries = {
   'San Jose': 'USA'
 };
 const cities = [
-  { cityname: 'Agra', cityimg: AgraImg },
-  { cityname: 'Bhuwaneshwar', cityimg: BhuwaneshwarImg },
-  { cityname: 'Bodhgaya', cityimg: BodhgayaImg },
-  { cityname: 'Hyderabad', cityimg: HyderabadImg },
-  { cityname: 'Khajuraho', cityimg: KhajurahoImg },
-  { cityname: 'Kolkata', cityimg: KolkataImg },
-  { cityname: 'Varanasi', cityimg: VaranasiImg }
+  { cityname: 'Agra', cityimg: AgraImg, km:'1164 km away' },
+  { cityname: 'Bhuwaneshwar', cityimg: BhuwaneshwarImg, km:'362 km away' },
+  { cityname: 'Bodhgaya', cityimg: BodhgayaImg, km:'420 km away' },
+  { cityname: 'Hyderabad', cityimg: HyderabadImg, km:'1183 km away' },
+  { cityname: 'Khajuraho', cityimg: KhajurahoImg, km:'896 km away' },
+  { cityname: 'Kolkata', cityimg: KolkataImg, km:'4 km away' },
+  { cityname: 'Varanasi', cityimg: VaranasiImg, km:'627 km away' }
 ];
 
 function showList() {
@@ -233,10 +233,11 @@ const CitiesDisplay = () => {
       )}
       <div className="cities-holder container d-flex" ref={citycontainerRef}>
 
-        {cities.map(({ cityimg, cityname }, index) => (
+        {cities.map(({ cityimg, cityname, km }, index) => (
           <div className="select-city" key={index}>
             <img className="city-image" src={cityimg} alt={cityname} />
-            <p>{cityname}</p>
+            <p className='cityname'>{cityname}</p>
+            <p className='km'>{km}</p>
           </div>
         ))}
 

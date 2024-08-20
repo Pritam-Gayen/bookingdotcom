@@ -566,18 +566,15 @@
 }
 .city-image{
     position: relative;
-    width: 200px;
+    width: 100%;
     height: 150px;
     border-radius: 10px;
 }
 .select-city {
-    min-width: 200px;
-    min-height: 94px;
-    padding: 7px 11px 7px 11px;
+    min-width: calc((100% - 100px) / 6);
+    min-height: 200px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 .cities-display-right,
 .cities-display-left {
@@ -592,13 +589,27 @@
 }
 .cities-display-right{
     right: -17px;
+    top: 80px;
 }
 .cities-display-left{
     left: -17px;
+    top: 80px;
 }
 .cities-display-left:hover{
     background-color: rgb(244, 240, 240);
 }
 .cities-display-right:hover{
     background-color: rgb(244, 240, 240);
+}
+.cityname{
+    color: black !important;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 10px;
+}
+.km{
+    color: grey !important;
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
