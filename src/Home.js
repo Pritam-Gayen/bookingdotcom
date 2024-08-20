@@ -10,6 +10,8 @@ import HyderabadImg from './Places/Hyderabad.jpg';
 import KhajurahoImg from './Places/Khajuraho.jpg';
 import KolkataImg from './Places/Kolkata.jpg';
 import VaranasiImg from './Places/Varanasi.jpg';
+import OrchhaImg from './Places/Orchha.jpg';
+import MathuraImg from './Places/Mathura.jpg';
 
 
 const places = [
@@ -35,7 +37,9 @@ const cities = [
   { cityname: 'Hyderabad', cityimg: HyderabadImg, km:'1183 km away' },
   { cityname: 'Khajuraho', cityimg: KhajurahoImg, km:'896 km away' },
   { cityname: 'Kolkata', cityimg: KolkataImg, km:'4 km away' },
-  { cityname: 'Varanasi', cityimg: VaranasiImg, km:'627 km away' }
+  { cityname: 'Varanasi', cityimg: VaranasiImg, km:'627 km away' },
+  { cityname: 'Orchha', cityimg: OrchhaImg, km:'1036 km away' },
+  { cityname: 'Mathura', cityimg: MathuraImg, km:'1209 km away' }
 ];
 
 function showList() {
@@ -209,7 +213,7 @@ const CitiesDisplay = () => {
   const handleScrollLeft = () => {
     if (citycontainerRef.current) {
       citycontainerRef.current.scrollBy({
-        left: -(citycontainerRef.current.clientWidth / 6),
+        left: -(citycontainerRef.current.clientWidth / 6 ),
         behavior: 'smooth'
       });
     }
@@ -390,7 +394,7 @@ const Home = () => {
       <div class="container trip-planner">
         <h4>Quick and easy trip planner</h4>
         <p>Pick a vibe and explore the top destinations in India</p>
-        <div class="trip-planner-icons-holder d-flex">
+        <div class="trip-planner-icons-holder container d-flex">
           <div class="trip-planner-button trip-planner-active">
             <div class="trip-planner-button-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m.153 22.237.85 1.117c.634.76 1.724.856 2.456.244q.117-.099.216-.217l.944-1.132a.228.228 0 0 1 .349.001l.944 1.13a1.728 1.728 0 0 0 2.651.001l.944-1.132a.228.228 0 0 1 .349.001l.95 1.132a1.728 1.728 0 0 0 2.65 0l.942-1.133a.228.228 0 0 1 .349.001l.942 1.13a1.728 1.728 0 0 0 2.651.001l.944-1.132a.228.228 0 0 1 .349.001l.94 1.13a1.728 1.728 0 0 0 2.652.001l.585-.7a.75.75 0 1 0-1.15-.962l-.585.7a.228.228 0 0 1-.35 0l-.94-1.13a1.728 1.728 0 0 0-2.652-.001l-.944 1.132a.228.228 0 0 1-.349-.001l-.942-1.13a1.728 1.728 0 0 0-2.651-.001l-.943 1.132a.228.228 0 0 1-.348-.001l-.95-1.132a1.726 1.726 0 0 0-2.65 0l-.944 1.133a.228.228 0 0 1-.349-.001l-.944-1.13a1.728 1.728 0 0 0-2.65 0l-.945 1.13a.228.228 0 0 1-.349-.001l-.828-1.09a.75.75 0 1 0-1.194.91zm11.335-2.68A7.16 7.16 0 0 1 15.77 18h7.481a.75.75 0 0 0 0-1.5h-7.5a8.67 8.67 0 0 0-5.196 1.884.75.75 0 1 0 .934 1.174zM22.285 7.969a1.73 1.73 0 0 0 .781-2.711C19.43.713 12.8-.022 8.256 3.614a10.54 10.54 0 0 0-3.952 8.171A1.73 1.73 0 0 0 6.6 13.427l15.684-5.459zm-.494-1.416L6.107 12.01a.23.23 0 0 1-.304-.218 9.036 9.036 0 0 1 16.09-5.599.228.228 0 0 1-.102.359zm-9.459-4.2L11.69.504a.75.75 0 1 0-1.416.492l.643 1.848a.75.75 0 1 0 1.416-.492zm1.156 7.883 2.527 7.262a.75.75 0 1 0 1.416-.494l-2.527-7.26a.75.75 0 1 0-1.416.492"></path></svg>            </div>
