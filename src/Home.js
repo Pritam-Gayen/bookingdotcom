@@ -213,7 +213,7 @@ const CitiesDisplay = () => {
   const handleScrollLeft = () => {
     if (citycontainerRef.current) {
       citycontainerRef.current.scrollBy({
-        left: -(citycontainerRef.current.clientWidth / 6 ),
+        left: -((citycontainerRef.current.clientWidth - 100) / 6 + 21 ),
         behavior: 'smooth'
       });
     }
@@ -222,7 +222,7 @@ const CitiesDisplay = () => {
   const handleScrollRight = () => {
     if (citycontainerRef.current) {
       citycontainerRef.current.scrollBy({
-        left: citycontainerRef.current.clientWidth / 6,
+        left: (citycontainerRef.current.clientWidth -100)  / 6 + 21,
         behavior: 'smooth'
       });
     }
