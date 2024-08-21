@@ -203,14 +203,16 @@ document.addEventListener('click', function (event) {
 });
 
 
-const CitiesDisplay = ({choice}) => {
+const CitiesDisplay = ({ choice }) => {
   const citycontainerRef = useRef(null);
   const [cityScrollable, setCityScrollable] = useState({ left: false, right: true });
 
   useEffect(() => {
+    const containerRef = citycontainerRef.current;
+
     const handleScroll = () => {
-      if (citycontainerRef.current) {
-        const { scrollLeft, scrollWidth, clientWidth } = citycontainerRef.current;
+      if (containerRef) {
+        const { scrollLeft, scrollWidth, clientWidth } = containerRef;
         setCityScrollable({
           left: scrollLeft > 0,
           right: scrollLeft < scrollWidth - clientWidth
@@ -218,17 +220,17 @@ const CitiesDisplay = ({choice}) => {
       }
     };
 
-    if (citycontainerRef.current) {
-      citycontainerRef.current.addEventListener('scroll', handleScroll);
+    if (containerRef) {
+      containerRef.addEventListener('scroll', handleScroll);
     }
 
     return () => {
-      const currentRef = citycontainerRef.current;
-      if (currentRef) {
-        currentRef.removeEventListener('scroll', handleScroll);
+      if (containerRef) {
+        containerRef.removeEventListener('scroll', handleScroll);
       }
     };
   }, []);
+
 
 
   const handleScrollLeft = () => {
