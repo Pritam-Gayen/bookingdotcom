@@ -13,6 +13,15 @@ import VaranasiImg from './Places/Varanasi.jpg';
 import OrchhaImg from './Places/Orchha.jpg';
 import MathuraImg from './Places/Mathura.jpg';
 
+import DighaImg from './Places/Digha.jpg';
+import PuriImg from './Places/Puri.jpg';
+import VishakhapatnamImg from './Places/Vishakhapatnam.jpg';
+import PortblareImg from './Places/Portblare.jpg';
+import PuducheryImg from './Places/Puduchery.jpg';
+import DamanImg from './Places/Daman.jpg';
+import UtordaImg from './Places/Utorda.jpg';
+import PanajiImg from './Places/Panaji.jpg';
+import MorjimImg from './Places/Morjim.jpg';
 
 const places = [
   'New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix',
@@ -31,15 +40,27 @@ const countries = {
   'San Jose': 'USA'
 };
 const cities = [
-  { cityname: 'Agra', cityimg: AgraImg, km:'1164 km away' },
-  { cityname: 'Bhuwaneshwar', cityimg: BhuwaneshwarImg, km:'362 km away' },
-  { cityname: 'Bodhgaya', cityimg: BodhgayaImg, km:'420 km away' },
-  { cityname: 'Hyderabad', cityimg: HyderabadImg, km:'1183 km away' },
-  { cityname: 'Khajuraho', cityimg: KhajurahoImg, km:'896 km away' },
-  { cityname: 'Kolkata', cityimg: KolkataImg, km:'4 km away' },
-  { cityname: 'Varanasi', cityimg: VaranasiImg, km:'627 km away' },
-  { cityname: 'Orchha', cityimg: OrchhaImg, km:'1036 km away' },
-  { cityname: 'Mathura', cityimg: MathuraImg, km:'1209 km away' }
+  { cityname: 'Agra', cityimg: AgraImg, km: '1164 km away' },
+  { cityname: 'Bhuwaneshwar', cityimg: BhuwaneshwarImg, km: '362 km away' },
+  { cityname: 'Bodhgaya', cityimg: BodhgayaImg, km: '420 km away' },
+  { cityname: 'Hyderabad', cityimg: HyderabadImg, km: '1183 km away' },
+  { cityname: 'Khajuraho', cityimg: KhajurahoImg, km: '896 km away' },
+  { cityname: 'Kolkata', cityimg: KolkataImg, km: '4 km away' },
+  { cityname: 'Varanasi', cityimg: VaranasiImg, km: '627 km away' },
+  { cityname: 'Orchha', cityimg: OrchhaImg, km: '1036 km away' },
+  { cityname: 'Mathura', cityimg: MathuraImg, km: '1209 km away' }
+];
+
+const beaches = [
+  { cityname: 'Digha', cityimg: DighaImg, km: '127 km away' },
+  { cityname: 'Puri', cityimg: PuriImg, km: '402 km away' },
+  { cityname: 'Vishakhapatnam', cityimg: VishakhapatnamImg, km: '752 km away' },
+  { cityname: 'Portblare', cityimg: PortblareImg, km: '1295 km away' },
+  { cityname: 'Puduchery', cityimg: PuducheryImg, km: '1486 km away' },
+  { cityname: 'Daman', cityimg: DamanImg, km: '1622 km away' },
+  { cityname: 'Panaji', cityimg: PanajiImg, km: '1715 km away' },
+  { cityname: 'Utorda', cityimg: UtordaImg, km: '1717 km away' },
+  { cityname: 'Morjim', cityimg: MorjimImg, km: '1718 km away' }
 ];
 
 function showList() {
@@ -182,7 +203,7 @@ document.addEventListener('click', function (event) {
 });
 
 
-const CitiesDisplay = () => {
+const CitiesDisplay = ({choice}) => {
   const citycontainerRef = useRef(null);
   const [cityScrollable, setCityScrollable] = useState({ left: false, right: true });
 
@@ -213,7 +234,7 @@ const CitiesDisplay = () => {
   const handleScrollLeft = () => {
     if (citycontainerRef.current) {
       citycontainerRef.current.scrollBy({
-        left: -((citycontainerRef.current.clientWidth - 100) / 6 + 21 ),
+        left: -((citycontainerRef.current.clientWidth - 100) / 6 + 21),
         behavior: 'smooth'
       });
     }
@@ -222,7 +243,7 @@ const CitiesDisplay = () => {
   const handleScrollRight = () => {
     if (citycontainerRef.current) {
       citycontainerRef.current.scrollBy({
-        left: (citycontainerRef.current.clientWidth -100)  / 6 + 21,
+        left: (citycontainerRef.current.clientWidth - 100) / 6 + 21,
         behavior: 'smooth'
       });
     }
@@ -237,14 +258,34 @@ const CitiesDisplay = () => {
       )}
       <div className="cities-holder container d-flex" ref={citycontainerRef}>
 
-        {cities.map(({ cityimg, cityname, km }, index) => (
+        {choice.city && cities.map(({ cityimg, cityname, km }, index) => (
           <div className="select-city" key={index}>
             <img className="city-image" src={cityimg} alt={cityname} />
             <p className='cityname'>{cityname}</p>
             <p className='km'>{km}</p>
           </div>
         ))}
-
+        {choice.beach && beaches.map(({ cityimg, cityname, km }, index) => (
+          <div className="select-city" key={index}>
+            <img className="city-image" src={cityimg} alt={cityname} />
+            <p className='cityname'>{cityname}</p>
+            <p className='km'>{km}</p>
+          </div>
+        ))}
+        {choice.outdoor && cities.map(({ cityimg, cityname, km }, index) => (
+          <div className="select-city" key={index}>
+            <img className="city-image" src={cityimg} alt={cityname} />
+            <p className='cityname'>{cityname}</p>
+            <p className='km'>{km}</p>
+          </div>
+        ))}
+        {choice.romance && beaches.map(({ cityimg, cityname, km }, index) => (
+          <div className="select-city" key={index}>
+            <img className="city-image" src={cityimg} alt={cityname} />
+            <p className='cityname'>{cityname}</p>
+            <p className='km'>{km}</p>
+          </div>
+        ))}
       </div>
       {cityScrollable.right && (
         <button class="cities-display-right" onClick={handleScrollRight}>
@@ -257,6 +298,33 @@ const CitiesDisplay = () => {
 
 const Home = () => {
   const [dateRange, setDateRange] = useState({ startDate: null, endDate: null, count: '' });
+  const [tripPlannerChoice, settripPlannerChoice] = useState({ beach: false, city: true, outdoor: false, romance: false });
+
+  const handleTripPlannerChoice = (choice) => {
+    return () => {
+      // Reset all classes first
+      document.getElementById('trip_planner_beach').classList.remove('trip-planner-active');
+      document.getElementById('trip_planner_city').classList.remove('trip-planner-active');
+      document.getElementById('trip_planner_outdoor').classList.remove('trip-planner-active');
+      document.getElementById('trip_planner_romance').classList.remove('trip-planner-active');
+
+      // Apply the active class to the selected choice
+      if (choice === 'beach') {
+        settripPlannerChoice({ beach: true, city: false, outdoor: false, romance: false });
+        document.getElementById('trip_planner_beach').classList.add('trip-planner-active');
+      } else if (choice === 'city') {
+        settripPlannerChoice({ beach: false, city: true, outdoor: false, romance: false });
+        document.getElementById('trip_planner_city').classList.add('trip-planner-active');
+      } else if (choice === 'outdoor') {
+        settripPlannerChoice({ beach: false, city: false, outdoor: true, romance: false });
+        document.getElementById('trip_planner_outdoor').classList.add('trip-planner-active');
+      } else if (choice === 'romance') {
+        settripPlannerChoice({ beach: false, city: false, outdoor: false, romance: true });
+        document.getElementById('trip_planner_romance').classList.add('trip-planner-active');
+      }
+    };
+  };
+
 
   const formatDate = (date) => {
     if (!date) return 'Check-in date';
@@ -395,29 +463,29 @@ const Home = () => {
         <h4>Quick and easy trip planner</h4>
         <p>Pick a vibe and explore the top destinations in India</p>
         <div class="trip-planner-icons-holder container d-flex">
-          <div class="trip-planner-button trip-planner-active">
+          <div id='trip_planner_beach' class="trip-planner-button " onClick={handleTripPlannerChoice('beach')}>
             <div class="trip-planner-button-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m.153 22.237.85 1.117c.634.76 1.724.856 2.456.244q.117-.099.216-.217l.944-1.132a.228.228 0 0 1 .349.001l.944 1.13a1.728 1.728 0 0 0 2.651.001l.944-1.132a.228.228 0 0 1 .349.001l.95 1.132a1.728 1.728 0 0 0 2.65 0l.942-1.133a.228.228 0 0 1 .349.001l.942 1.13a1.728 1.728 0 0 0 2.651.001l.944-1.132a.228.228 0 0 1 .349.001l.94 1.13a1.728 1.728 0 0 0 2.652.001l.585-.7a.75.75 0 1 0-1.15-.962l-.585.7a.228.228 0 0 1-.35 0l-.94-1.13a1.728 1.728 0 0 0-2.652-.001l-.944 1.132a.228.228 0 0 1-.349-.001l-.942-1.13a1.728 1.728 0 0 0-2.651-.001l-.943 1.132a.228.228 0 0 1-.348-.001l-.95-1.132a1.726 1.726 0 0 0-2.65 0l-.944 1.133a.228.228 0 0 1-.349-.001l-.944-1.13a1.728 1.728 0 0 0-2.65 0l-.945 1.13a.228.228 0 0 1-.349-.001l-.828-1.09a.75.75 0 1 0-1.194.91zm11.335-2.68A7.16 7.16 0 0 1 15.77 18h7.481a.75.75 0 0 0 0-1.5h-7.5a8.67 8.67 0 0 0-5.196 1.884.75.75 0 1 0 .934 1.174zM22.285 7.969a1.73 1.73 0 0 0 .781-2.711C19.43.713 12.8-.022 8.256 3.614a10.54 10.54 0 0 0-3.952 8.171A1.73 1.73 0 0 0 6.6 13.427l15.684-5.459zm-.494-1.416L6.107 12.01a.23.23 0 0 1-.304-.218 9.036 9.036 0 0 1 16.09-5.599.228.228 0 0 1-.102.359zm-9.459-4.2L11.69.504a.75.75 0 1 0-1.416.492l.643 1.848a.75.75 0 1 0 1.416-.492zm1.156 7.883 2.527 7.262a.75.75 0 1 0 1.416-.494l-2.527-7.26a.75.75 0 1 0-1.416.492"></path></svg>            </div>
             <div class="trip-planner-button-word">Beach</div>
           </div>
-          <div class="trip-planner-button">
+          <div id='trip_planner_outdoor' class="trip-planner-button" onClick={handleTripPlannerChoice('outdoor')}>
             <div class="trip-planner-button-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.5 3.75a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m1.5 0a3 3 0 1 0-6 0 3 3 0 0 0 6 0m-10.5 15a3 3 0 1 1-6 0 3 3 0 0 1 6 0m1.5 0a4.5 4.5 0 1 0-9 0 4.5 4.5 0 0 0 9 0m13.5 0a3 3 0 1 1-6 0 3 3 0 0 1 6 0m1.5 0a4.5 4.5 0 1 0-9 0 4.5 4.5 0 0 0 9 0m-12 .75a.75.75 0 0 1-.75-.75 6.73 6.73 0 0 0-3.642-5.994.75.75 0 0 1-.167-1.207l4.043-3.842a.75.75 0 0 1 1.187.208c.062.116.143.252.263.429.197.289.429.577.697.848.8.809 1.758 1.308 2.869 1.308a.75.75 0 0 1 0 1.5 5.56 5.56 0 0 1-4.137-1.966.75.75 0 0 0-1.089-.058l-1.452 1.38a.75.75 0 0 0 .031 1.116 8.22 8.22 0 0 1 2.897 6.277.75.75 0 0 1-.75.751m0 1.5a2.25 2.25 0 0 0 2.25-2.25 9.72 9.72 0 0 0-3.425-7.421l.03 1.114 1.453-1.38-1.089-.059a7.07 7.07 0 0 0 5.268 2.496A2.25 2.25 0 1 0 16.5 9c-.656 0-1.26-.315-1.803-.863a4.6 4.6 0 0 1-.695-.914 2.25 2.25 0 0 0-3.552-.604l-4.043 3.842a2.25 2.25 0 0 0 .51 3.626 5.24 5.24 0 0 1 2.833 4.662A2.25 2.25 0 0 0 12 21"></path></svg>            </div>
             <div class="trip-planner-button-word">Outdoors</div>
           </div>
-          <div class="trip-planner-button">
+          <div id='trip_planner_romance' class="trip-planner-button" onClick={handleTripPlannerChoice('romance')}>
             <div class="trip-planner-button-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" ><path d="m12.541 21.325-9.588-10a4.923 4.923 0 1 1 6.95-6.976l1.567 1.566a.75.75 0 0 0 1.06 0l1.566-1.566a4.923 4.923 0 0 1 6.963 6.962l-9.6 10.014zm-1.082 1.038a.75.75 0 0 0 1.082 0l9.59-10.003a6.42 6.42 0 0 0-.012-9.07 6.423 6.423 0 0 0-9.083-.001L11.47 4.854h1.06l-1.566-1.566a6.423 6.423 0 1 0-9.082 9.086l9.577 9.99z"></path></svg>            </div>
             <div class="trip-planner-button-word">Romance</div>
           </div>
-          <div class="trip-planner-button">
+          <div id='trip_planner_city' class="trip-planner-button trip-planner-active" onClick={handleTripPlannerChoice('city')}>
             <div class="trip-planner-button-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" ><path d="M2.75 6h9.5a.25.25 0 0 1-.25-.25v17.5l.75-.75H2.25l.75.75V5.75a.25.25 0 0 1-.25.25m0-1.5c-.69 0-1.25.56-1.25 1.25v17.5c0 .414.336.75.75.75h10.5a.75.75 0 0 0 .75-.75V5.75c0-.69-.56-1.25-1.25-1.25zm3-1.5h3.5A.25.25 0 0 1 9 2.75v2.5l.75-.75h-4.5l.75.75v-2.5a.25.25 0 0 1-.25.25m0-1.5c-.69 0-1.25.56-1.25 1.25v2.5c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-2.5c0-.69-.56-1.25-1.25-1.25zM5.25 9h4.5a.75.75 0 0 0 0-1.5h-4.5a.75.75 0 0 0 0 1.5m0 3h4.5a.75.75 0 0 0 0-1.5h-4.5a.75.75 0 0 0 0 1.5m0 3h4.5a.75.75 0 0 0 0-1.5h-4.5a.75.75 0 0 0 0 1.5m0 3h4.5a.75.75 0 0 0 0-1.5h-4.5a.75.75 0 0 0 0 1.5m0 3h4.5a.75.75 0 0 0 0-1.5h-4.5a.75.75 0 0 0 0 1.5M7.5.75v1.5a.75.75 0 0 0 1.5 0V.75a.75.75 0 0 0-1.5 0M15.75 24h6a.75.75 0 0 0 .75-.75V10.5A1.5 1.5 0 0 0 21 9h-4.5a1.5 1.5 0 0 0-1.5 1.5v12.75a.75.75 0 0 0 1.5 0V10.5H21v12.75l.75-.75h-6a.75.75 0 0 0 0 1.5M19.5 8.25v1.5a.75.75 0 0 0 1.5 0v-1.5a.75.75 0 0 0-1.5 0M.75 24h22.5a.75.75 0 0 0 0-1.5H.75a.75.75 0 0 0 0 1.5"></path></svg>            </div>
             <div class="trip-planner-button-word">City</div>
           </div>
         </div>
         <div className='trip-planner-cities'>
-          <CitiesDisplay />
+          <CitiesDisplay choice={tripPlannerChoice} />
         </div>
       </div>
     </div>
