@@ -235,8 +235,13 @@ const CitiesDisplay = ({ choice }) => {
 
   const handleScrollLeft = () => {
     if (citycontainerRef.current) {
+      const containerWidth = citycontainerRef.current.clientWidth;
+      const scrollAmount = (containerWidth > 600)
+        ? -((containerWidth - 100) / 6 + 21) // Landscape or larger screens
+        : -((containerWidth - 35) / 2+21); // Portrait or smaller screens
+
       citycontainerRef.current.scrollBy({
-        left: -((citycontainerRef.current.clientWidth - 100) / 6 + 21),
+        left: scrollAmount,
         behavior: 'smooth'
       });
     }
@@ -244,12 +249,18 @@ const CitiesDisplay = ({ choice }) => {
 
   const handleScrollRight = () => {
     if (citycontainerRef.current) {
+      const containerWidth = citycontainerRef.current.clientWidth;
+      const scrollAmount = (containerWidth > 600)
+        ? ((containerWidth - 100) / 6 + 21) // Landscape or larger screens
+        : ((containerWidth -35) / 2+21); // Portrait or smaller screens
+
       citycontainerRef.current.scrollBy({
-        left: (citycontainerRef.current.clientWidth - 100) / 6 + 21,
+        left: scrollAmount,
         behavior: 'smooth'
       });
     }
   };
+
 
   return (
     <div className="cities-display-container d-flex">
