@@ -126,9 +126,12 @@ document.addEventListener('click', function (event) {
   const listBox = document.getElementById('list-box');
 
   // Check if the click happened outside both the input container and the list box
-  if (!inputContainer.contains(event.target) && !listBox.contains(event.target)) {
-    listBox.style.display = 'none';
+  if (inputContainer) {
+    if (!inputContainer.contains(event.target) && !listBox.contains(event.target)) {
+      listBox.style.display = 'none';
+    }
   }
+
 });
 
 // function showCalenderHolder() {
@@ -144,12 +147,14 @@ const showCalenderHolder = () => {
   // showCalenderHolderDiv.style.left = `${showCalenderRect.left - relativeContainerRect.left}px`;
   // showCalenderHolderDiv.style.top = `${showCalenderRect.bottom - relativeContainerRect.top}px`;
   // setIsVisible(true);
+  if (showCalender) {
+    const relativeContainerRect = relativeContainer[0].getBoundingClientRect();
+    const showCalenderRect = showCalender[0].getBoundingClientRect();
+    showCalenderHolderDiv.style.left = `${showCalenderRect.left - relativeContainerRect.left + 5}px`;
+    showCalenderHolderDiv.style.top = `${showCalenderRect.bottom - relativeContainerRect.top + 10}px`;
+    showCalenderHolderDiv.style.display = 'block';
+  }
 
-  const relativeContainerRect = relativeContainer[0].getBoundingClientRect();
-  const showCalenderRect = showCalender[0].getBoundingClientRect();
-  showCalenderHolderDiv.style.left = `${showCalenderRect.left - relativeContainerRect.left + 5}px`;
-  showCalenderHolderDiv.style.top = `${showCalenderRect.bottom - relativeContainerRect.top + 10}px`;
-  showCalenderHolderDiv.style.display = 'block';
 };
 // Hide the showCalenderHolderDiv when clicking outside
 document.addEventListener('click', function (event) {
@@ -157,16 +162,18 @@ document.addEventListener('click', function (event) {
   const showCalenderHolderDiv = document.getElementById('show-calender-holder');
   const showCalenderHolderDivChildren = document.querySelectorAll('#show-calender-holder *');
   let isChild = false;
+  if (showCalender) {
+    showCalenderHolderDivChildren.forEach(child => {
+      if (child.contains(event.target)) {
+        isChild = true;
+      }
+    });
 
-  showCalenderHolderDivChildren.forEach(child => {
-    if (child.contains(event.target)) {
-      isChild = true;
+    if (!isChild && !showCalender.contains(event.target)) {
+      showCalenderHolderDiv.style.display = 'none';
     }
-  });
-
-  if (!isChild && !showCalender.contains(event.target)) {
-    showCalenderHolderDiv.style.display = 'none';
   }
+
 });
 
 
@@ -196,10 +203,12 @@ document.addEventListener('click', function (event) {
       isChild = true;
     }
   });
-
-  if (!isChild && !personIconDiv.contains(event.target)) {
-    guestCountDiv.style.display = 'none';
+  if (personIconDiv) {
+    if (!isChild && !personIconDiv.contains(event.target)) {
+      guestCountDiv.style.display = 'none';
+    }
   }
+
 });
 
 
