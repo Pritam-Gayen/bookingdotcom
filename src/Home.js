@@ -318,7 +318,7 @@ const CitiesDisplay = ({ choice }) => {
   );
 };
 
-const Home = () => {
+const Home = ({loginState}) => {
   const [dateRange, setDateRange] = useState({ startDate: null, endDate: null, count: '' });
   const [tripPlannerChoice, settripPlannerChoice] = useState({ beach: false, city: true, outdoor: false, romance: false });
 

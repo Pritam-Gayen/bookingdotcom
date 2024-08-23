@@ -43,7 +43,9 @@ body{
     border-radius: 5px;
 }
 .register-sign-in{
-    margin-top: 8px;
+    /* margin-top: 8px; */
+    align-items: center;
+    justify-content: center;
 }
 .nav-item-custom{
     color: white;
@@ -194,3 +196,31 @@ body{
     }
 }
 /* -------------------responsive navbar end----------------------- */
+
+/* ---------------------------------------- */
+.show-pic{
+    margin-left: 20px;
+    border-radius: 50%;
+    border: 2px solid goldenrod;
+    overflow: hidden;
+    height: 35px;
+    width: 35px;
+}
+.show-pic img{
+    height: 30px;
+    width: 30px;
+}
+.show-name{
+    margin-left: 10px;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    font-size: 14px;
+}
+.show-name p{
+    color: goldenrod;
+    font-weight: 400;
+    font-size:smaller;
+    text-align: left;
+    font-size: 12px;
+}

@@ -1,10 +1,10 @@
-import React from 'react';
+// import React, { useState } from 'react';
 import './Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import IndiaFlag from "./StaticImages/Indiaflag.png";
 import { Link } from 'react-router-dom';
 
-function Navbar({ showBottomNav, onRegisterClick, onHomeClick }) {
+function Navbar({ showBottomNav, onRegisterClick, onHomeClick, loginState, userPhoto, userName }) {
     return (
         <header class="blue-bg">
             <nav class="top-nav">
@@ -43,16 +43,31 @@ function Navbar({ showBottomNav, onRegisterClick, onHomeClick }) {
                             List Your Property
                         </div>
                         <div class="d-flex register-sign-in">
+                            { !loginState && 
                             <div class="nav-item-white-btn">
                                 <div class="navbar-button">
                                     <Link class='no-underline' to="/login" onClick={onRegisterClick}>Register</Link>
                                 </div>
                             </div>
+                            }
+                            { !loginState && 
                             <div class="nav-item-white-btn">
                                 <div class="navbar-button">
                                     Sign In
                                 </div>
                             </div>
+                            }
+                            {loginState && 
+                                <div className='show-pic'>
+                                    <img src={userPhoto} alt='userPhoto'></img>
+                                </div>
+                            }
+                            {loginState && 
+                                <div className='show-name'>
+                                    {userName}
+                                    <p>Genius Level 1 </p>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
