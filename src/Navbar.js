@@ -45,7 +45,7 @@ function Navbar({ showBottomNav, onRegisterClick, onHomeClick }) {
                         <div class="d-flex register-sign-in">
                             <div class="nav-item-white-btn">
                                 <div class="navbar-button">
-                                    <Link to="/login" onClick={onRegisterClick}>Register</Link>
+                                    <Link class='no-underline' to="/login" onClick={onRegisterClick}>Register</Link>
                                 </div>
                             </div>
                             <div class="nav-item-white-btn">
