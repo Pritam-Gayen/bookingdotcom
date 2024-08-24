@@ -224,3 +224,13 @@ body{
     text-align: left;
     font-size: 12px;
 }
+@media screen and (orientation:portrait) {
+    .show-pic{
+        width: 25px;
+        height: 25px;
+    }
+    .show-pic img{
+        width: 23px;
+        height: 23px;
+    }
+}
