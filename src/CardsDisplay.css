@@ -1,0 +1,110 @@
+.cards-display-container {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+.cards-display-right,
+.cards-display-left {
+    position:absolute;
+    z-index: 2;
+    background-color: white;
+    border-radius: 50%;
+    border: none;
+    height: 35px;
+    width: 35px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.cards-display-right{
+    right: -17px;
+    top: 80px;
+}
+.cards-display-left{
+    left: -17px;
+    top: 80px;
+}
+.cards-display-left:hover{
+    background-color: rgb(244, 240, 240);
+}
+.cards-display-right:hover{
+    background-color: rgb(244, 240, 240);
+}
+.cards-holder {
+    position: relative;
+    width: 100%;
+    gap: 20px;
+    overflow: hidden;
+    /* padding-left: 20px;
+    padding-right: 20px; */
+    align-items: center;
+    /* justify-content: center; */
+    scroll-behavior: smooth;
+    margin-top: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+}
+.select-card {
+    position: relative;
+    display: flex;
+    width: calc((100% - 60px) / 4);
+    height: 400px;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: inset;
+    border: 1px solid rgb(235, 235, 235);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+}
+.card-content{
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 10px;
+}
+.hotel-image{
+    position: relative;
+    width: 100%;
+    height: 210px;
+}
+.hotelname{
+    color: black !important;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 10px;
+    font-size: large;
+}
+.cityname{
+    color: gray !important;
+    font-weight:200;
+    text-align: left;
+    margin-top: 5px;
+}
+.rating-box{
+    background-color: #003b95;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: white;
+    padding: 5px;
+}
+.rating-word{
+    color: black;
+    margin-left: 5px;
+}
+.price{
+    text-align: right;
+}
+.priceCrossed{
+    color: red;
+    text-decoration: line-through;
+    margin-left: 5px;
+}
+.actualPrice{
+    margin-left: 5px;
+    font-size: large;
+    font-weight: bold;
+    color: black;
+}

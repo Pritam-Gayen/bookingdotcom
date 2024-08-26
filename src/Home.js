@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import './Home.css';
 // import DateRangePicker from './DateRangePicker';
 import TabbedDateRangePicker from './TabbedDateRangePicker';
+import CardsDisplay from './CardsDisplay';
 
 import AgraImg from './Places/Agra.jpg';
 import BhuwaneshwarImg from './Places/Bhuwaneshwar.jpg';
@@ -22,6 +23,9 @@ import DamanImg from './Places/Daman.jpg';
 import UtordaImg from './Places/Utorda.jpg';
 import PanajiImg from './Places/Panaji.jpg';
 import MorjimImg from './Places/Morjim.jpg';
+
+import TajImg from './Hotels/TajImg.jpg';
+import ITCImg from './Hotels/ITCImg.jpg';
 
 const places = [
   'New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix',
@@ -61,6 +65,29 @@ const beaches = [
   { cityname: 'Panaji', cityimg: PanajiImg, km: '1715 km away' },
   { cityname: 'Utorda', cityimg: UtordaImg, km: '1717 km away' },
   { cityname: 'Morjim', cityimg: MorjimImg, km: '1718 km away' }
+];
+
+const weekEndDealsData=[
+  {hotelimg: ITCImg,
+  hotelname:'Taj City Centre New Town, Kolkata',
+  cityname:'Kolkata, India',
+  ratingNo:'8.8',
+  ratingWord:'Fabulous',
+  reviews:'1,093 reviews',
+  nights: '2',
+  priceCrossed:'12,400',
+  price:'11,600'
+  },
+  {hotelimg: TajImg,
+  hotelname:'Welcomhotel by ITC Hotels, Dwarka, New Delhi',
+  cityname:'New Delhi, India',
+  ratingNo:'7.1',
+  ratingWord:'Good',
+  reviews:'3,451 reviews',
+  nights: '2',
+  priceCrossed:'13,000',
+  price:'11,700'
+  },
 ];
 
 function showList() {
@@ -508,6 +535,13 @@ const Home = ({loginState}) => {
         </div>
         <div className='trip-planner-cities'>
           <CitiesDisplay choice={tripPlannerChoice} />
+        </div>
+      </div>
+      <div className='weekend-deals container'>
+        <h4>Deals for the weekend</h4>
+        <p>Save on stays for 30 August - 1 September</p>
+        <div className='weekend-deals-cards'>
+          <CardsDisplay cardData={weekEndDealsData} />
         </div>
       </div>
     </div>

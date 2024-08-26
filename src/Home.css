@@ -630,3 +630,11 @@
         top: 55px;
     }
 }
+/* ------------------weekend deals---------------------------------- */
+.weekend-deals{
+    text-align: left;
+    margin-top: 40px;
+}
+.weekend-deals p{
+    color: rgb(89, 84, 84);
+}
