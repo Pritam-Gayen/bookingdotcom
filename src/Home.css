@@ -558,6 +558,7 @@
 .cities-holder {
     position: relative;
     width: 100%;
+    margin-top: 20px !important;
     gap: 20px;
     overflow: hidden;
     /* padding-left: 20px;
@@ -624,7 +625,7 @@
 }
 @media screen and (orientation:portrait) {
     .select-city{
-        min-width: calc((100vw - 60px) / 2);
+        min-width: 35%;
     }
     .cities-display-right,
     .cities-display-left{
@@ -634,6 +635,7 @@
         overflow-x: scroll;
         scrollbar-width: none; /* For Firefox */
         -ms-overflow-style: none; /* For Internet Explorer and Edge */
+        margin-top: 20px;
     }
     .cities-holder::-webkit-scrollbar {
         display: none; /* For Chrome, Safari, and Opera */
