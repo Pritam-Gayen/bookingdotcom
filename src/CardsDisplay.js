@@ -82,7 +82,7 @@ const CardsDisplay = ({ cardData }) => {
                     <p className='rating'><span className="rating-box">{ratingNo}</span> <span className="rating-word">{ratingWord} </span><span className="reviews">-{reviews}</span></p>
                 </div>
                 <div>
-                    <p className='price'> <span>{nights} nights</span> <span className="priceCrossed">₹ {priceCrossed}</span><span className="actualPrice">₹{price}</span></p>
+                    {price && <p className='price'> <span>{nights} nights</span> <span className="priceCrossed">₹ {priceCrossed}</span><span className="actualPrice">₹{price}</span></p>}
                 </div>
             </div>
           </div>

@@ -31,6 +31,14 @@ import LilaAmb from './Hotels/LeelaAmb.jpg';
 import TajTal from './Hotels/TajTal.jpg';
 import Posada from './Hotels/Posada.jpg';
 
+import CasaImg from './Properties/Casa.webp'
+import CasapriscoImg from './Properties/Casaprisco.webp';
+import DasroteImg from './Properties/Dasrote.webp';
+import DomkiImg from "./Properties/Domki.webp";
+import GyttjaImg from './Properties/Gyttja.webp';
+import HarborImg from './Properties/Harbor.webp';
+import WaldscheneImg from './Properties/Waldschenke.webp';
+
 const places = [
   'New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix',
   'Philadelphia', 'San Antonio', 'San Diego', 'Dallas', 'San Jose'
@@ -72,7 +80,7 @@ const beaches = [
 ];
 
 const weekEndDealsData=[
-  {hotelimg: ITCImg,
+  {hotelimg: TajImg,
   hotelname:'Taj City Centre New Town, Kolkata',
   cityname:'Kolkata, India',
   ratingNo:'8.8',
@@ -82,7 +90,7 @@ const weekEndDealsData=[
   priceCrossed:'12,400',
   price:'11,600'
   },
-  {hotelimg: TajImg,
+  {hotelimg: ITCImg,
   hotelname:'Welcomhotel by ITC Hotels, Dwarka, New Delhi',
   cityname:'New Delhi, India',
   ratingNo:'7.1',
@@ -130,7 +138,59 @@ const weekEndDealsData=[
   reviews:'61 reviews',
   nights: '2',
   priceCrossed:'12,598',
-  price:'11.338'
+  price:'11,338'
+  },
+];
+
+const uniqueuePlaces =[
+  {hotelimg: CasaImg,
+  hotelname:'Casa Rural La Marquesa - Cuenca',
+  cityname:'Spain, Valera de Abajo',
+  ratingNo:'9.5',
+  ratingWord:'Exceptional',
+  reviews:'60 reviews',
+  },
+  {hotelimg: CasapriscoImg,
+  hotelname:'Casaprisco',
+  cityname:'Netherlands, Putten',
+  ratingNo:'9.2',
+  ratingWord:'Superb',
+  reviews:'70 reviews',
+  },
+  {hotelimg: DasroteImg,
+  hotelname:'Das rote Haus hinterm Deich',
+  cityname:'Germany, Simonsberg',
+  ratingNo:'9.4',
+  ratingWord:'Superb',
+  reviews:'50 reviews',
+  },
+  {hotelimg: DomkiImg,
+  hotelname:'Domki ROSSE niedaleko plaży',
+  cityname:'Poland, Jastracizebia Gora',
+  ratingNo:'9.8',
+  ratingWord:'Exceptional',
+  reviews:'140 reviews',
+  },
+  {hotelimg: GyttjaImg,
+  hotelname:'Gyttja Västergårds',
+  cityname:'Finland, linlandet',
+  ratingNo:'9.3',
+  ratingWord:'Superb',
+  reviews:'132 reviews',
+  },
+  {hotelimg: HarborImg,
+  hotelname:'Harbor View',
+  cityname:'United Kingdom, Isle of skye',
+  ratingNo:'9.0',
+  ratingWord:'Superb',
+  reviews:'141 reviews',
+  },
+  {hotelimg: WaldscheneImg,
+  hotelname:'Waldschenke Stendenitz Übernachten im Wald am See',
+  cityname:'Germany, Neuruppin',
+  ratingNo:'8.7',
+  ratingWord:'Fabulous',
+  reviews:'388 reviews',
   },
 ];
 
@@ -586,6 +646,13 @@ const Home = ({loginState}) => {
         <p>Save on stays for 30 August - 1 September</p>
         <div className='weekend-deals-cards'>
           <CardsDisplay cardData={weekEndDealsData} />
+        </div>
+      </div>
+      <div className='weekend-deals container'>
+        <h4>Stay at our top unique properties</h4>
+        <p>From castles and villas to boats and igloos, we've got it all</p>
+        <div className='weekend-deals-cards'>
+          <CardsDisplay cardData={uniqueuePlaces} />
         </div>
       </div>
     </div>
