@@ -26,6 +26,10 @@ import MorjimImg from './Places/Morjim.jpg';
 
 import TajImg from './Hotels/TajImg.jpg';
 import ITCImg from './Hotels/ITCImg.jpg';
+import SterlingDarjeeling from './Hotels/SterlingDarjeeling.jpg';
+import LilaAmb from './Hotels/LeelaAmb.jpg';
+import TajTal from './Hotels/TajTal.jpg';
+import Posada from './Hotels/Posada.jpg';
 
 const places = [
   'New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix',
@@ -73,7 +77,7 @@ const weekEndDealsData=[
   cityname:'Kolkata, India',
   ratingNo:'8.8',
   ratingWord:'Fabulous',
-  reviews:'1,093 reviews',
+  reviews:'2,005 reviews',
   nights: '2',
   priceCrossed:'12,400',
   price:'11,600'
@@ -87,6 +91,46 @@ const weekEndDealsData=[
   nights: '2',
   priceCrossed:'13,000',
   price:'11,700'
+  },
+  {hotelimg: SterlingDarjeeling,
+  hotelname:'Sterling Darjeeling',
+  cityname:'Darjeeling, India',
+  ratingNo:'7.0',
+  ratingWord:'Good',
+  reviews:'130 reviews',
+  nights: '2',
+  priceCrossed:'25,000',
+  price:'21,250'
+  },
+  {hotelimg: LilaAmb,
+  hotelname:'The Leela Ambience Convention Hotel Delhi',
+  cityname:'Kolkata, India',
+  ratingNo:'8.3',
+  ratingWord:'vary good',
+  reviews:'87 reviews',
+  nights: '2',
+  priceCrossed:'17,000',
+  price:'15,300'
+  },
+  {hotelimg: TajTal,
+  hotelname:'Taj Tal Kutir',
+  cityname:'New Delhi, India',
+  ratingNo:'8.6',
+  ratingWord:'fabulous',
+  reviews:'130 reviews',
+  nights: '2',
+  priceCrossed:'10,215',
+  price:'9,194'
+  },
+  {hotelimg: Posada,
+  hotelname:'The West Gate Posada By Summit',
+  cityname:'Darjeeling, India',
+  ratingNo:'8.0',
+  ratingWord:'very good',
+  reviews:'61 reviews',
+  nights: '2',
+  priceCrossed:'12,598',
+  price:'11.338'
   },
 ];
 
