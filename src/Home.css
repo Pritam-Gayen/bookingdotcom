@@ -627,7 +627,15 @@
     }
     .cities-display-right,
     .cities-display-left{
-        top: 55px;
+        display: none;
+    }
+    .cities-holder{
+        overflow-x: scroll;
+        scrollbar-width: none; /* For Firefox */
+        -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    }
+    .cities-holder::-webkit-scrollbar {
+        display: none; /* For Chrome, Safari, and Opera */
     }
 }
 /* ------------------weekend deals---------------------------------- */
