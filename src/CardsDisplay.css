@@ -108,6 +108,31 @@
     font-weight: bold;
     color: black;
 }
+.overlay-circle {
+    position: absolute;
+    display: flex;
+    top: 10px; /* Adjust this value to position the circle relative to the top */
+    right: 10px; /* Adjust this value to position the circle relative to the right */
+    width: 36px; /* Adjust the size of the circle */
+    height: 36px;
+    background-color: white;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    z-index: 10; /* Ensures the circle appears above the content */
+}
+.overlay-circle:hover{
+    cursor: pointer;
+    background-color: rgb(237, 235, 235);
+}
+.custom-svg {
+    fill: white;       /* Sets the fill color to white */
+    stroke: black;     /* Sets the border (stroke) color to black */
+    stroke-width: 2px; /* Adjusts the border thickness */
+    width: 18px;
+    height: 16px;
+}
+
 @media screen and (orientation: portrait){
     .select-card {
         min-width: 70%;

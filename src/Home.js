@@ -652,7 +652,7 @@ const Home = ({loginState}) => {
         <h4>Stay at our top unique properties</h4>
         <p>From castles and villas to boats and igloos, we've got it all</p>
         <div className='weekend-deals-cards'>
-          <CardsDisplay cardData={uniqueuePlaces} />
+          <CardsDisplay cardData={uniqueuePlaces} showLike={true}/>
         </div>
       </div>
     </div>

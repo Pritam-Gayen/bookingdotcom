@@ -4,7 +4,7 @@ import './CardsDisplay.css';
 
 
 
-const CardsDisplay = ({ cardData }) => {
+const CardsDisplay = ({ cardData, showLike }) => {
   const cardcontainerRef = useRef(null);
   const [cardScrollable, setCardScrollable] = useState({ left: false, right: true });
 
@@ -74,6 +74,10 @@ const CardsDisplay = ({ cardData }) => {
         
         {cardData.map(({ hotelimg, hotelname,  cityname, ratingNo, ratingWord,reviews,nights,priceCrossed, price }, index) => (
           <div className="select-card" key={index}>
+            {showLike && <div class="overlay-circle" >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="custom-svg"><path d="M23.3 5.076a6.582 6.582 0 0 0-10.446-1.71L12 4.147l-.827-.753a6.52 6.52 0 0 0-5.688-1.806A6.47 6.47 0 0 0 .7 5.075a6.4 6.4 0 0 0 1.21 7.469l9.373 9.656a1 1 0 0 0 1.434 0l9.36-9.638A6.41 6.41 0 0 0 23.3 5.076"></path></svg>
+              </div>
+            }
             <img className="hotel-image" src={hotelimg} alt={hotelname} />
             <div className="card-content d-flex">
                 <div>
