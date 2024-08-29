@@ -2,7 +2,41 @@ import { useEffect, useRef, useState } from "react";
 import './CardsDisplay.css';
 
 
+function OverlayCircle({ index }) {
+  const [isToggled, setIsToggled] = useState(false);
 
+  // Load the state from localStorage when the component mounts
+  useEffect(() => {
+    const savedState = localStorage.getItem(`overlay-circle-${index}`);
+    if (savedState) {
+      setIsToggled(JSON.parse(savedState));
+    }
+  }, [index]);
+
+  // Save the state to localStorage whenever it changes
+  const handleClick = () => {
+    const newState = !isToggled;
+    setIsToggled(newState);
+    localStorage.setItem(`overlay-circle-${index}`, JSON.stringify(newState));
+  };
+
+  return (
+    <div
+      className="overlay-circle"
+      key={index}
+      onClick={handleClick}
+    >
+      <svg 
+      style={{
+        fill: isToggled ? 'red' : 'white', // Toggle between red and white
+        stroke: isToggled ? 'red' : 'black',
+      }}
+      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="custom-svg">
+        <path d="M23.3 5.076a6.582 6.582 0 0 0-10.446-1.71L12 4.147l-.827-.753a6.52 6.52 0 0 0-5.688-1.806A6.47 6.47 0 0 0 .7 5.075a6.4 6.4 0 0 0 1.21 7.469l9.373 9.656a1 1 0 0 0 1.434 0l9.36-9.638A6.41 6.41 0 0 0 23.3 5.076"></path>
+      </svg>
+    </div>
+  );
+}
 
 const CardsDisplay = ({ cardData, showLike }) => {
   const cardcontainerRef = useRef(null);
@@ -39,7 +73,7 @@ const CardsDisplay = ({ cardData, showLike }) => {
       const containerWidth = cardcontainerRef.current.clientWidth;
       const scrollAmount = (containerWidth > 600)
         ? -((containerWidth - 60) / 4 + 21) // Landscape or larger screens
-        : -((containerWidth - 35) / 2+21); // Portrait or smaller screens
+        : -((containerWidth - 35) / 2 + 21); // Portrait or smaller screens
 
       cardcontainerRef.current.scrollBy({
         left: scrollAmount,
@@ -53,7 +87,7 @@ const CardsDisplay = ({ cardData, showLike }) => {
       const containerWidth = cardcontainerRef.current.clientWidth;
       const scrollAmount = (containerWidth > 600)
         ? ((containerWidth - 60) / 4 + 21) // Landscape or larger screens
-        : ((containerWidth -35) / 2+21); // Portrait or smaller screens
+        : ((containerWidth - 35) / 2 + 21); // Portrait or smaller screens
 
       cardcontainerRef.current.scrollBy({
         left: scrollAmount,
@@ -71,27 +105,28 @@ const CardsDisplay = ({ cardData, showLike }) => {
         </button>
       )}
       <div className="cards-holder container d-flex" ref={cardcontainerRef}>
-        
-        {cardData.map(({ hotelimg, hotelname,  cityname, ratingNo, ratingWord,reviews,nights,priceCrossed, price }, index) => (
+
+        {cardData.map(({ hotelimg, hotelname, cityname, ratingNo, ratingWord, reviews, nights, priceCrossed, price }, index) => (
           <div className="select-card" key={index}>
-            {showLike && <div class="overlay-circle" >
+            {showLike && <OverlayCircle key={index} index={index} />}
+            {/* {showLike && <div class="overlay-circle" >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="custom-svg"><path d="M23.3 5.076a6.582 6.582 0 0 0-10.446-1.71L12 4.147l-.827-.753a6.52 6.52 0 0 0-5.688-1.806A6.47 6.47 0 0 0 .7 5.075a6.4 6.4 0 0 0 1.21 7.469l9.373 9.656a1 1 0 0 0 1.434 0l9.36-9.638A6.41 6.41 0 0 0 23.3 5.076"></path></svg>
               </div>
-            }
+            } */}
             <img className="hotel-image" src={hotelimg} alt={hotelname} />
             <div className="card-content d-flex">
-                <div>
-                    <p className='hotelname'>{hotelname}</p>
-                    <p className='cityname'>{cityname}</p>
-                    <p className='rating'><span className="rating-box">{ratingNo}</span> <span className="rating-word">{ratingWord} </span><span className="reviews">-{reviews}</span></p>
-                </div>
-                <div>
-                    {price && <p className='price'> <span>{nights} nights</span> <span className="priceCrossed">₹ {priceCrossed}</span><span className="actualPrice">₹{price}</span></p>}
-                </div>
+              <div>
+                <p className='hotelname'>{hotelname}</p>
+                <p className='cityname'>{cityname}</p>
+                <p className='rating'><span className="rating-box">{ratingNo}</span> <span className="rating-word">{ratingWord} </span><span className="reviews">-{reviews}</span></p>
+              </div>
+              <div>
+                {price && <p className='price'> <span>{nights} nights</span> <span className="priceCrossed">₹ {priceCrossed}</span><span className="actualPrice">₹{price}</span></p>}
+              </div>
             </div>
           </div>
         ))}
-        
+
       </div>
       {cardScrollable.right && (
         <button class="cards-display-right" onClick={handleScrollRight}>
