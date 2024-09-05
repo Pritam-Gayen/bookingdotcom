@@ -649,3 +649,38 @@
 .weekend-deals p{
     color: rgb(89, 84, 84);
 }
+/* ---------------------------------------------------------- */
+.get-inspiration{
+    text-align: left;
+    margin-top: 20px;
+}
+.get-inspiration-cards{
+    position: relative;
+    height: 350px;
+    width: 550px;
+    margin-bottom: 50px;
+}
+.big-card {
+    position: relative;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), 
+                url('/src/StaticImages/new-year-eve.webp');
+    background-size: 100%; /* Start with the normal background size */
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 100%; 
+    height: 100%;
+    align-items: flex-start;
+    justify-content: flex-end;
+    text-align: left;
+    color: white;
+    transition: background-size 0.5s ease-in-out; /* Smooth transition for background image */
+}
+
+.big-card:hover {
+    background-size: 105%; /* Zoom in the background image */
+    cursor: pointer;
+}

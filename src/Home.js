@@ -655,6 +655,17 @@ const Home = ({loginState}) => {
           <CardsDisplay cardData={uniqueuePlaces} showLike={true}/>
         </div>
       </div>
+      <div className='get-inspiration container'>
+       <h4>Get inspiration for your next trip </h4> 
+       <div className='get-inspiration-cards'>
+        <div className='big-card'>
+          <h4>New Year's Eve in New York City</h4>
+          <p>Ring in the new year with iconic moments and unforgottable memories in New York City</p>
+        </div>
+        <div className='small-card'>
+        </div>
+       </div>
+      </div>
     </div>
   );
 };
