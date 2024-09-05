@@ -41,6 +41,9 @@ import WaldscheneImg from './Properties/Waldschenke.webp';
 
 import inspiration1 from './StaticImages/inspiration1.webp'
 import inspiration2 from './StaticImages/inspiration2.webp'
+import inspiration3 from './StaticImages/inspiration3.webp'
+import inspiration4 from './StaticImages/inspiration4.webp'
+
 const places = [
   'New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix',
   'Philadelphia', 'San Antonio', 'San Diego', 'Dallas', 'San Jose'
@@ -81,118 +84,131 @@ const beaches = [
   { cityname: 'Morjim', cityimg: MorjimImg, km: '1718 km away' }
 ];
 
-const weekEndDealsData=[
-  {hotelimg: TajImg,
-  hotelname:'Taj City Centre New Town, Kolkata',
-  cityname:'Kolkata, India',
-  ratingNo:'8.8',
-  ratingWord:'Fabulous',
-  reviews:'2,005 reviews',
-  nights: '2',
-  priceCrossed:'12,400',
-  price:'11,600'
+const weekEndDealsData = [
+  {
+    hotelimg: TajImg,
+    hotelname: 'Taj City Centre New Town, Kolkata',
+    cityname: 'Kolkata, India',
+    ratingNo: '8.8',
+    ratingWord: 'Fabulous',
+    reviews: '2,005 reviews',
+    nights: '2',
+    priceCrossed: '12,400',
+    price: '11,600'
   },
-  {hotelimg: ITCImg,
-  hotelname:'Welcomhotel by ITC Hotels, Dwarka, New Delhi',
-  cityname:'New Delhi, India',
-  ratingNo:'7.1',
-  ratingWord:'Good',
-  reviews:'3,451 reviews',
-  nights: '2',
-  priceCrossed:'13,000',
-  price:'11,700'
+  {
+    hotelimg: ITCImg,
+    hotelname: 'Welcomhotel by ITC Hotels, Dwarka, New Delhi',
+    cityname: 'New Delhi, India',
+    ratingNo: '7.1',
+    ratingWord: 'Good',
+    reviews: '3,451 reviews',
+    nights: '2',
+    priceCrossed: '13,000',
+    price: '11,700'
   },
-  {hotelimg: SterlingDarjeeling,
-  hotelname:'Sterling Darjeeling',
-  cityname:'Darjeeling, India',
-  ratingNo:'7.0',
-  ratingWord:'Good',
-  reviews:'130 reviews',
-  nights: '2',
-  priceCrossed:'25,000',
-  price:'21,250'
+  {
+    hotelimg: SterlingDarjeeling,
+    hotelname: 'Sterling Darjeeling',
+    cityname: 'Darjeeling, India',
+    ratingNo: '7.0',
+    ratingWord: 'Good',
+    reviews: '130 reviews',
+    nights: '2',
+    priceCrossed: '25,000',
+    price: '21,250'
   },
-  {hotelimg: LilaAmb,
-  hotelname:'The Leela Ambience Convention Hotel Delhi',
-  cityname:'Kolkata, India',
-  ratingNo:'8.3',
-  ratingWord:'vary good',
-  reviews:'87 reviews',
-  nights: '2',
-  priceCrossed:'17,000',
-  price:'15,300'
+  {
+    hotelimg: LilaAmb,
+    hotelname: 'The Leela Ambience Convention Hotel Delhi',
+    cityname: 'Kolkata, India',
+    ratingNo: '8.3',
+    ratingWord: 'vary good',
+    reviews: '87 reviews',
+    nights: '2',
+    priceCrossed: '17,000',
+    price: '15,300'
   },
-  {hotelimg: TajTal,
-  hotelname:'Taj Tal Kutir',
-  cityname:'New Delhi, India',
-  ratingNo:'8.6',
-  ratingWord:'fabulous',
-  reviews:'130 reviews',
-  nights: '2',
-  priceCrossed:'10,215',
-  price:'9,194'
+  {
+    hotelimg: TajTal,
+    hotelname: 'Taj Tal Kutir',
+    cityname: 'New Delhi, India',
+    ratingNo: '8.6',
+    ratingWord: 'fabulous',
+    reviews: '130 reviews',
+    nights: '2',
+    priceCrossed: '10,215',
+    price: '9,194'
   },
-  {hotelimg: Posada,
-  hotelname:'The West Gate Posada By Summit',
-  cityname:'Darjeeling, India',
-  ratingNo:'8.0',
-  ratingWord:'very good',
-  reviews:'61 reviews',
-  nights: '2',
-  priceCrossed:'12,598',
-  price:'11,338'
+  {
+    hotelimg: Posada,
+    hotelname: 'The West Gate Posada By Summit',
+    cityname: 'Darjeeling, India',
+    ratingNo: '8.0',
+    ratingWord: 'very good',
+    reviews: '61 reviews',
+    nights: '2',
+    priceCrossed: '12,598',
+    price: '11,338'
   },
 ];
 
-const uniqueuePlaces =[
-  {hotelimg: CasaImg,
-  hotelname:'Casa Rural La Marquesa - Cuenca',
-  cityname:'Spain, Valera de Abajo',
-  ratingNo:'9.5',
-  ratingWord:'Exceptional',
-  reviews:'60 reviews',
+const uniqueuePlaces = [
+  {
+    hotelimg: CasaImg,
+    hotelname: 'Casa Rural La Marquesa - Cuenca',
+    cityname: 'Spain, Valera de Abajo',
+    ratingNo: '9.5',
+    ratingWord: 'Exceptional',
+    reviews: '60 reviews',
   },
-  {hotelimg: CasapriscoImg,
-  hotelname:'Casaprisco',
-  cityname:'Netherlands, Putten',
-  ratingNo:'9.2',
-  ratingWord:'Superb',
-  reviews:'70 reviews',
+  {
+    hotelimg: CasapriscoImg,
+    hotelname: 'Casaprisco',
+    cityname: 'Netherlands, Putten',
+    ratingNo: '9.2',
+    ratingWord: 'Superb',
+    reviews: '70 reviews',
   },
-  {hotelimg: DasroteImg,
-  hotelname:'Das rote Haus hinterm Deich',
-  cityname:'Germany, Simonsberg',
-  ratingNo:'9.4',
-  ratingWord:'Superb',
-  reviews:'50 reviews',
+  {
+    hotelimg: DasroteImg,
+    hotelname: 'Das rote Haus hinterm Deich',
+    cityname: 'Germany, Simonsberg',
+    ratingNo: '9.4',
+    ratingWord: 'Superb',
+    reviews: '50 reviews',
   },
-  {hotelimg: DomkiImg,
-  hotelname:'Domki ROSSE niedaleko plaży',
-  cityname:'Poland, Jastracizebia Gora',
-  ratingNo:'9.8',
-  ratingWord:'Exceptional',
-  reviews:'140 reviews',
+  {
+    hotelimg: DomkiImg,
+    hotelname: 'Domki ROSSE niedaleko plaży',
+    cityname: 'Poland, Jastracizebia Gora',
+    ratingNo: '9.8',
+    ratingWord: 'Exceptional',
+    reviews: '140 reviews',
   },
-  {hotelimg: GyttjaImg,
-  hotelname:'Gyttja Västergårds',
-  cityname:'Finland, linlandet',
-  ratingNo:'9.3',
-  ratingWord:'Superb',
-  reviews:'132 reviews',
+  {
+    hotelimg: GyttjaImg,
+    hotelname: 'Gyttja Västergårds',
+    cityname: 'Finland, linlandet',
+    ratingNo: '9.3',
+    ratingWord: 'Superb',
+    reviews: '132 reviews',
   },
-  {hotelimg: HarborImg,
-  hotelname:'Harbor View',
-  cityname:'United Kingdom, Isle of skye',
-  ratingNo:'9.0',
-  ratingWord:'Superb',
-  reviews:'141 reviews',
+  {
+    hotelimg: HarborImg,
+    hotelname: 'Harbor View',
+    cityname: 'United Kingdom, Isle of skye',
+    ratingNo: '9.0',
+    ratingWord: 'Superb',
+    reviews: '141 reviews',
   },
-  {hotelimg: WaldscheneImg,
-  hotelname:'Waldschenke Stendenitz Übernachten im Wald am See',
-  cityname:'Germany, Neuruppin',
-  ratingNo:'8.7',
-  ratingWord:'Fabulous',
-  reviews:'388 reviews',
+  {
+    hotelimg: WaldscheneImg,
+    hotelname: 'Waldschenke Stendenitz Übernachten im Wald am See',
+    cityname: 'Germany, Neuruppin',
+    ratingNo: '8.7',
+    ratingWord: 'Fabulous',
+    reviews: '388 reviews',
   },
 ];
 
@@ -380,7 +396,7 @@ const CitiesDisplay = ({ choice }) => {
       const containerWidth = citycontainerRef.current.clientWidth;
       const scrollAmount = (containerWidth > 600)
         ? -((containerWidth - 100) / 6 + 21) // Landscape or larger screens
-        : -((containerWidth - 35) / 2+21); // Portrait or smaller screens
+        : -((containerWidth - 35) / 2 + 21); // Portrait or smaller screens
 
       citycontainerRef.current.scrollBy({
         left: scrollAmount,
@@ -394,7 +410,7 @@ const CitiesDisplay = ({ choice }) => {
       const containerWidth = citycontainerRef.current.clientWidth;
       const scrollAmount = (containerWidth > 600)
         ? ((containerWidth - 100) / 6 + 21) // Landscape or larger screens
-        : ((containerWidth -35) / 2+21); // Portrait or smaller screens
+        : ((containerWidth - 35) / 2 + 21); // Portrait or smaller screens
 
       citycontainerRef.current.scrollBy({
         left: scrollAmount,
@@ -451,7 +467,7 @@ const CitiesDisplay = ({ choice }) => {
   );
 };
 
-const Home = ({loginState}) => {
+const Home = ({ loginState }) => {
   const [dateRange, setDateRange] = useState({ startDate: null, endDate: null, count: '' });
   const [tripPlannerChoice, settripPlannerChoice] = useState({ beach: false, city: true, outdoor: false, romance: false });
 
@@ -654,27 +670,37 @@ const Home = ({loginState}) => {
         <h4>Stay at our top unique properties</h4>
         <p>From castles and villas to boats and igloos, we've got it all</p>
         <div className='weekend-deals-cards'>
-          <CardsDisplay cardData={uniqueuePlaces} showLike={true}/>
+          <CardsDisplay cardData={uniqueuePlaces} showLike={true} />
         </div>
       </div>
       <div className='get-inspiration container'>
-       <h4>Get inspiration for your next trip </h4> 
-       <div className='get-inspiration-cards'>
-        <div className='big-card'>
-          <h4>New Year's Eve in New York City</h4>
-          <p>Ring in the new year with iconic moments and unforgottable memories in New York City</p>
+        <h4>Get inspiration for your next trip </h4>
+        <div className='get-inspiration-cards'>
+          <div className='big-card'>
+            <h4>New Year's Eve in New York City</h4>
+            <p>Ring in the new year with iconic moments and unforgottable memories in New York City</p>
+          </div>
+          <div className='small-card'>
+            <img src={inspiration1} alt='inspiration1'></img>
+            <h5>6 best ryokans in Japan to rejuvenate yourself</h5>
+            <p>Discover unmissable ryokans to relax and unwind in style.</p>
+          </div>
+          <div className='small-card'>
+            <img src={inspiration2} alt='inspiration2'></img>
+            <h5>7 best places in Asia to celebrate Christmas</h5>
+            <p>Discover the shimmering lights and festive sights of Asia’s holiday season.</p>
+          </div>
+          <div className='small-card'>
+            <img src={inspiration3} alt='inspiration3'></img>
+            <h5>6 magical Christmas experiences in London</h5>
+            <p>A London Christmas: cherished traditions and new discoveries.</p>
+          </div>
+          <div className='small-card'>
+            <img src={inspiration4} alt='inspiration4'></img>
+            <h5>Top 5 places for winter sports in South Korea</h5>
+            <p> Ski Olympic slopes and jumps, before relaxing in a traditional Korean bathhouse</p>
+          </div>
         </div>
-        <div className='small-card'>
-          <img src={inspiration1} alt='inspiration1'></img>
-          <h5>6 best ryokans in Japan to rejuvenate yourself</h5>
-          <p>Discover unmissable ryokans to relax and unwind in style.</p>
-        </div>
-        <div className='small-card'>
-          <img src={inspiration2} alt='inspiration2'></img>
-          <h5>7 best places in Asia to celebrate Christmas</h5>
-          <p>Discover the shimmering lights and festive sights of Asia’s holiday season.</p>
-        </div>
-       </div>
       </div>
     </div>
   );

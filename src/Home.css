@@ -653,6 +653,8 @@
 .get-inspiration{
     text-align: left;
     margin-top: 20px;
+    width: 100%;
+    overflow: hidden;
 }
 .get-inspiration-cards{
     position: relative;
@@ -663,11 +665,11 @@
     margin-bottom: 50px;
     margin-top: 10px;
     gap: 20px;
+    overflow: scroll;
 }
 .big-card {
     position: relative;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), 
-                url('/src/StaticImages/new-year-eve.webp');
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), url('/src/StaticImages/new-year-eve.webp');
     background-size: 100%; /* Start with the normal background size */
     background-position: center;
     display: flex;
@@ -675,8 +677,7 @@
     background-repeat: no-repeat;
     padding: 20px;
     border-radius: 10px;
-    width: 550px; 
-    width: (100% - 40px)/2;
+    min-width: calc((100% - 40px)/2) ;
     height: 350px;
     align-items: flex-start;
     justify-content: flex-end;
@@ -693,7 +694,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    width: (100% - 40px)/4;
+    min-width: calc((100% - 40px)/4);
     height: 100%;
     border-radius: 10px;
     overflow: hidden;
