@@ -39,6 +39,8 @@ import GyttjaImg from './Properties/Gyttja.webp';
 import HarborImg from './Properties/Harbor.webp';
 import WaldscheneImg from './Properties/Waldschenke.webp';
 
+import inspiration1 from './StaticImages/inspiration1.webp'
+import inspiration2 from './StaticImages/inspiration2.webp'
 const places = [
   'New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix',
   'Philadelphia', 'San Antonio', 'San Diego', 'Dallas', 'San Jose'
@@ -663,6 +665,14 @@ const Home = ({loginState}) => {
           <p>Ring in the new year with iconic moments and unforgottable memories in New York City</p>
         </div>
         <div className='small-card'>
+          <img src={inspiration1} alt='inspiration1'></img>
+          <h5>6 best ryokans in Japan to rejuvenate yourself</h5>
+          <p>Discover unmissable ryokans to relax and unwind in style.</p>
+        </div>
+        <div className='small-card'>
+          <img src={inspiration2} alt='inspiration2'></img>
+          <h5>7 best places in Asia to celebrate Christmas</h5>
+          <p>Discover the shimmering lights and festive sights of Asia’s holiday season.</p>
         </div>
        </div>
       </div>
