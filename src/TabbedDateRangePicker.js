@@ -24,6 +24,7 @@ const MonthDisplay = () => {
     const [scrollable, setScrollable] = useState({ left: false, right: true });
 
     useEffect(() => {
+        const currentRef = containerRef.current;
         const handleScroll = () => {
             if (containerRef.current) {
                 const { scrollLeft, scrollWidth, clientWidth } = containerRef.current;
@@ -39,7 +40,6 @@ const MonthDisplay = () => {
         }
 
         return () => {
-            const currentRef = containerRef.current;
             if (currentRef) {
                 currentRef.removeEventListener('scroll', handleScroll);
             }
