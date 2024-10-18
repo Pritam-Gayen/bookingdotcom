@@ -3,6 +3,7 @@ import './Home.css';
 // import DateRangePicker from './DateRangePicker';
 import TabbedDateRangePicker from './TabbedDateRangePicker';
 import CardsDisplay from './CardsDisplay';
+import InspirationDisplay from './InspirationDisplay';
 
 import AgraImg from './Places/Agra.jpg';
 import BhuwaneshwarImg from './Places/Bhuwaneshwar.jpg';
@@ -210,6 +211,34 @@ const uniqueuePlaces = [
     ratingWord: 'Fabulous',
     reviews: '388 reviews',
   },
+];
+
+const inspiration = [
+  {
+    image: inspiration1,
+    heading1: "New Year's Eve in New York City",
+    heading2: "Ring in the new year with iconic moments and unforgottable memories in New York City"
+  },
+  {
+    image: inspiration1,
+    heading1: "6 best ryokans in Japan to rejuvenate yourself",
+    heading2: "Discover unmissable ryokans to relax and unwind in style."
+  },
+  {
+    image: inspiration2,
+    heading1: "7 best places in Asia to celebrate Christmas",
+    heading2: "Discover the shimmering lights and festive sights of Asia’s holiday season."
+  },
+  {
+    image: inspiration3,
+    heading1: "6 magical Christmas experiences in London",
+    heading2: "A London Christmas: cherished traditions and new discoveries."
+  },
+  {
+    image: inspiration4,
+    heading1: "Top 5 places for winter sports in South Korea",
+    heading2: "Ski Olympic slopes and jumps, before relaxing in a traditional Korean bathhouse"
+  }
 ];
 
 function showList() {
@@ -675,32 +704,9 @@ const Home = ({ loginState }) => {
       </div>
       <div className='get-inspiration container'>
         <h4>Get inspiration for your next trip </h4>
-        <div className='get-inspiration-cards'>
-          <div className='big-card'>
-            <h4>New Year's Eve in New York City</h4>
-            <p>Ring in the new year with iconic moments and unforgottable memories in New York City</p>
-          </div>
-          <div className='small-card'>
-            <img src={inspiration1} alt='inspiration1'></img>
-            <h5>6 best ryokans in Japan to rejuvenate yourself</h5>
-            <p>Discover unmissable ryokans to relax and unwind in style.</p>
-          </div>
-          <div className='small-card'>
-            <img src={inspiration2} alt='inspiration2'></img>
-            <h5>7 best places in Asia to celebrate Christmas</h5>
-            <p>Discover the shimmering lights and festive sights of Asia’s holiday season.</p>
-          </div>
-          <div className='small-card'>
-            <img src={inspiration3} alt='inspiration3'></img>
-            <h5>6 magical Christmas experiences in London</h5>
-            <p>A London Christmas: cherished traditions and new discoveries.</p>
-          </div>
-          <div className='small-card'>
-            <img src={inspiration4} alt='inspiration4'></img>
-            <h5>Top 5 places for winter sports in South Korea</h5>
-            <p> Ski Olympic slopes and jumps, before relaxing in a traditional Korean bathhouse</p>
-          </div>
-        </div>
+        {/* <div className='get-inspiration-cards'> */}
+            <InspirationDisplay cardData={inspiration} />
+        {/* </div> */}
       </div>
     </div>
   );
