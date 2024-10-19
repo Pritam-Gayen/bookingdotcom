@@ -732,6 +732,17 @@ const Home = ({ loginState }) => {
             <h2>Villas</h2>
           </div>
           <div className='holiday-rentals-grid'>
+            <div className='camping'>
+              <svg xmlns="http://www.w3.org/2000/svg" fill='green' viewBox="0 0 24 24" width="50px"><path d="M13.77.36.109 22.86A.75.75 0 0 0 .75 24h22.5a.75.75 0 0 0 .641-1.14L10.231.36a.75.75 0 0 0-1.283.78l13.66 22.5.642-1.14H.75l.641 1.14 13.661-22.5A.75.75 0 1 0 13.77.36m-2.426 15.294-4.018 7.232A.75.75 0 0 0 7.982 24h8.036a.75.75 0 0 0 .656-1.114l-4.018-7.232a.75.75 0 0 0-1.312 0m1.312.728h-1.312l4.018 7.232.656-1.114H7.982l.656 1.114z"></path></svg>
+              <h5>Camping & boats</h5>
+            </div>
+            <div className='houses'>
+              <div className='houses-words'>
+                <h4>Houses</h4>
+              </div>
+              <div className='houses-pic'>
+              </div>
+            </div>
           </div>
         </div>
       </div>

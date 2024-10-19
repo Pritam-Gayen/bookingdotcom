@@ -704,7 +704,7 @@
     background-position: 60% 20%;
 }
 .villas h2{
-    margin-top: 50px;
+    margin-top: 30px;
     color: #8e6b13;
 }
 .bungalows{
@@ -724,7 +724,7 @@
     border-bottom-right-radius: 10px;
     width: 100%;
     height: 80px;
-    background: linear-gradient(to top, rgb(25, 130, 165),rgb(88, 200, 228),rgba(58, 206, 184, 0.9), rgba(186, 240, 186, 0.5),rgba(207, 240, 207, 0.01));
+    background: linear-gradient(to top, rgba(25, 130, 165, 0.9),rgba(88, 200, 228, 0.9),rgba(58, 206, 184, 0.9), rgba(186, 240, 186, 0.5),rgba(207, 240, 207, 0.01));
     padding-top: 20px;
 }
 .apartments-chalets{
@@ -743,7 +743,44 @@
     border-radius: 10px;
     background-color: #fafafa;
     border: 1px solid rgb(235, 232, 232);
+    font-weight:1000;
 }
 .apartments-chalets-inner h5{
     margin-top: 15px;
+}
+.camping{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: green;
+    font-weight:1000;
+    gap: 10px;
+    border-radius: 10px;
+    background-color: rgb(231, 245, 231);
+    border: 1px solid rgb(235, 232, 232);
+}
+.houses{
+    display: flex;
+    height: 50%;
+    width: 100%;   
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid rgb(235, 232, 232);
+}
+.houses-words{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 35%;
+    color: rgb(79, 77, 77);
+}
+.houses-pic{
+    background-image: url('./StaticImages/houses.webp');
+    height: 100%;
+    width: 65%;
+    background-size: 100%;
+    background-position: 60% 20%;
 }
