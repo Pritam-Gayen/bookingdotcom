@@ -673,3 +673,77 @@
         display: none;
     }
 }
+/* ---------------------------------------------------- */
+.holiday-rentals{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 30px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+.holiday-rentals-grids{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.holiday-rentals-grid{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+    height: 400px;
+    /* background-color: #0751c0; */
+    border-radius: 10px;
+}
+.villas{
+    background-image: url('./StaticImages/villas.webp');
+    background-size: 130%;
+    background-position: 60% 20%;
+}
+.villas h2{
+    margin-top: 50px;
+    color: #8e6b13;
+}
+.bungalows{
+    display: flex;
+    height: 50%;
+    width: 100%;
+    background-image: url('./StaticImages/bangalows.webp');
+    background-size: 100%;
+    background-position: 60% 20%;
+    justify-content: center;
+    border-radius: 10px;
+    color: white;
+    align-items: flex-end;
+}
+.bungalows-heading{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to top, rgb(25, 130, 165),rgb(88, 200, 228),rgba(58, 206, 184, 0.9), rgba(186, 240, 186, 0.5),rgba(207, 240, 207, 0.01));
+    padding-top: 20px;
+}
+.apartments-chalets{
+    display: flex;
+    gap: 20px;
+    height: 50%;
+    width: 100%;
+}
+.apartments-chalets-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 50%;
+    border-radius: 10px;
+    background-color: #fafafa;
+    border: 1px solid rgb(235, 232, 232);
+}
+.apartments-chalets-inner h5{
+    margin-top: 15px;
+}
