@@ -675,14 +675,20 @@
 }
 /* ---------------------------------------------------- */
 .holiday-rentals{
+    position: relative;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
     margin-top: 30px;
     width: 100%;
-    margin-bottom: 50px;
+    padding-bottom: 20px;
+}
+.holiday-rentals h4{
+    position: relative;
+    text-align: left;
 }
 .holiday-rentals-grids{
+    position: relative;
     display: flex;
     gap: 20px;
     width: 100%;
@@ -690,6 +696,7 @@
     margin-top: 20px;
 }
 .holiday-rentals-grid{
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -699,15 +706,18 @@
     border-radius: 10px;
 }
 .villas{
+    position: relative;
     background-image: url('./StaticImages/villas.webp');
     background-size: 130%;
     background-position: 60% 20%;
 }
 .villas h2{
+    position: relative;
     margin-top: 30px;
     color: #8e6b13;
 }
 .bungalows{
+    position: relative;
     display: flex;
     height: 50%;
     width: 100%;
@@ -720,6 +730,7 @@
     align-items: flex-end;
 }
 .bungalows-heading{
+    position: relative;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     width: 100%;
@@ -728,12 +739,14 @@
     padding-top: 20px;
 }
 .apartments-chalets{
+    position: relative;
     display: flex;
     gap: 20px;
     height: 50%;
     width: 100%;
 }
 .apartments-chalets-inner{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -746,9 +759,11 @@
     font-weight:1000;
 }
 .apartments-chalets-inner h5{
+    position: relative;
     margin-top: 15px;
 }
 .camping{
+    position: relative;
     height: 50%;
     width: 100%;
     display: flex;
@@ -762,6 +777,7 @@
     border: 1px solid rgb(235, 232, 232);
 }
 .houses{
+    position: relative;
     display: flex;
     height: 50%;
     width: 100%;   
@@ -770,6 +786,7 @@
     border: 1px solid rgb(235, 232, 232);
 }
 .houses-words{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -778,9 +795,34 @@
     color: rgb(79, 77, 77);
 }
 .houses-pic{
+    position: relative;
     background-image: url('./StaticImages/houses.webp');
     height: 100%;
     width: 65%;
     background-size: 100%;
     background-position: 60% 20%;
+}
+@media screen and (orientation: portrait) {  
+    .holiday-rentals-grids{
+        overflow-x: scroll;
+    }
+    .holiday-rentals-grids::-webkit-scrollbar{
+        display: none;
+    }
+    .holiday-rentals-grid{
+        height: 300px;
+        min-width: 300px !important;
+    }
+}
+@media screen and (max-width: 1024px) {  
+    .holiday-rentals-grids{
+        overflow-x: scroll;
+    }
+    .holiday-rentals-grids::-webkit-scrollbar{
+        display: none;
+    }
+    .holiday-rentals-grid{
+        height: 300px;
+        min-width: 300px !important;
+    }
 }
