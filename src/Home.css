@@ -826,3 +826,69 @@
         min-width: 300px !important;
     }
 }
+/* ------------------------------------------------------- */
+.travel-more{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 30px;
+}
+.travel-more-box{
+    display: flex;
+    border: 1px solid rgb(219, 216, 216);
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+    /* justify-content: center; */
+}
+.travel-more-box-left{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-left: 15px;
+    margin-top: 20px;
+    text-align: left;
+}
+.travel-more-box-button-holder{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.travel-more-box-button{
+    height: 40px;
+    width: 80px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.signin-button{
+    background-color: #006ce4;
+    color: white;
+}
+.register-button{
+    color: #006ce4;
+    background-color: white;
+}
+.register-button:hover{
+    background-color: #e3ebf5;
+}
+.travel-more-box-right{
+    background-image: url('./StaticImages/GeniusGenericGiftBox.png');
+    width: 120px;
+    height: 120px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+}
+@media screen and (orientation: portrait) {
+    .travel-more-box-right{
+        width: 60%;
+    }
+}

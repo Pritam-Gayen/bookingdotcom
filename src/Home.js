@@ -746,6 +746,22 @@ const Home = ({ loginState }) => {
           </div>
         </div>
       </div>
+      <div className='travel-more container'>
+        <h4>Travel more, spend less</h4>
+        <div className='travel-more-box'>
+          <div className='travel-more-box-left'>
+            <h6>Sign in, save money</h6>
+            <p>Save 10% or more at participating properties – just look for the blue Genius label</p>
+            <div className='travel-more-box-button-holder'>
+              <button className='travel-more-box-button signin-button'>Sign in</button>
+              <button className='travel-more-box-button register-button'>Register</button>
+            </div>
+          </div>
+          <div className='travel-more-box-right'>
+
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
