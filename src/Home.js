@@ -4,6 +4,7 @@ import './Home.css';
 import TabbedDateRangePicker from './TabbedDateRangePicker';
 import CardsDisplay from './CardsDisplay';
 import InspirationDisplay from './InspirationDisplay';
+import ScrollingDiv from './ScrollingDiv';
 
 import AgraImg from './Places/Agra.jpg';
 import BhuwaneshwarImg from './Places/Bhuwaneshwar.jpg';
@@ -44,6 +45,7 @@ import inspiration1 from './StaticImages/inspiration1.webp'
 import inspiration2 from './StaticImages/inspiration2.webp'
 import inspiration3 from './StaticImages/inspiration3.webp'
 import inspiration4 from './StaticImages/inspiration4.webp'
+
 
 const places = [
   'New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix',
@@ -240,6 +242,7 @@ const inspiration = [
     heading2: "Ski Olympic slopes and jumps, before relaxing in a traditional Korean bathhouse"
   }
 ];
+
 
 function showList() {
   const listBox = document.getElementById('list-box');
@@ -499,7 +502,8 @@ const CitiesDisplay = ({ choice }) => {
 const Home = ({ loginState }) => {
   const [dateRange, setDateRange] = useState({ startDate: null, endDate: null, count: '' });
   const [tripPlannerChoice, settripPlannerChoice] = useState({ beach: false, city: true, outdoor: false, romance: false });
-
+  const divRef = document.getElementsByClassName('animated-divs');
+  
   const handleTripPlannerChoice = (choice) => {
     return () => {
       // Reset all classes first
@@ -770,6 +774,16 @@ const Home = ({ loginState }) => {
           </div>
           <div className='find-section-middle'>
             <div className='blue-circle'>
+              <div className='first-line'>
+                <div>Find</div>
+                <div className='animated-divs'>
+                  <ScrollingDiv ref={divRef}/>
+                </div>
+              </div>
+              <div className='second-line'>
+                <span>for your next trip</span>
+              </div>
+              <button className='button-discover'>Discover homes</button>
             </div>
           </div>
           <div className='find-section-right'>

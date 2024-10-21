@@ -1,0 +1,18 @@
+.animated-divs{
+    position: relative;
+    text-align: left;
+    height: 30px;
+    width: 100%;
+    overflow-y: hidden;
+    padding-left: 5px;
+    scroll-behavior:smooth;
+}
+.animated-divs-inner {
+  display: flex;
+  flex-direction: column;
+  height: 246px;
+  width: 500px;
+  overflow-y: hidden;
+  text-decoration: underline;
+  text-decoration-color: rgb(247, 172, 20);
+}
