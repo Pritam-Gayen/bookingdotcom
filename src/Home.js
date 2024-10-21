@@ -762,6 +762,22 @@ const Home = ({ loginState }) => {
           </div>
         </div>
       </div>
+      <div className='container'>
+        <div className='find-section'>
+          <div className='find-section-left'>
+            <div className='yellow-circle'>
+            </div>
+          </div>
+          <div className='find-section-middle'>
+            <div className='blue-circle'>
+            </div>
+          </div>
+          <div className='find-section-right'>
+            <div className='find-section-right-inner'>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
