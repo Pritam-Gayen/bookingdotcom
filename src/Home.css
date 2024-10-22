@@ -976,3 +976,39 @@
 .first-line{
     display: flex;
 }
+@media screen and (orientation: portrait) {
+    .find-section{
+        flex-direction: column-reverse;
+        height: auto;
+    }
+    .find-section-right{
+        width: 100%;
+    }
+    .find-section-right-inner{
+        width: 100%;
+        height: 200px;
+    }
+    .find-section-left{
+        display: none;
+    }
+    .find-section-middle{
+        width: 100%;
+    }
+    .blue-circle{
+        height: 300px;
+        width: 100%;
+        padding-left: 0;
+        margin-left: 0;
+    }
+    .button-discover{
+        width: 80%;
+    }
+    .first-line{
+        text-align: center;
+        width: 100%;
+    }
+    .second-line{
+        text-align: center;
+        width: 100%;
+    }
+}
