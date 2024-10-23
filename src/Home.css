@@ -995,20 +995,36 @@
         width: 100%;
     }
     .blue-circle{
-        height: 300px;
         width: 100%;
-        padding-left: 0;
+        aspect-ratio: 1 / 1;
+        padding-left: 50px;
+        padding-right: 50px;
         margin-left: 0;
     }
-    .button-discover{
-        width: 80%;
+}
+@media screen and (max-width: 700px) {
+    .find-section{
+        flex-direction: column-reverse;
+        height: auto;
     }
-    .first-line{
-        text-align: center;
+    .find-section-right{
         width: 100%;
     }
-    .second-line{
-        text-align: center;
+    .find-section-right-inner{
         width: 100%;
+        height: 200px;
+    }
+    .find-section-left{
+        display: none;
+    }
+    .find-section-middle{
+        width: 100%;
+    }
+    .blue-circle{
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        padding-left: 50px;
+        padding-right: 50px;
+        margin-left: 0;
     }
 }
