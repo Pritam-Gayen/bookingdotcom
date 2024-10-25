@@ -1,54 +1,56 @@
 import React from 'react';
 import './Footer.css';
+import FooterColumn from './FooterColumn';
+
+const itemSupport = [
+  'Coronavirus (COVID-19) FAQs',
+  'Manage your trips',
+  'Contact Customer Service',
+  'Safety resource centre',
+];
+const itemDiscover = [
+    'Genius loyalty programme',
+    'Seasonal and holiday deals',
+    'Travel articles',
+    'Booking.com for Business',
+    'Traveller Review Awards',
+    'Car hire',
+    'Flight finder',
+    'Restaurant reservations',
+    'Booking.com for Travel Agents',
+];
+const itemTerms = [
+    'Privacy & cookies',
+    'Terms and conditions',
+    'Grievance officer',
+    'Modern Slavery Statement',
+    'Human Rights Statement'
+];
+const itemPartners = [
+    'Extranet login',
+    'Partner help',
+    'List your property',
+    'Become an affiliate'
+];
+const itemAbout = [
+    'About Booking.com',
+    'How we work',
+    'Sustainability',
+    'Press centre',
+    'Careers',
+    'Investor relations',
+    'Corporate contact'
+];
 
 const Footer = () =>{
     return(
         <div className='footer-color'>
             <div className='footer-section container'>
-                <div className='footer-columns'>
-                    <h6>Support</h6>
-                    <a href='/'><p>Coronavirus (COVID-19) FAQs</p></a>
-                    <a href='/'><p>Manage your trips</p></a>
-                    <a href='/'><p>Contact Customer Service</p></a>
-                    <a href='/'><p>Safety resource centre</p></a>
-                </div>
-                <div className='footer-columns'>
-                    <h6>Discover</h6>
-                    <a href='/'><p>Genius loyalty programme</p></a>
-                    <a href='/'><p>Seasonal and holiday deals</p></a>
-                    <a href='/'><p>Travel articles</p></a>
-                    <a href='/'><p>Booking.com for Business</p></a>
-                    <a href='/'><p>Traveller Review Awards</p></a>
-                    <a href='/'><p>Car hire</p></a>
-                    <a href='/'><p>Flight finder</p></a>
-                    <a href='/'><p>Restaurant reservations</p></a>
-                    <a href='/'><p>Booking.com for Travel Agents</p></a>
-                </div>
-                <div className='footer-columns'>
-                    <h6>Terms and settings</h6>
-                    <a href='/'><p>Privacy & cookies</p></a>
-                    <a href='/'><p>Terms and conditions</p></a>
-                    <a href='/'><p>Grievance officer</p></a>
-                    <a href='/'><p>Modern Slavery Statement</p></a>
-                    <a href='/'><p>Human Rights Statement</p></a>
-                </div>
-                <div className='footer-columns'>
-                    <h6>Partners</h6>
-                    <a href='/'><p>Extranet login</p></a>
-                    <a href='/'><p>Partner help</p></a>
-                    <a href='/'><p>List your property</p></a>
-                    <a href='/'><p>Become an affiliate</p></a>
-                </div>
-                <div className='footer-columns'>
-                    <h6>About</h6>
-                    <a href='/'><p>About Booking.com</p></a>
-                    <a href='/'><p>How we work</p></a>
-                    <a href='/'><p>Sustainability</p></a>
-                    <a href='/'><p>Press centre</p></a>
-                    <a href='/'><p>Careers</p></a>
-                    <a href='/'><p>Investor relations</p></a>
-                    <a href='/'><p>Corporate contact</p></a>
-                </div>
+                <FooterColumn className='font-style' title='Support' items={itemSupport} />
+                <FooterColumn className='font-style' title='Discover' items={itemDiscover} />
+                <FooterColumn className='font-style' title='Terms and settings' items={itemTerms} />
+                <FooterColumn className='font-style' title='Partners' items={itemPartners} />
+                <FooterColumn className='font-style' title='About' items={itemAbout} />
             </div>
         </div>
     )
