@@ -54,12 +54,12 @@ const Footer = () =>{
                 <FooterColumn className='font-style' title='About' items={itemAbout} />
             </div>
             <div className='footer-show-inr container'>
-                <div className='nav-item-custom'>
+                <div className='footer-item-custom'>
                     <div class="navbar-picture">
                         <img src={IndiaFlag} alt=""></img>
                     </div>
                 </div>
-                <div class="nav-item-custom inr">
+                <div class="footer-item-custom inr">
                     INR
                 </div>
             </div>
