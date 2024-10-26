@@ -10,24 +10,7 @@
     padding-top: 20px;
     /* gap: 5%; */
 }
-.footer-columns{
-    display: flex;
-    flex-direction: column;
-    width: 14%;
-    align-items: flex-start;
-    text-align: left;
-}
-.footer-columns h6{
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-.footer-columns a{
-    color: black;
-    margin-bottom: 8px;
-}
-.footer-columns a:hover{
-    color: black;
-}
+
 .font-style{
     width: 30px;
     height: 30px;
@@ -37,9 +20,5 @@
         flex-direction: column;
         padding: 15px;
     }
-    .footer-columns{
-        width: 100%;
-        border-bottom: 1px solid rgb(212, 210, 210);
-        margin-bottom: 20px;
-    }
+    
 }

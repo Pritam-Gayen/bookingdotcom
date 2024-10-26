@@ -1,0 +1,43 @@
+.footer-columns{
+    display: flex;
+    flex-direction: column;
+    width: 14%;
+    align-items: flex-start;
+    text-align: left;
+}
+.footer-columns h6{
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.footer-columns a{
+    color: black;
+    margin-bottom: 8px;
+}
+.footer-columns a:hover{
+    color: black;
+}
+.button-icon{
+    display: none;
+    height: 10px;
+    font-size: 15px;
+}
+.footer-columns-inner{
+    display: flex;
+    justify-content: space-between;
+}
+.footer-dropdown a p{
+    margin-bottom: 8px;
+}
+@media screen and (orientation:portrait) {
+    .footer-columns-inner{
+        width: 100%;
+    }
+    .button-icon{
+        display: block;
+    }
+    .footer-columns{
+        width: 100%;
+        border-bottom: 1px solid rgb(212, 210, 210);
+        margin-bottom: 20px;
+    }
+}
