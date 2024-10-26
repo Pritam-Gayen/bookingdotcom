@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.css';
 import FooterColumn from './FooterColumn';
+import IndiaFlag from "./StaticImages/Indiaflag.png";
 
 const itemSupport = [
   'Coronavirus (COVID-19) FAQs',
@@ -51,6 +52,16 @@ const Footer = () =>{
                 <FooterColumn className='font-style' title='Terms and settings' items={itemTerms} />
                 <FooterColumn className='font-style' title='Partners' items={itemPartners} />
                 <FooterColumn className='font-style' title='About' items={itemAbout} />
+            </div>
+            <div className='footer-show-inr container'>
+                <div className='nav-item-custom'>
+                    <div class="navbar-picture">
+                        <img src={IndiaFlag} alt=""></img>
+                    </div>
+                </div>
+                <div class="nav-item-custom inr">
+                    INR
+                </div>
             </div>
         </div>
     )
