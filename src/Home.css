@@ -961,6 +961,7 @@
     height: 30px;
     margin-top: 10px;
     color: #006ce4;
+    border: solid 1px #006ce4;
 }
 .animated-divs{
     position: relative;
@@ -985,8 +986,9 @@
         width: 100%;
     }
     .find-section-right-inner{
-        width: 100%;
-        height: 200px;
+        width: 80%;
+        height: 100px;
+        background-position: center;
     }
     .find-section-left{
         display: none;
@@ -996,11 +998,26 @@
     }
     .blue-circle{
         width: 100%;
-        aspect-ratio: 1 / 1;
-        padding-left: 50px;
-        padding-right: 50px;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        height: 200px !important;
         margin-left: 0;
+        background-color: white;
     }
+    .blue-circle div{
+        color: black;
+        /* font-size: 20px; */
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .animated-divs div{
+        text-align: center;
+    }
+    .first-line{
+        flex-direction: column;
+    }
+    
 }
 @media screen and (max-width: 700px) {
     .find-section{
@@ -1011,8 +1028,9 @@
         width: 100%;
     }
     .find-section-right-inner{
-        width: 100%;
-        height: 200px;
+        width: 80%;
+        height: 100px;
+        background-position: center;
     }
     .find-section-left{
         display: none;
@@ -1022,9 +1040,23 @@
     }
     .blue-circle{
         width: 100%;
-        aspect-ratio: 1 / 1;
-        padding-left: 50px;
-        padding-right: 50px;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        height: 200px !important;
         margin-left: 0;
+        background-color: white;
+    }
+    .blue-circle div{
+        color: black;
+        /* font-size: 20px; */
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .animated-divs div{
+        text-align: center;
+    }
+    .first-line{
+        flex-direction: column;
     }
 }
