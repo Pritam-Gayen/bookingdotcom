@@ -234,3 +234,8 @@ body{
         height: 23px;
     }
 }
+/* --------------------------------------------------------*/
+.tooltip-class{
+    position: absolute;
+    z-index: 9999;
+}

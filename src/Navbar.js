@@ -8,7 +8,7 @@ import { Tooltip } from 'react-tooltip';
 function Navbar({ showBottomNav, onRegisterClick, onHomeClick, loginState, userPhoto, userName }) {
     return (
         <header class="blue-bg">
-            <Tooltip id="my-tooltip" />
+            <Tooltip id="my-tooltip" className='tooltip-class'/>
             <nav class="top-nav">
                 <div class="container d-flex">
                     <div class="top-nav-left d-flex">
