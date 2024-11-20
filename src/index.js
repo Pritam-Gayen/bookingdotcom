@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'rsuite/dist/rsuite.min.css';
-
+import 'react-tooltip/dist/react-tooltip.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
