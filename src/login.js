@@ -1,7 +1,7 @@
 // src/LoginButton.js
 import React from 'react';
 import { GoogleLogin } from '@react-oauth/google';
-// import axios from 'axios';
+import axios from 'axios';
 import {jwtDecode} from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
 
@@ -20,17 +20,16 @@ const LoginButton = ({setloginState, setUserPhoto, setUserName}) => {
     localStorage.setItem('userName', userName);
     setUserPhoto(userPhoto);
     setUserName(userName);
-    navigate('/');
-    // axios.post('http://localhost:3000', {
-    //   token: response.credential,
-    // })
-    // .then(res => res.data)
-    // .then(data => {
-    //   console.log('User data:', data);
-    // })
-    // .catch(error => {
-    //   console.error('Login error:', error);
-    // });
+    
+    axios.post('https://clonebookingdotcom.netlify.app/.netlify/functions/register', {token: response.credential,})
+    .then(res => res.data)
+    .then(data => {
+      console.log('User data:', data);
+      navigate('/');
+    })
+    .catch(error => {
+      console.error('Login error:', error);
+    });
   };
 
   const onFailure = (response) => {
@@ -38,7 +37,7 @@ const LoginButton = ({setloginState, setUserPhoto, setUserName}) => {
   };
 
   return (
-  <div class="d-flex justify-content-center align-items-center" style={{ marginTop: '100px' }}>
+  <div class="d-flex justify-content-center align-items-center" style={{ marginTop: '100px', marginBottom: '100px' }}>
     <GoogleLogin
       onSuccess={onSuccess}
       onError={onFailure}

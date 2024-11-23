@@ -48,7 +48,7 @@ function Navbar({ showBottomNav, onRegisterClick, onHomeClick, loginState, userP
                             {!loginState &&
                                 <div class="nav-item-white-btn">
                                     <div class="navbar-button">
-                                        <Link class='no-underline' to="/login" onClick={onRegisterClick}>Register</Link>
+                                        <Link class='no-underline' to="/register" onClick={onRegisterClick}>Register</Link>
                                     </div>
                                 </div>
                             }

@@ -58,7 +58,7 @@ function App() {
           <Navbar showBottomNav={showBottomNav} onRegisterClick={handleRegisterClick} onHomeClick={handleHomeClick} loginState={loginState} userPhoto={userPhoto} userName={userName}/>
           <Routes>
             <Route path="/" element={<Home loginState={loginState} />} />
-            <Route path="/login" element={<LoginButton setloginState={setloginState} setUserPhoto={setUserPhoto} setUserName={setUserName}/>} />
+            <Route path="/register" element={<LoginButton setloginState={setloginState} setUserPhoto={setUserPhoto} setUserName={setUserName}/>} />
           </Routes>
           <Footer/>
         </div>
