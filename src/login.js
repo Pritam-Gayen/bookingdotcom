@@ -21,7 +21,7 @@ const LoginButton = ({setloginState, setUserPhoto, setUserName}) => {
     setUserPhoto(userPhoto);
     setUserName(userName);
     
-    axios.post('https://clonebookingdotcom.netlify.app/.netlify/functions/register/login', {token: response.credential,})
+    axios.post('https://clonebookingdotcom.netlify.app/login', {token: response.credential,})
     .then(res => res.data)
     .then(data => {
       console.log('User data:', data);
