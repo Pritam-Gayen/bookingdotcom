@@ -17,7 +17,7 @@ exports.handler = async (event, context) => {
   
   // Configure CORS (adjust origins as needed)
   const corsOptions = {
-    origin: ['https://clonebookingdotcom.netlify.app/'], // Replace with your client-side app origin
+    origin: ['https://clonebookingdotcom.netlify.app/', 'https://play.google.com/log?hasfast=true&authuser=0&format=json'], // Replace with your client-side app origin
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
