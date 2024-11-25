@@ -66,10 +66,10 @@ exports.handler = async (event, context) => {
 
   // Handle other routes as needed...
 
-  const response = {
-    statusCode: 200,
-    body: 'Hello from Netlify Function!', // Change based on your endpoint logic
-  };
+  // const response = {
+  //   statusCode: 200,
+  //   body: res, // Change based on your endpoint logic
+  // };
 
   // Handle specific routes based on the HTTP method and path:
   // if (event.httpMethod === 'GET' && event.path === '/') {
@@ -78,5 +78,5 @@ exports.handler = async (event, context) => {
   //   // ...
   // }
 
-  return response;
+  return res;
 };
