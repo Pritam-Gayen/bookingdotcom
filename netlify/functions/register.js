@@ -41,7 +41,7 @@ exports.handler = async (event, context) => {
     body: "Initialization", // Change based on your endpoint logic
   };
   // Login endpoint (modify based on your specific JWT structure)
-  app.post('https://clonebookingdotcom.netlify.app/login', async (req, res) => {
+  app.post('https://clonebookingdotcom.netlify.app/register', async (req, res) => {
     const token = req.body.token;
     console.log("inside post ");
     try {
