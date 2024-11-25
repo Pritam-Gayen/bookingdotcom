@@ -12,7 +12,7 @@ admin.initializeApp({
   });
 
   const app = express();
-  
+
 exports.handler = async (event, context) => {
   
   // Configure CORS (adjust origins as needed)
@@ -36,7 +36,7 @@ exports.handler = async (event, context) => {
       console.error('Error creating user:', error);
     }
   }
-  const response = {
+  var response = {
     statusCode: 200,
     body: "Initialization", // Change based on your endpoint logic
   };
