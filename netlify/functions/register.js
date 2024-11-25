@@ -14,7 +14,7 @@ admin.initializeApp({
   const app = express();
 
 exports.handler = async (event, context) => {
-  
+  console.log("logging ");
   // Configure CORS (adjust origins as needed)
   const corsOptions = {
     origin: ['https://clonebookingdotcom.netlify.app/', 'https://play.google.com/log?hasfast=true&authuser=0&format=json'], // Replace with your client-side app origin
