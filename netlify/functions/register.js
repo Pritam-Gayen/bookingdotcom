@@ -7,12 +7,13 @@ const bodyParser = require('body-parser'); // Required for parsing request body
 // Replace with your actual service account key (in JSON format)
 const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY);
 
-exports.handler = async (event, context) => {
-  admin.initializeApp({
+admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
   });
 
   const app = express();
+  
+exports.handler = async (event, context) => {
   
   // Configure CORS (adjust origins as needed)
   const corsOptions = {
