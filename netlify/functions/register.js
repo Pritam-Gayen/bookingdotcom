@@ -35,7 +35,10 @@ exports.handler = async (event, context) => {
       console.error('Error creating user:', error);
     }
   }
-
+  const response = {
+    statusCode: 200,
+    body: "Initialization", // Change based on your endpoint logic
+  };
   // Login endpoint (modify based on your specific JWT structure)
   app.post('/login', async (req, res) => {
     const token = req.body.token;
@@ -55,13 +58,14 @@ exports.handler = async (event, context) => {
       // Send successful response with user data
       res.status(200).json({
         message: 'User authenticated successfully',
-        user: userData,
+        user: userData
       });
     }
     catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Authentication failed' });
     }
+    response.body = res;
   });
 
   // Handle other routes as needed...
@@ -78,5 +82,5 @@ exports.handler = async (event, context) => {
   //   // ...
   // }
 
-  return res;
+  return response;
 };
