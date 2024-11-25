@@ -14,7 +14,7 @@ admin.initializeApp({
   const app = express();
 
 exports.handler = async (event, context) => {
-  console.log("logging ");
+  
   // Configure CORS (adjust origins as needed)
   const corsOptions = {
     origin: ['https://clonebookingdotcom.netlify.app/', 'https://play.google.com/log?hasfast=true&authuser=0&format=json'], // Replace with your client-side app origin
@@ -25,7 +25,7 @@ exports.handler = async (event, context) => {
   app.use(cors(corsOptions));
 
   app.use(bodyParser.json()); // Parse JSON request body
-
+  console.log("logging ");
   async function createUser(email, userData) {
     try {
       const userRef = admin.firestore().collection('users').doc(email);
@@ -43,7 +43,7 @@ exports.handler = async (event, context) => {
   // Login endpoint (modify based on your specific JWT structure)
   app.post('/login', async (req, res) => {
     const token = req.body.token;
-
+    console.log("inside post ");
     try {
       // Verify the JWT token
       const decodedToken = jwt.decode(token);
