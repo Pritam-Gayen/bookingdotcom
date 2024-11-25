@@ -17,7 +17,7 @@ exports.handler = async (event, context) => {
   
   // Configure CORS (adjust origins as needed)
   const corsOptions = {
-    origin: ['https://clonebookingdotcom.netlify.app/', 'https://play.google.com/log?hasfast=true&authuser=0&format=json', 'https://clonebookingdotcom.netlify.app/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', '	https://clonebookingdotcom.netlify.app/node_modules/bootstrap/dist/css/bootstrap.min.css'], // Replace with your client-side app origin
+    origin: ['https://clonebookingdotcom.netlify.app/', 'https://play.google.com/log?hasfast=true&authuser=0&format=json' ], // Replace with your client-side app origin
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -41,7 +41,7 @@ exports.handler = async (event, context) => {
     body: "Initialization", // Change based on your endpoint logic
   };
   // Login endpoint (modify based on your specific JWT structure)
-  app.post('/login', async (req, res) => {
+  app.post('https://clonebookingdotcom.netlify.app/login', async (req, res) => {
     const token = req.body.token;
     console.log("inside post ");
     try {
