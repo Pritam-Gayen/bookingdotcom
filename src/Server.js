@@ -14,7 +14,7 @@ const router = express.Router();
 
 // Configure CORS (adjust origins as needed)
 const corsOptions = {
-  origin: ['http://localhost:3000'], // Replace with your client-side app origin
+  origin: ['https://bookingdotcom-gkgr.onrender.com'], // Replace with your client-side app origin
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -23,7 +23,7 @@ app.use(cors(corsOptions));
 
 async function createUser(email, userData) {
   try {
-    const userRef = admin.firestore().collection('users').doc(email);
+    const userRef = admin.firestore().collection('hotelwoners').doc(email);
     await userRef.set(userData);
     console.log('User created:', email);
   }
