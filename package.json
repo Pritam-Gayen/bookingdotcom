@@ -33,7 +33,8 @@
   },
   "scripts": {
     "build:client": "react-scripts build",
-    "start:server": "node server.js",
+    "build:server": "node ./src/Server.js",
+    "start:server": "node ./src/Server.js",
     "build": "npm run build:client && npm run build:server"
   },
   "eslintConfig": {
