@@ -1,4 +1,4 @@
-// require('dotenv').config();
+require('dotenv').config();
 
 const admin = require('firebase-admin');
 const express = require('express');
@@ -70,7 +70,7 @@ app.use(express.json());
 // Mount the router onto the Express app
 app.use('/', router);// Mount at the root path
 
-const port = 4000;
+const port = process.env.PORT || 4000;
 app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+  console.log(`Server listening on https://bookingdotcom-gkgr.onrender.com port: ${port}`);
 });
