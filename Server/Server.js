@@ -14,7 +14,7 @@ const router = express.Router();
 
 // Configure CORS (adjust origins as needed)
 const corsOptions = {
-  origin: ['https://bookingdotcom-gkgr.onrender.com'], // Replace with your client-side app origin
+  origin: ['https://clonebookingdotcom.netlify.app/'], // Replace with your client-side app origin
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -72,5 +72,5 @@ app.use('/', router);// Mount at the root path
 
 const port = process.env.PORT || 4000;
 app.listen(port, () => {
-  console.log(`Server listening on https://bookingdotcom-gkgr.onrender.com port: ${port}`);
+  console.log(`Server listening on https://bookingdotcom-gkgr.onrender.com:${port}`);
 });

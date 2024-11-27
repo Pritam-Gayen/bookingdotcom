@@ -27,3 +27,4 @@ yarn-error.log*
 .netlify
 /build
 /Client/node_modules
+/Server/node_modules
