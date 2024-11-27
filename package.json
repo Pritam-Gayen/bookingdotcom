@@ -34,8 +34,7 @@
   "scripts": {
     "build:client": "react-scripts build",
     "build:server": "node src/Server.js",
-    "start:server": "node src/Server.js",
-    "build": "npm run build:client && npm run build:server"
+    "build": "npm run build:server && npm run build:client"
   },
   "eslintConfig": {
     "extends": [
