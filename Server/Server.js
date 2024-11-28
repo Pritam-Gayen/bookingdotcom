@@ -45,7 +45,7 @@ router.post('/register', async (req, res) => {
     const decodedToken = jwt.decode(token);
 
     // Create a new user document
-    var userData = {
+    const userData = { // Use const for variable declaration
       name: decodedToken.name,
       email: decodedToken.email,
     };
@@ -60,6 +60,7 @@ router.post('/register', async (req, res) => {
   }
   catch (error) {
     console.error(error);
+    // Handle specific errors here (e.g., 401 for JWT verification failure)
     res.status(500).json({ error: 'Authentication failed' });
   }
 });
