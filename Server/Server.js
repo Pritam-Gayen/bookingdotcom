@@ -14,7 +14,7 @@ const router = express.Router();
 
 // Configure CORS (adjust origins as needed)
 const corsOptions = {
-  origin: ['https://clonebookingdotcom.netlify.app/'], // Replace with your client-side app origin
+  origin: ['https://clonebookingdotcom.netlify.app'], // Replace with your client-side app origin
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
