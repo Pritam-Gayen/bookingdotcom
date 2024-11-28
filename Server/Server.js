@@ -5,12 +5,13 @@ const express = require('express');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const { getStorage } = require('firebase/storage');
-const storage = getStorage(admin.app());
+
 
 admin.initializeApp({
   credential: admin.credential.cert(process.env.FIREBASE_SERVICE_ACCOUNT_KEY)
 });
 
+const storage = getStorage(admin.app());
 const app = express();
 const router = express.Router();
 
