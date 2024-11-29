@@ -11,8 +11,9 @@ admin.initializeApp({
   credential: admin.credential.cert(process.env.FIREBASE_SERVICE_ACCOUNT_KEY)
 });
 
-const storage = getStorage(admin.app());
+
 const app = express();
+const storage = getStorage(admin.app());
 const router = express.Router();
 
 // Configure CORS (adjust origins as needed)
