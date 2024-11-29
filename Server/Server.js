@@ -4,7 +4,7 @@ const admin = require('firebase-admin');
 const express = require('express');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
-const { getStorage } = require('firebase/storage');
+const { getStorage } = require('@firebase/storage');
 
 
 admin.initializeApp({
