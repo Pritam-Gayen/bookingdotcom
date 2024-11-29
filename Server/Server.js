@@ -13,7 +13,7 @@ admin.initializeApp({
 
 
 const app = express();
-const storage = getStorage();
+// const storage = getStorage(admin.app());
 const router = express.Router();
 
 // Configure CORS (adjust origins as needed)
