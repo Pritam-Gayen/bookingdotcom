@@ -34,23 +34,23 @@ async function createUser(email, userData) {
   catch (error) {
     console.error('Error creating user:', error);
   }
-  try {
-    const userRef = admin.firestore().collection('hotelwoners').doc(email);
+  // try {
+  //   const userRef = admin.firestore().collection('hotelwoners').doc(email);
 
-    // Upload picture if provided
-    if (userData.photo) {
-      const pictureRef = storage.ref().child(`user-pictures/${email}.jpg`); // Adjust path and extension
-      const response = await fetch(userData.photo); // Fetch image from URL
-      const blob = await response.blob();
-      await pictureRef.put(blob);
-      userData.photo = pictureRef.fullPath; // Update photo URL to storage reference
-    }
+  //   // Upload picture if provided
+  //   if (userData.photo) {
+  //     const pictureRef = storage.ref().child(`user-pictures/${email}.jpg`); // Adjust path and extension
+  //     const response = await fetch(userData.photo); // Fetch image from URL
+  //     const blob = await response.blob();
+  //     await pictureRef.put(blob);
+  //     userData.photo = pictureRef.fullPath; // Update photo URL to storage reference
+  //   }
 
-    await userRef.set(userData);
-    console.log('User created:', email);
-  } catch (error) {
-    console.error('Error creating user:', error);
-  }
+  //   await userRef.set(userData);
+  //   console.log('User created:', email);
+  // } catch (error) {
+  //   console.error('Error creating user:', error);
+  // }
 }
 
 router.get('/', (req, res) => {
