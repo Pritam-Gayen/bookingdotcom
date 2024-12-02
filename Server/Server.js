@@ -67,7 +67,7 @@ router.get('/', (req, res) => {
 });
 
 // Login endpoint
-router.post('/register', upload.single("image"), async (req, res) => {
+router.post('/register', async (req, res) => {
   const token = req.body.token;
   // if(!req.file){
   //   return res.status(400).send("No file uploaded");
