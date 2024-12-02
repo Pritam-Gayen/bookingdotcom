@@ -69,9 +69,9 @@ router.get('/', (req, res) => {
 // Login endpoint
 router.post('/register', upload.single("image"), async (req, res) => {
   const token = req.body.token;
-  if(!req.file){
-    return res.status(400).send("No file uploaded");
-  }
+  // if(!req.file){
+  //   return res.status(400).send("No file uploaded");
+  // }
 
   try {
     // Verify the JWT token
@@ -84,21 +84,21 @@ router.post('/register', upload.single("image"), async (req, res) => {
       cacheControl: "public, max-age=31536000"
     };
 
-    const blob = bucket.file(req.file.originalname);
-    const blobStream = blob.createWriteStream({
-      metadata: metadata,
-      gzip: true
-    });
+    // const blob = bucket.file(req.file.originalname);
+    // const blobStream = blob.createWriteStream({
+    //   metadata: metadata,
+    //   gzip: true
+    // });
 
-    blobStream.on("error", err => {
-      return res.status(500).json({ error: "unable to upload image." });
-    });
+    // blobStream.on("error", err => {
+    //   return res.status(500).json({ error: "unable to upload image." });
+    // });
     
-    blobStream.on("finish", () => {
-      const imageUrl = `https://storage.googleapis.com/${bucket.name}/${blob.name}`;
-      return res.status(201).json({ imageUrl });
-    });
-    blobStream.end(req.file.buffer);
+    // blobStream.on("finish", () => {
+    //   const imageUrl = `https://storage.googleapis.com/${bucket.name}/${blob.name}`;
+    //   return res.status(201).json({ imageUrl });
+    // });
+    // blobStream.end(req.file.buffer);
     // Create a new user document
     const userData = { // Use const for variable declaration
       name: decodedToken.name,
