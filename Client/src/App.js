@@ -19,11 +19,10 @@ function App() {
   const [showListYourProperty, setshowListYourProperty] = useState(true);
   const [showRegister, setshowRegister] = useState(true);
   const [showSignIn, setshowSignIn] = useState(true);
-
+  const { pathname } = useLocation();
 
   useEffect(() => {
     // Check the current URL and update state accordingly
-    const { pathname } = useLocation();
     if (pathname === '/') {
       setshowBottomNav(true);
       setshowListYourProperty(true);
