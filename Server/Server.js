@@ -5,21 +5,12 @@ const express = require('express');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const { getStorage } = require('@firebase/storage');
-const uuid = require("uuid-v4");
-const multer = require("multer");
 
-const storageBucket = process.env.STORAGEBUCKET;
-// const dbUrl = "";
 
 admin.initializeApp({
-  credential: admin.credential.cert(process.env.FIREBASE_SERVICE_ACCOUNT_KEY),
-  // databaseUrl: dbUrl,
-  storageBucket: storageBucket
+  credential: admin.credential.cert(process.env.FIREBASE_SERVICE_ACCOUNT_KEY)
 });
 
-const bucket = admin.storage().bucket();
-const storage = multer.memoryStorage();
-const upload = multer({ storage: storage });
 
 const app = express();
 // const storage = getStorage(admin.app());
@@ -67,38 +58,13 @@ router.get('/', (req, res) => {
 });
 
 // Login endpoint
-router.post('/register', upload.single("image"), async (req, res) => {
+router.post('/register', async (req, res) => {
   const token = req.body.token;
-  if(!req.file){
-    return res.status(400).send("No file uploaded");
-  }
 
   try {
     // Verify the JWT token
     const decodedToken = jwt.decode(token);
-    const metadata = {
-      metadata: {
-        firebaseStorageDownloadToken: uuid()
-      },
-      contentType: req.file.mimetype,
-      cacheControl: "public, max-age=31536000"
-    };
 
-    const blob = bucket.file(req.file.originalname);
-    const blobStream = blob.createWriteStream({
-      metadata: metadata,
-      gzip: true
-    });
-
-    blobStream.on("error", err => {
-      return res.status(500).json({ error: "unable to upload image." });
-    });
-    
-    blobStream.on("finish", () => {
-      const imageUrl = `https://storage.googleapis.com/${bucket.name}/${blob.name}`;
-      return res.status(201).json({ imageUrl });
-    });
-    blobStream.end(req.file.buffer);
     // Create a new user document
     const userData = { // Use const for variable declaration
       name: decodedToken.name,

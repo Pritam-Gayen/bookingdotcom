@@ -21,7 +21,7 @@ const LoginButton = ({setloginState, setUserPhoto, setUserName}) => {
     setUserPhoto(userPhoto);
     setUserName(userName);
     
-    axios.post('https://bookingdotcom-gkgr.onrender.com/register',{image: userPhoto}, {token: response.credential,})
+    axios.post('https://bookingdotcom-gkgr.onrender.com/register', {token: response.credential,})
     .then(res => res.data)
     .then(data => {
       console.log('User data:', data);
