@@ -5,7 +5,7 @@ import IndiaFlag from "./StaticImages/Indiaflag.png";
 import { Link } from 'react-router-dom';
 import { Tooltip } from 'react-tooltip';
 
-function Navbar({ showBottomNav, showListYourProperty, showRegister, showSignIn, onRegisterClick, onHomeClick, loginState, userPhoto, userName }) {
+function Navbar({ showBottomNav, showListYourProperty, showRegister, showSignIn, onRegisterClick, onListyourpropertyClick, onHomeClick, loginState, userPhoto, userName }) {
     return (
         <header class="blue-bg">
             <Tooltip id="my-tooltip" className='tooltip-class'/>
@@ -43,7 +43,7 @@ function Navbar({ showBottomNav, showListYourProperty, showRegister, showSignIn,
                         </div>
                         {showListYourProperty && 
                             <div class="nav-item-custom" data-tooltip-id="my-tooltip" data-tooltip-content="Feature in development" data-tooltip-place="top">
-                                List Your Property
+                                <Link class='no-underline' to="/listyourproperty" onClick={onListyourpropertyClick}>List Your Property</Link>
                             </div>
                         }
                         <div class="d-flex register-sign-in">
