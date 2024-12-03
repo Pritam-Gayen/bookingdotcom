@@ -1,6 +1,6 @@
 // src/App.js
 import React, { useState, useEffect} from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import Navbar from './Navbar';
 import Home from './Home';
@@ -68,13 +68,24 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+  // Check the current URL and update state accordingly
+  const { pathname } = useLocation();
+  if (pathname === '/') {
+    setshowBottomNav(true);
+    setshowListYourProperty(true);
+  } else {
+    // Set appropriate values based on the URL
+  }
+}, [useLocation]);
+
   return (
     <GoogleOAuthProvider clientId={clientID}>
       <Router>
         <div className="App">
           <Navbar showBottomNav={showBottomNav} showListYourProperty={showListYourProperty} showRegister={showRegister} showSignIn={showSignIn} onRegisterClick={handleRegisterClick} onListyourpropertyClick={handleListyourpropertyClick} onHomeClick={handleHomeClick} loginState={loginState} userPhoto={userPhoto} userName={userName}/>
           <Routes>
-            <Route path="/" element={<Home loginState={loginState} showBottomNav={()=>setshowBottomNav(true)} showListYourProperty={()=>setshowListYourProperty(true)} showRegister={showRegister} showSignIn={showSignIn}/>} />
+            <Route path="/" element={<Home loginState={loginState} showRegister={showRegister} showSignIn={showSignIn}/>} />
             <Route path="/register" element={<LoginButton setloginState={setloginState} setUserPhoto={setUserPhoto} setUserName={setUserName}/>} />
             <Route path="/listyourproperty" element={<ListYourProperty setloginState={setloginState} setUserPhoto={setUserPhoto} setUserName={setUserName}/>} />
           </Routes>
