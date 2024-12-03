@@ -1,5 +1,5 @@
 // src/App.js
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import Navbar from './Navbar';
@@ -20,6 +20,17 @@ function App() {
   const [showRegister, setshowRegister] = useState(true);
   const [showSignIn, setshowSignIn] = useState(true);
 
+
+  useEffect(() => {
+    // Check the current URL and update state accordingly
+    const { pathname } = useLocation();
+    if (pathname === '/') {
+      setshowBottomNav(true);
+      setshowListYourProperty(true);
+    }
+  }, [useLocation]);
+
+  
   const [loginState, setloginState] = useState(() => {
     // Retrieve login state from localStorage on initial load
     return localStorage.getItem('loginState') === 'true';
@@ -68,28 +79,19 @@ function App() {
     }
   }, []);
 
-  useEffect(() => {
-  // Check the current URL and update state accordingly
-  const { pathname } = useLocation();
-  if (pathname === '/') {
-    setshowBottomNav(true);
-    setshowListYourProperty(true);
-  } else {
-    // Set appropriate values based on the URL
-  }
-}, [useLocation]);
+
 
   return (
     <GoogleOAuthProvider clientId={clientID}>
       <Router>
         <div className="App">
-          <Navbar showBottomNav={showBottomNav} showListYourProperty={showListYourProperty} showRegister={showRegister} showSignIn={showSignIn} onRegisterClick={handleRegisterClick} onListyourpropertyClick={handleListyourpropertyClick} onHomeClick={handleHomeClick} loginState={loginState} userPhoto={userPhoto} userName={userName}/>
+          <Navbar showBottomNav={showBottomNav} showListYourProperty={showListYourProperty} showRegister={showRegister} showSignIn={showSignIn} onRegisterClick={handleRegisterClick} onListyourpropertyClick={handleListyourpropertyClick} onHomeClick={handleHomeClick} loginState={loginState} userPhoto={userPhoto} userName={userName} />
           <Routes>
-            <Route path="/" element={<Home loginState={loginState} showRegister={showRegister} showSignIn={showSignIn}/>} />
-            <Route path="/register" element={<LoginButton setloginState={setloginState} setUserPhoto={setUserPhoto} setUserName={setUserName}/>} />
-            <Route path="/listyourproperty" element={<ListYourProperty setloginState={setloginState} setUserPhoto={setUserPhoto} setUserName={setUserName}/>} />
+            <Route path="/" element={<Home loginState={loginState} showRegister={showRegister} showSignIn={showSignIn} />} />
+            <Route path="/register" element={<LoginButton setloginState={setloginState} setUserPhoto={setUserPhoto} setUserName={setUserName} />} />
+            <Route path="/listyourproperty" element={<ListYourProperty setloginState={setloginState} setUserPhoto={setUserPhoto} setUserName={setUserName} />} />
           </Routes>
-          <Footer/>
+          <Footer />
         </div>
       </Router>
     </GoogleOAuthProvider>
