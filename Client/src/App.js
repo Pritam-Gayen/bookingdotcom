@@ -7,7 +7,7 @@ import Home from './Home';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import LoginButton from './login';
 import Footer from './Footer.js';
-import { faLeaf } from '@fortawesome/free-solid-svg-icons';
+
 
 // import LogoutButton from './logout';
 
