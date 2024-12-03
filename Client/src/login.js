@@ -25,7 +25,7 @@ const LoginButton = ({setloginState, setUserPhoto, setUserName}) => {
     .then(res => res.data)
     .then(data => {
       console.log('User data:', data);
-      navigate('/');
+      navigate('https://clonebookingdotcom.netlify.app');
     })
     .catch(error => {
       console.error('Login error:', error);
