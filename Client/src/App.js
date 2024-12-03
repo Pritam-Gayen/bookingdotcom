@@ -12,7 +12,7 @@ import ListYourProperty from './ListYourProperty';
 
 // import LogoutButton from './logout';
 
-const clientID = '2518369344-q9dpo7qi8cf6miot94a0f4tiqhnslanc.apps.googleusercontent.com';
+const clientID = JSON.stringify(process.env.CLIENTID);
 
 function App() {
   const [showBottomNav, setshowBottomNav] = useState(true);
@@ -30,7 +30,7 @@ function App() {
     }
   }, [useLocation]);
 
-  
+
   const [loginState, setloginState] = useState(() => {
     // Retrieve login state from localStorage on initial load
     return localStorage.getItem('loginState') === 'true';
