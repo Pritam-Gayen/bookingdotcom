@@ -27,7 +27,7 @@ app.use(cors(corsOptions));
 
 async function createUser(email, userData) {
   try {
-    const userRef = admin.firestore().collection('hotelwoners').doc(email);
+    const userRef = admin.firestore().collection('traveller').doc(email);
     await userRef.set(userData);
     console.log('User created:', email);
   }
