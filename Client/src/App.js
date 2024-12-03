@@ -7,6 +7,7 @@ import Home from './Home';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import LoginButton from './login';
 import Footer from './Footer.js';
+import { faLeaf } from '@fortawesome/free-solid-svg-icons';
 
 // import LogoutButton from './logout';
 
@@ -14,6 +15,10 @@ const clientID = '2518369344-q9dpo7qi8cf6miot94a0f4tiqhnslanc.apps.googleusercon
 
 function App() {
   const [showBottomNav, setshowBottomNav] = useState(true);
+  const [showListYourProperty, setshowListYourProperty] = useState(true);
+  const [showRegister, setshowRegister] = useState(true);
+  const [showSignIn, setshowSignIn] = useState(true);
+
   const [loginState, setloginState] = useState(() => {
     // Retrieve login state from localStorage on initial load
     return localStorage.getItem('loginState') === 'true';
@@ -23,10 +28,16 @@ function App() {
 
   const handleRegisterClick = () => {
     setshowBottomNav(false);
+    setshowListYourProperty(false);
+    setshowRegister(false);
+    setshowSignIn(false);
   };
 
   const handleHomeClick = () => {
     setshowBottomNav(true);
+    setshowListYourProperty(true);
+    setshowRegister(true);
+    setshowSignIn(true);
   };
 
   useEffect(() => {
@@ -55,7 +66,7 @@ function App() {
     <GoogleOAuthProvider clientId={clientID}>
       <Router>
         <div className="App">
-          <Navbar showBottomNav={showBottomNav} onRegisterClick={handleRegisterClick} onHomeClick={handleHomeClick} loginState={loginState} userPhoto={userPhoto} userName={userName}/>
+          <Navbar showBottomNav={showBottomNav} showListYourProperty={showListYourProperty} showRegister={showRegister} showSignIn={showSignIn} onRegisterClick={handleRegisterClick} onHomeClick={handleHomeClick} loginState={loginState} userPhoto={userPhoto} userName={userName}/>
           <Routes>
             <Route path="/" element={<Home loginState={loginState} />} />
             <Route path="/register" element={<LoginButton setloginState={setloginState} setUserPhoto={setUserPhoto} setUserName={setUserName}/>} />
