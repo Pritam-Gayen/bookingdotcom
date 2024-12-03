@@ -28,7 +28,7 @@ function App() {
       setshowBottomNav(true);
       setshowListYourProperty(true);
     }
-  }, [useLocation]);
+  }, [pathname]);
 
 
   const [loginState, setloginState] = useState(() => {
