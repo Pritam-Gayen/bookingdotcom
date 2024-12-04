@@ -84,7 +84,13 @@ router.post('/register', async (req, res) => {
   }
 });
 
-
+router.post('/hotels', async (req, res) => {
+  const hotelRef = admin.firestore().collection('hotels');
+  res.status(200).json({
+      message: 'Hotel details',
+      hotel: hotelRef,
+    });
+});
 
 
 // ListYourProperty endpoint

@@ -24,7 +24,7 @@ const ListYourProperty = ({setloginState, setUserPhoto, setUserName}) => {
     .then(res => res.data)
     .then(data => {
       console.log('User data:', data);
-      navigate('/');
+      navigate('/edithotels');
     })
     .catch(error => {
       console.error('Login error:', error);
