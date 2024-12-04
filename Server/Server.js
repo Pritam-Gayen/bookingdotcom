@@ -88,11 +88,11 @@ router.post('/hotels', async (req, res) => {
   try {
     const hotelRef = admin.firestore().collection('hotels');
     const hotelsSnapshot = await hotelRef.get();  // Fetch hotel documents
-    const hotels = hotelsSnapshot.docs.map(doc => doc.data()); // Extract data
-    console.log("hotels :", hotels);
+    // const hotels = hotelsSnapshot.docs.map(doc => doc.data()); // Extract data
+    console.log("hotels :", hotelsSnapshot);
     res.status(200).json({
       message: 'Hotel details',
-      hotels: hotels // Send actual hotel data
+      hotels: hotelsSnapshot // Send actual hotel data
     });
   } catch (err) {
     console.error(err);

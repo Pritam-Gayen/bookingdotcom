@@ -6,11 +6,19 @@ function EditHotels({ userName }) {
     // const navigate = useNavigate();
 
     useEffect(() => {
-        // Fetch hotels from server (replace with your actual API call)
         const fetchHotels = async () => {
-            const response = await fetch('https://bookingdotcom-gkgr.onrender.com/hotels'); // Replace with your API endpoint
-            const data = await response.json();
-            setHotels(data.hotel);
+            try {
+                const response = await fetch('https://bookingdotcom-gkgr.onrender.com/hotels');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                setHotels(data.hotels); // Assuming your API returns "hotel" as the key for the list
+                console.log(data.hotels);
+            } catch (error) {
+                console.error('Error fetching hotels:', error);
+                // Handle errors gracefully, e.g., display an error message to the user
+            }
         };
 
         fetchHotels();
@@ -18,7 +26,7 @@ function EditHotels({ userName }) {
 
     const handleAddProperty = () => {
         // navigate('/addproperty'); // Assuming '/add-property' is the route for adding a new hotel
-        console.log("hotels ",hotels);
+        console.log("hotels ", hotels);
     };
 
     const filteredHotels = hotels.filter(hotel => hotel.hotelowner === userName);
