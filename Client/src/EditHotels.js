@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 function EditHotels({ userName }) {
     const [hotels, setHotels] = useState([]);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     useEffect(() => {
         // Fetch hotels from server (replace with your actual API call)
