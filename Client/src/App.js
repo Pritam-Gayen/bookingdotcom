@@ -1,6 +1,6 @@
 // src/App.js
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Navbar from './Navbar';
 import Home from './Home';
@@ -20,15 +20,7 @@ function App() {
   const [showListYourProperty, setshowListYourProperty] = useState(true);
   const [showRegister, setshowRegister] = useState(true);
   const [showSignIn, setshowSignIn] = useState(true);
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    // Check the current URL and update state accordingly
-    if (pathname === '/') {
-      setshowBottomNav(true);
-      setshowListYourProperty(true);
-    }
-  }, [pathname]);
+ 
 
 
   const [loginState, setloginState] = useState(() => {
