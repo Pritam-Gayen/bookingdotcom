@@ -8,6 +8,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import LoginButton from './login';
 import Footer from './Footer.js';
 import ListYourProperty from './ListYourProperty';
+import EditHotels from './EditHotels.js';
 
 
 // import LogoutButton from './logout';
@@ -82,7 +83,7 @@ function App() {
             <Route path="/register" element={<LoginButton setloginState={setloginState} setUserPhoto={setUserPhoto} setUserName={setUserName} setshowBottomNav={setshowBottomNav} setshowListYourProperty={setshowListYourProperty} />} />
             <Route path="/listyourproperty" element={<ListYourProperty setloginState={setloginState} setUserPhoto={setUserPhoto} setUserName={setUserName} />} />
             <Route path="/edithotels" element={<EditHotels  userName={userName}/>} />
-            <Route path="/addproperty" element={<HotelForm  userName={userName}/>} />
+            {/* <Route path="/addproperty" element={<HotelForm  userName={userName}/>} /> */}
           </Routes>
           <Footer />
         </div>
