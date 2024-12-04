@@ -12,7 +12,7 @@ import ListYourProperty from './ListYourProperty';
 
 // import LogoutButton from './logout';
 
-const clientID = JSON.stringify(process.env.CLIENTID);
+const clientID = process.env.CLIENTID;
 // const clientID = '2518369344-q9dpo7qi8cf6miot94a0f4tiqhnslanc.apps.googleusercontent.com';
 
 function App() {
