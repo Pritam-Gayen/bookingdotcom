@@ -5,7 +5,7 @@ import axios from 'axios';
 import {jwtDecode} from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
 
-const LoginButton = ({setloginState, setUserPhoto, setUserName}) => {
+const LoginButton = ({setloginState, setUserPhoto, setUserName, setshowBottomNav, setshowListYourProperty}) => {
   const navigate = useNavigate();
   const onSuccess = (response) => {
     // console.log('Login Success:', response);
@@ -25,6 +25,8 @@ const LoginButton = ({setloginState, setUserPhoto, setUserName}) => {
     .then(res => res.data)
     .then(data => {
       console.log('User data:', data);
+      setshowBottomNav(true);
+      setshowListYourProperty(true);
       navigate('/');
     })
     .catch(error => {
