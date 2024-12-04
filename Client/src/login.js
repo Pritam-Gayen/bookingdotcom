@@ -5,7 +5,7 @@ import axios from 'axios';
 import {jwtDecode} from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
 
-const LoginButton = ({setloginState, setUserPhoto, setUserName, setshowBottomNav, setshowListYourProperty}) => {
+const LoginButton = ({setuserEmail, setloginState, setUserPhoto, setUserName, setshowBottomNav, setshowListYourProperty}) => {
   const navigate = useNavigate();
   const onSuccess = (response) => {
     // console.log('Login Success:', response);
@@ -13,13 +13,16 @@ const LoginButton = ({setloginState, setUserPhoto, setUserName, setshowBottomNav
     const decodedToken = jwtDecode(response.credential);
     const userName = decodedToken.name;
     const userPhoto = decodedToken.picture;
+    const userEmail = decodedToken.email;
     console.log('User Name:', userName);
     console.log('User Photo:', userPhoto);
+    console.log('User Email:', userEmail);
     setloginState(true);
     localStorage.setItem('userPhoto', userPhoto);
     localStorage.setItem('userName', userName);
     setUserPhoto(userPhoto);
     setUserName(userName);
+    setuserEmail(userEmail);
     
     axios.post('https://bookingdotcom-gkgr.onrender.com/register', {token: response.credential,})
     .then(res => res.data)

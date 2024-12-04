@@ -29,6 +29,7 @@ function App() {
   });
   const [userPhoto, setUserPhoto] = useState('');
   const [userName, setUserName] = useState('');
+  const [userEmail, setuserEmail] = useState('');
 
   const handleRegisterClick = () => {
     setshowBottomNav(false);
@@ -80,9 +81,9 @@ function App() {
           <Navbar showBottomNav={showBottomNav} showListYourProperty={showListYourProperty} showRegister={showRegister} showSignIn={showSignIn} onRegisterClick={handleRegisterClick} onListyourpropertyClick={handleListyourpropertyClick} onHomeClick={handleHomeClick} loginState={loginState} userPhoto={userPhoto} userName={userName} />
           <Routes>
             <Route path="/" element={<Home loginState={loginState} showRegister={showRegister} showSignIn={showSignIn} />} />
-            <Route path="/register" element={<LoginButton setloginState={setloginState} setUserPhoto={setUserPhoto} setUserName={setUserName} setshowBottomNav={setshowBottomNav} setshowListYourProperty={setshowListYourProperty} />} />
+            <Route path="/register" element={<LoginButton setuserEmail={setuserEmail} setloginState={setloginState} setUserPhoto={setUserPhoto} setUserName={setUserName} setshowBottomNav={setshowBottomNav} setshowListYourProperty={setshowListYourProperty} />} />
             <Route path="/listyourproperty" element={<ListYourProperty setloginState={setloginState} setUserPhoto={setUserPhoto} setUserName={setUserName} />} />
-            <Route path="/edithotels" element={<EditHotels  userName={userName}/>} />
+            <Route path="/edithotels" element={<EditHotels  userEmail={userEmail}/>} />
             {/* <Route path="/addproperty" element={<HotelForm  userName={userName}/>} /> */}
           </Routes>
           <Footer />

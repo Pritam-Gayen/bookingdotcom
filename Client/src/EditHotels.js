@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // import { useNavigate } from 'react-router-dom';
 
-function EditHotels({ userName }) {
+function EditHotels({ userEmail }) {
     const [hotels, setHotels] = useState([]);
     // const navigate = useNavigate();
 
@@ -29,7 +29,7 @@ function EditHotels({ userName }) {
         console.log("hotels ", hotels);
     };
 
-    const filteredHotels = hotels.filter(hotel => hotel.hotelowner === userName);
+    const filteredHotels = hotels.filter(hotel => hotel.hotelwoner === userEmail);
 
     return (
         <div>
