@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import './HotelForm.css';
 const HotelForm = ({ userEmail }) => {
     const [hotelName, setHotelName] = useState('');
     const [address, setAddress] = useState('');
@@ -29,7 +29,8 @@ const HotelForm = ({ userEmail }) => {
                 city: city,
                 description: description,
                 rating: rating,
-                hotelwoner: userEmail
+                hotelwoner: userEmail,
+                images: images
             }
         console.log("hotelData ", hotelData);
         navigate('/edithotels');
@@ -37,7 +38,7 @@ const HotelForm = ({ userEmail }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <div>
+            <div className='hotel-form-input'>
                 <label htmlFor="hotelName">Hotel Name:</label>
                 <input
                     type="text"
@@ -47,7 +48,7 @@ const HotelForm = ({ userEmail }) => {
                 />
             </div>
 
-            <div>
+            <div className='hotel-form-input'>
                 <label htmlFor="address">Hotel Address:</label>
                 <input
                     type="text"
@@ -57,7 +58,7 @@ const HotelForm = ({ userEmail }) => {
                 />
             </div>
 
-            <div>
+            <div className='hotel-form-input'>
                 <label htmlFor="city">City:</label>
                 <input
                     type="text"
@@ -67,7 +68,7 @@ const HotelForm = ({ userEmail }) => {
                 />
             </div>
 
-            <div>
+            <div className='hotel-form-input'>
                 <label htmlFor="description">Hotel Description:</label>
                 <input
                     type="text"
@@ -77,7 +78,7 @@ const HotelForm = ({ userEmail }) => {
                 />
             </div>
 
-            <div>
+            <div className='hotel-form-input'>
                 <label htmlFor="rating">Hotel Rating:</label>
                 <input
                     type="text"
@@ -87,7 +88,7 @@ const HotelForm = ({ userEmail }) => {
                 />
             </div>
 
-            <div>
+            <div className='hotel-form-input'>
                 <label htmlFor="images">Images:</label>
                 <input type="file" id="images" multiple onChange={handleImageChange} />
                 {images.map((image, index) => (
