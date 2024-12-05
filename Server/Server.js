@@ -4,6 +4,10 @@ const admin = require('firebase-admin');
 const express = require('express');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
+const multer = require('multer');
+
+const upload = multer({ dest: 'uploads/' }); // Configure multer for file storage
+
 const { getStorage } = require('@firebase/storage');
 
 
@@ -94,7 +98,7 @@ router.get('/hotels', async (req, res) => {
       message: 'Hotel details',
       hotels: hotels
     });
-  } 
+  }
   catch (err) {
     console.error(err);
     res.status(500).json({ message: 'Error fetching hotels' });
@@ -134,14 +138,38 @@ router.post('/listyourproperty', async (req, res) => {
 });
 
 // Ads Hotel endpoint
-router.post('/addhotel', async (req, res) => {
-  const hotel = req.body.hotel;
-  console.log("hotel: ", hotel);
-  // Send successful response with user data
-  res.status(200).json({
-    message: 'Successfully Uploaded',
-    hotel: hotel.name,
-  });
+// router.post('/addhotel', upload.array('images', 8), async (req, res) => {
+//   const hotel = req.body.hotel;
+//   const files = req.body.hetel.files;
+//   console.log("hotel: ", hotel);
+//   console.log("Images: ", files);
+//   // Send successful response with user data
+//   res.status(200).json({
+//     message: 'Successfully Uploaded',
+//     hotel: hotel.name,
+//   });
+// });
+
+app.post('/addhotel', upload.array('images'), async (req, res) => {
+  try {
+    const hotel = req.body.hotel;
+    const files = req.files; // Access uploaded files directly from multer
+
+    console.log("hotel: ", hotel);
+    console.log("Images: ", files);
+
+    // Process hotel data and uploaded images (implementation depends on your backend logic)
+
+    // Send successful response with hotel data
+    res.status(200).json({
+      message: 'Successfully Uploaded',
+      hotel: { name: hotel.name }, // Include desired hotel data
+    });
+  } 
+  catch (error) {
+    console.error('Processing error:', error);
+    res.status(500).json({ message: 'Internal Server Error' }); // Handle errors appropriately
+  }
 });
 
 
