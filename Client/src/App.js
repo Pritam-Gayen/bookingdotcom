@@ -9,7 +9,7 @@ import LoginButton from './login';
 import Footer from './Footer.js';
 import ListYourProperty from './ListYourProperty';
 import EditHotels from './EditHotels.js';
-
+import HotelForm from './HotelForm.js';
 
 // import LogoutButton from './logout';
 
