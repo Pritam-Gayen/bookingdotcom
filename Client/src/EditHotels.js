@@ -26,6 +26,7 @@ function EditHotels({ userEmail }) {
     }, []);
 
     useEffect(() => {
+        console.log(userEmail);
         if (hotels && userEmail) {
             setfilteredHotels(hotels.filter(hotel => hotel.hotelwoner === userEmail));
         } else {
@@ -36,7 +37,7 @@ function EditHotels({ userEmail }) {
 
     const handleAddProperty = () => {
         // navigate('/addproperty'); // Assuming '/add-property' is the route for adding a new hotel
-        console.log("hotels ", hotels);
+        console.log("filtered hotels ", filteredHotels);
     };
 
     return (
