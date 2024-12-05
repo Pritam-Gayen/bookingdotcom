@@ -4,7 +4,7 @@ import axios from 'axios';
 import {jwtDecode} from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
 
-const ListYourProperty = ({setloginState, setUserPhoto, setUserName}) => {
+const ListYourProperty = ({setuserEmail, setloginState, setUserPhoto, setUserName}) => {
   const navigate = useNavigate();
   const onSuccess = (response) => {
     // console.log('Login Success:', response);
@@ -19,7 +19,7 @@ const ListYourProperty = ({setloginState, setUserPhoto, setUserName}) => {
     localStorage.setItem('userName', userName);
     setUserPhoto(userPhoto);
     setUserName(userName);
-    
+    setuserEmail(decodedToken.email);
     axios.post('https://bookingdotcom-gkgr.onrender.com/listyourproperty', {token: response.credential,})
     .then(res => res.data)
     .then(data => {
