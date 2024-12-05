@@ -24,7 +24,7 @@ function EditHotels({ userEmail }) {
         };
 
         fetchHotels();
-    }, []);
+    }, [hotels,  userEmail]);
 
     const handleAddProperty = () => {
         // navigate('/addproperty'); // Assuming '/add-property' is the route for adding a new hotel
