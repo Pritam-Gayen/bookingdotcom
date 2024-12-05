@@ -133,8 +133,16 @@ router.post('/listyourproperty', async (req, res) => {
   }
 });
 
-
-
+// Ads Hotel endpoint
+router.post('/addhotel', async (req, res) => {
+  const hotel = req.body.hotelData;
+  console.log("hotel: ", hotel);
+  // Send successful response with user data
+  res.status(200).json({
+    message: 'Successfully Uploaded',
+    hotel: hotel.name,
+  });
+});
 
 
 app.use(express.json());

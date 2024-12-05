@@ -21,19 +21,27 @@ const HotelForm = ({ userEmail }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
+
         // Handle form submission here, e.g., send data to server
-        const hotelData={
-                name: hotelName,
-                address: address,
-                city: city,
-                description: description,
-                rating: rating,
-                hotelwoner: userEmail,
-                images: images
-            }
+        const hotelData = {
+            name: hotelName,
+            address: address,
+            city: city,
+            description: description,
+            rating: rating,
+            hotelwoner: userEmail,
+            images: images
+        }
         console.log("hotelData ", hotelData);
-        navigate('/edithotels');
+        axios.post('https://bookingdotcom-gkgr.onrender.com/addhotel', hotelData)
+        .then(res => res.data)
+        .then(data => {
+            console.log('Successful upload:', data);
+            navigate('/edithotels');
+        })
+        .catch(error => {
+            console.error('upload error:', error);
+        });
     };
 
     return (
