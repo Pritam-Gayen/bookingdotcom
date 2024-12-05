@@ -16,7 +16,6 @@ function EditHotels({ userEmail }) {
                 const data = await response.json();
                 setHotels(data.hotels); // Assuming your API returns "hotel" as the key for the list
                 console.log(data.hotels);
-                setfilteredHotels(hotels.filter(hotel => hotel.hotelwoner === userEmail));
             } catch (error) {
                 console.error('Error fetching hotels:', error);
                 // Handle errors gracefully, e.g., display an error message to the user
