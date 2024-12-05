@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const HotelForm = ({ userEmail }) => {
     const [hotelName, setHotelName] = useState('');
@@ -9,6 +9,7 @@ const HotelForm = ({ userEmail }) => {
     const [rating, setRating] = useState('');
     const [hotelOwner, setHotelOwner] = useState('');
     const [images, setImages] = useState([]);
+    const navigate = useNavigate();
 
     const handleImageChange = (e) => {
         const files = Array.from(e.target.files);
@@ -31,7 +32,7 @@ const HotelForm = ({ userEmail }) => {
             hotelwoner: setHotelOwner(userEmail),
         }
         console.log("hotelData ", hotelData);
-        Navigate('/edithotels');
+        navigate('/edithotels');
     };
 
     return (

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './EditHotels.css';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function EditHotels({ userEmail }) {
     const [hotels, setHotels] = useState([]);
     const [filteredHotels, setfilteredHotels] = useState([]);
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchHotels = async () => {
