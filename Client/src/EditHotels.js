@@ -37,8 +37,8 @@ function EditHotels({ userEmail }) {
 
 
     const handleAddProperty = () => {
-        // navigate('/addproperty'); // Assuming '/add-property' is the route for adding a new hotel
-        console.log("filtered hotels ", filteredHotels);
+        navigate('/addproperty'); // Assuming '/add-property' is the route for adding a new hotel
+        // console.log("filtered hotels ", filteredHotels);
     };
 
     return (

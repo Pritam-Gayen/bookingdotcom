@@ -84,7 +84,7 @@ function App() {
             <Route path="/register" element={<LoginButton setuserEmail={setuserEmail} setloginState={setloginState} setUserPhoto={setUserPhoto} setUserName={setUserName} setshowBottomNav={setshowBottomNav} setshowListYourProperty={setshowListYourProperty} />} />
             <Route path="/listyourproperty" element={<ListYourProperty setuserEmail={setuserEmail} setloginState={setloginState} setUserPhoto={setUserPhoto} setUserName={setUserName} />} />
             <Route path="/edithotels" element={<EditHotels  userEmail={userEmail}/>} />
-            {/* <Route path="/addproperty" element={<HotelForm  userName={userName}/>} /> */}
+            <Route path="/addproperty" element={<HotelForm  userEmail={userEmail}/>} />
           </Routes>
           <Footer />
         </div>
