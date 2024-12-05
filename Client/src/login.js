@@ -14,6 +14,7 @@ const LoginButton = ({setuserEmail, setloginState, setUserPhoto, setUserName, se
     const userName = decodedToken.name;
     const userPhoto = decodedToken.picture;
     const userEmail = decodedToken.email;
+    console.log(decodedToken);
     console.log('User Name:', userName);
     console.log('User Photo:', userPhoto);
     console.log('User Email:', userEmail);
