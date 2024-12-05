@@ -23,7 +23,7 @@ function EditHotels({ userEmail }) {
             }
         };
 
-        fetchHotels();
+        fetchHotels(userEmail);
     }, []);
 
     useEffect(() => {
