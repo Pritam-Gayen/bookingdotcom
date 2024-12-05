@@ -1,6 +1,10 @@
 .add-property-btn{
     margin-top: 50px;
     margin-bottom: 50px;
+    background-color: white;
+    color: green;
+    border: 1px solid green;
+    border-radius: 10px;
 }
 
 .hotel-edit-card{
@@ -10,5 +14,6 @@
     border-radius: 10px;
     padding: 10px;
     column-gap: 10px;
+    margin: 10px;
 }
 
