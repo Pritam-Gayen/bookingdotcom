@@ -23,17 +23,17 @@ function EditHotels({ userEmail }) {
             }
         };
 
-        fetchHotels(userEmail);
+        fetchHotels();
     }, []);
 
     useEffect(() => {
-        try{
+        if (hotels && userEmail) {
             setfilteredHotels(hotels.filter(hotel => hotel.hotelwoner === userEmail));
+        } else {
+            setfilteredHotels([]); // Set to empty array if no hotels or email
         }
-        catch(error){
-            console.error('Error fetching hotels:', error);
-        }
-    }, [hotels])
+    }, [hotels, userEmail]);
+
 
     const handleAddProperty = () => {
         // navigate('/addproperty'); // Assuming '/add-property' is the route for adding a new hotel
