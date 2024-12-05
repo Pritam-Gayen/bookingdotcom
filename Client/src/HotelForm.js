@@ -23,14 +23,14 @@ const HotelForm = ({ userEmail }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Handle form submission here, e.g., send data to server
-        hotelData={
-            name: hotelName,
-            address: address,
-            city: city,
-            description: description,
-            rating: rating,
-            hotelwoner: setHotelOwner(userEmail),
-        }
+        const hotelData={
+                name: hotelName,
+                address: address,
+                city: city,
+                description: description,
+                rating: rating,
+                hotelwoner: setHotelOwner(userEmail),
+            }
         console.log("hotelData ", hotelData);
         navigate('/edithotels');
     };
