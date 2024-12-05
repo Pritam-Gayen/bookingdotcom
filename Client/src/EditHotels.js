@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './EditHotels.css';
 // import { useNavigate } from 'react-router-dom';
 
 function EditHotels({ userEmail }) {
@@ -42,13 +43,15 @@ function EditHotels({ userEmail }) {
 
     return (
         <div>
-            <button onClick={handleAddProperty}>Add Property</button>
+            <button className="add-property-btn" onClick={handleAddProperty}>Add Property</button>
             {filteredHotels.map(hotel => (
-                <div key={hotel.id}>
+                <div className="hotel-edit-card" key={hotel.id}>
                     {/* Display hotel details here */}
                     <h3>{hotel.name}</h3>
+                    <h4>{hotel.city}</h4>
+                    <h5>{hotel.rating}</h5>
                     <p>{hotel.address}</p>
-                    {/* ... other hotel details ... */}
+                    <p>{hotel.description}</p>
                     {/* Add buttons for editing and deleting hotels */}
                 </div>
             ))}
