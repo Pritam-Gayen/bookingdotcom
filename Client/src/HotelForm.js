@@ -34,7 +34,7 @@ const HotelForm = ({ userEmail }) => {
             images: images
         }
         console.log("hotelData ", hotelData);
-        axios.post('https://bookingdotcom-gkgr.onrender.com/addhotel', hotelData)
+        axios.post('https://bookingdotcom-gkgr.onrender.com/addhotel', {hotel: hotelData})
         .then(res => res.data)
         .then(data => {
             console.log('Successful upload:', data);
