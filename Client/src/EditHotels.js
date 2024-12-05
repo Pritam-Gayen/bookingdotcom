@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 function EditHotels({ userEmail }) {
     const [hotels, setHotels] = useState([]);
+    const [filteredHotels, setfilteredHotels] = useState([]);
     // const navigate = useNavigate();
 
     useEffect(() => {
@@ -15,6 +16,7 @@ function EditHotels({ userEmail }) {
                 const data = await response.json();
                 setHotels(data.hotels); // Assuming your API returns "hotel" as the key for the list
                 console.log(data.hotels);
+                setfilteredHotels(hotels.filter(hotel => hotel.hotelwoner === userEmail));
             } catch (error) {
                 console.error('Error fetching hotels:', error);
                 // Handle errors gracefully, e.g., display an error message to the user
@@ -28,8 +30,6 @@ function EditHotels({ userEmail }) {
         // navigate('/addproperty'); // Assuming '/add-property' is the route for adding a new hotel
         console.log("hotels ", hotels);
     };
-
-    const filteredHotels = hotels.filter(hotel => hotel.hotelwoner === userEmail);
 
     return (
         <div>
