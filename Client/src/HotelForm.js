@@ -41,7 +41,7 @@ const HotelForm = ({ userEmail }) => {
             }
         }
 
-        console.log("hotelData ", hotelData);
+        console.log("formData ", formData);
         try {
             const response = await axios.post('https://bookingdotcom-gkgr.onrender.com/addhotel', formData, {
                 headers: {
