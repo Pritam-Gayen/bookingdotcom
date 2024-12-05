@@ -6,7 +6,11 @@
     border: 1px solid green;
     border-radius: 10px;
 }
-
+.add-property-btn:hover{
+    background-color: green;
+    color: white;
+    border-color: black;
+}
 .hotel-edit-card{
     display: flex;
     flex-direction: column;
