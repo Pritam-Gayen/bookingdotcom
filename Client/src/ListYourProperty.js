@@ -3,6 +3,7 @@ import { GoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import {jwtDecode} from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
+import './ListYourProperty.css';
 
 const ListYourProperty = ({setuserEmail, setloginState, setUserPhoto, setUserName}) => {
   const navigate = useNavigate();
@@ -36,7 +37,7 @@ const ListYourProperty = ({setuserEmail, setloginState, setUserPhoto, setUserNam
   };
 
   return (
-  <div class="d-flex justify-content-center align-items-center" style={{ marginTop: '100px', marginBottom: '100px' }}>
+  <div class="d-flex justify-content-center align-items-center list-your-property-login-container" style={{ marginTop: '100px', marginBottom: '100px' }}>
     <h3>Please Login with your google account to list your property.</h3>
     <GoogleLogin
       onSuccess={onSuccess}
