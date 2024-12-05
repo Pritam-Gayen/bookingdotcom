@@ -7,7 +7,6 @@ const HotelForm = ({ userEmail }) => {
     const [city, setCity] = useState('');
     const [description, setDescription] = useState('');
     const [rating, setRating] = useState('');
-    const [hotelOwner, setHotelOwner] = useState('');
     const [images, setImages] = useState([]);
     const navigate = useNavigate();
 
@@ -22,7 +21,7 @@ const HotelForm = ({ userEmail }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setHotelOwner(userEmail);
+        
         // Handle form submission here, e.g., send data to server
         const hotelData={
                 name: hotelName,
@@ -30,7 +29,7 @@ const HotelForm = ({ userEmail }) => {
                 city: city,
                 description: description,
                 rating: rating,
-                hotelwoner: hotelOwner
+                hotelwoner: userEmail
             }
         console.log("hotelData ", hotelData);
         navigate('/edithotels');
