@@ -43,10 +43,11 @@ const HotelForm = ({ userEmail }) => {
 
         console.log("formData ", formData);
         try {
-            const response = await axios.post('https://bookingdotcom-gkgr.onrender.com/addhotel', {hotel: formData})
+            await axios.post('https://bookingdotcom-gkgr.onrender.com/addhotel', {hotel: formData})
             .then(res => res.data)
             .then(data => {
             console.log("response: ", data)
+            navigate('/edithotels');
             });
 
             // if (response.status === 200) {
