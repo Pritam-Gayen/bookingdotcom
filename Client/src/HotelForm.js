@@ -27,19 +27,19 @@ const HotelForm = ({ userEmail }) => {
         const formData = new FormData();
 
         // Gather data from form fields
-        formData.append('hotel[name]', hotelName);
-        formData.append('hotel[address]', address);
-        formData.append('hotel[city]', city);
-        formData.append('hotel[description]', description);
-        formData.append('hotel[rating]', rating);
-        formData.append('hotelwoner', userEmail);
-
+        // formData.append('hotel[name]', hotelName);
+        // formData.append('hotel[address]', address);
+        // formData.append('hotel[city]', city);
+        // formData.append('hotel[description]', description);
+        // formData.append('hotel[rating]', rating);
+        // formData.append('hotelwoner', userEmail);
+        formData.append({hotel: {name: hotelName, address: address, city: city, description: description, rating: rating, hotelwoner: userEmail, images: images }});
         // Handle multiple image uploads
-        if (images) {
-            for (let i = 0; i < images.length; i++) {
-                formData.append(`images[${i}]`, images[i]);
-            }
-        }
+        // if (images) {
+        //     for (let i = 0; i < images.length; i++) {
+        //         formData.append(`images[${i}]`, images[i]);
+        //     }
+        // }
 
         console.log("formData ", formData);
         try {
