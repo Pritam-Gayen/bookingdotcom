@@ -152,18 +152,18 @@ router.post('/listyourproperty', async (req, res) => {
 
 app.post('/addhotel', upload.array('images'), async (req, res) => {
   try {
-    const hotel = req.body.hotel;
-    const files = req.body.hotel.images; // Access uploaded files directly from multer
+    const hotel = req.body
+    // const files = req.body.hotel.images; // Access uploaded files directly from multer
 
     console.log("hotel: ", hotel);
-    console.log("Images: ", files);
+    // console.log("Images: ", files);
 
     // Process hotel data and uploaded images (implementation depends on your backend logic)
 
     // Send successful response with hotel data
     res.status(200).json({
       message: 'Successfully Uploaded',
-      hotel: { name: hotel.name }, // Include desired hotel data
+      hotel: hotel // Include desired hotel data
     });
   } 
   catch (error) {
