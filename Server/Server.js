@@ -150,7 +150,7 @@ router.post('/listyourproperty', async (req, res) => {
 //   });
 // });
 
-router.post('/addhotel', upload.array('images'), (req, res) => {
+router.post('/addhotel', (req, res) => {
   const hotelData = JSON.parse(req.body.hotel);
   const textData = hotelData; // Access text data from req.body
   const images = req.files; // Access uploaded image files
