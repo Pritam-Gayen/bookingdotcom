@@ -151,17 +151,18 @@ router.post('/listyourproperty', async (req, res) => {
 // });
 
 router.post('/addhotel', upload.array('images'), (req, res) => {
-    const textData = req.body; // Access text data from req.body
-    const images = req.files; // Access uploaded image files
+  const hotelData = JSON.parse(req.body.hotel);
+  const textData = hotelData; // Access text data from req.body
+  const images = req.files; // Access uploaded image files
 
-    // Process text data and images
-    console.log('Text data:', textData);
-    console.log('Images:', images);
+  // Process text data and images
+  console.log('Text data:', textData);
+  console.log('Images:', images);
 
-    // Example: Upload images to a cloud storage service (e.g., Firebase Storage)
-    // ... your Firebase storage upload code here
+  // Example: Upload images to a cloud storage service (e.g., Firebase Storage)
+  // ... your Firebase storage upload code here
 
-    res.send('Data and images uploaded successfully!');
+  res.send('Data and images uploaded successfully!');
 });
 
 
