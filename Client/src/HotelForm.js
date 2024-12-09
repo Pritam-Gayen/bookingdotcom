@@ -47,25 +47,15 @@ const HotelForm = ({ userEmail }) => {
 
 
         console.log("hotelData ", hotelData);
-        try {
-            await axios.post('https://bookingdotcom-gkgr.onrender.com/addhotel', { token: hotelData })
-                .then(res => res.data)
-                .then(data => {
-                    console.log("response: ", data)
-                    navigate('/edithotels');
-                });
-
-            // if (response.status === 200) {
-            //     console.log('Successful upload:', response.data);
-            //     navigate('/edithotels');
-            // } 
-            // else {
-            //     console.error('Unexpected response:', response.statusText); // Handle non-200 status codes
-            // }
-        }
-        catch (error) {
-            console.error('Upload error:', error);
-        }
+        await axios.post('https://bookingdotcom-gkgr.onrender.com/addhotel', { token: hotelData })
+        .then(res => res.data)
+        .then(data => {
+            console.log("response: ", data)
+            navigate('/edithotels');
+        })
+        .catch(error => {
+            console.error('hoteldata error:', error);
+        });
     };
 
 

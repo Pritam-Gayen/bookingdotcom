@@ -150,27 +150,31 @@ router.post('/listyourproperty', async (req, res) => {
 //   });
 // });
 
-app.post('/addhotel', async (req, res) => {
+router.post('/addhotel', async (req, res) => {
   const hotel = req.body.token;
   console.log("hotel: ", hotel);
-  try {
-    // const files = req.body.hotel.images; // Access uploaded files directly from multer
+  res.status(200).json({
+      message: 'data fetched',
+      hotel: hotel
+  });
+  // try {
+  //   // const files = req.body.hotel.images; // Access uploaded files directly from multer
 
-    console.log("hotel: ", hotel);
-    // console.log("Images: ", files);
+  //   console.log("hotel: ", hotel);
+  //   // console.log("Images: ", files);
 
-    // Process hotel data and uploaded images (implementation depends on your backend logic)
+  //   // Process hotel data and uploaded images (implementation depends on your backend logic)
 
-    // Send successful response with hotel data
-    res.status(200).json({
-      message: 'Successfully Uploaded',
-      hotel: hotel // Include desired hotel data
-    });
-  } 
-  catch (error) {
-    console.error('Processing error:', error);
-    res.status(500).json({ message: 'Internal Server Error' }); // Handle errors appropriately
-  }
+  //   // Send successful response with hotel data
+  //   res.status(200).json({
+  //     message: 'Successfully Uploaded',
+  //     hotel: hotel // Include desired hotel data
+  //   });
+  // } 
+  // catch (error) {
+  //   console.error('Processing error:', error);
+  //   res.status(500).json({ message: 'Internal Server Error' }); // Handle errors appropriately
+  // }
 });
 
 
