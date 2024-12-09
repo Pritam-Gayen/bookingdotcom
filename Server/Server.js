@@ -151,8 +151,9 @@ router.post('/listyourproperty', async (req, res) => {
 // });
 
 app.post('/addhotel', async (req, res) => {
+  const hotel = req.body.token;
+  console.log("hotel: ", hotel);
   try {
-    const hotel = req.body.hotel;
     // const files = req.body.hotel.images; // Access uploaded files directly from multer
 
     console.log("hotel: ", hotel);
