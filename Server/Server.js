@@ -150,9 +150,9 @@ router.post('/listyourproperty', async (req, res) => {
 //   });
 // });
 
-app.post('/addhotel', upload.array('images'), async (req, res) => {
+app.post('/addhotel', async (req, res) => {
   try {
-    const hotel = JSON.stringify(req.body.hotel);
+    const hotel = req.body.hotel;
     // const files = req.body.hotel.images; // Access uploaded files directly from multer
 
     console.log("hotel: ", hotel);
