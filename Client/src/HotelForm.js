@@ -47,7 +47,7 @@ const HotelForm = ({ userEmail }) => {
 
 
         try {
-            const response = await axios.post('/upload', formData, {
+            const response = await axios.post('https://bookingdotcom-gkgr.onrender.com/addhotel', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -55,6 +55,7 @@ const HotelForm = ({ userEmail }) => {
 
             // Handle response
             console.log(response);
+            navigate('/edithotels');
         } catch (error) {
             console.error('Error uploading:', error);
         }
