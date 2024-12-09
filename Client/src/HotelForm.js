@@ -24,7 +24,7 @@ const HotelForm = ({ userEmail }) => {
         e.preventDefault();
 
         // Handle form submission here, e.g., send data to server
-        // const formData = new FormData();
+        const formData = new FormData();
 
         const hotelData = {
             name: hotelName,
@@ -36,26 +36,28 @@ const HotelForm = ({ userEmail }) => {
             images: images
         };
 
-        // formData.append('hotel', JSON.stringify(hotelData));
+        formData.append('hotel', JSON.stringify(hotelData));
 
         // Handle multiple image uploads
-        // if (images) {
-        //     for (let i = 0; i < images.length; i++) {
-        //         formData.append(`images[${i}]`, images[i]);
-        //     }
-        // }
+        if (images) {
+            for (let i = 0; i < images.length; i++) {
+                formData.append(`images[${i}]`, images[i]);
+            }
+        }
 
 
-        console.log("hotelData ", hotelData);
-        await axios.post('https://bookingdotcom-gkgr.onrender.com/addhotel', { token: hotelData })
-        .then(res => res.data)
-        .then(data => {
-            console.log("response: ", data)
-            navigate('/edithotels');
-        })
-        .catch(error => {
-            console.error('hoteldata error:', error);
-        });
+        try {
+            const response = await axios.post('/upload', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
+
+            // Handle response
+            console.log(response);
+        } catch (error) {
+            console.error('Error uploading:', error);
+        }
     };
 
 

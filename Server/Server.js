@@ -150,31 +150,18 @@ router.post('/listyourproperty', async (req, res) => {
 //   });
 // });
 
-router.post('/addhotel', async (req, res) => {
-  const hotel = req.body.token;
-  console.log("hotel: ", hotel);
-  res.status(200).json({
-      message: 'data fetched',
-      hotel: hotel
-  });
-  // try {
-  //   // const files = req.body.hotel.images; // Access uploaded files directly from multer
+router.post('/upload', upload.array('images'), (req, res) => {
+    const textData = req.body; // Access text data from req.body
+    const images = req.files; // Access uploaded image files
 
-  //   console.log("hotel: ", hotel);
-  //   // console.log("Images: ", files);
+    // Process text data and images
+    console.log('Text data:', textData);
+    console.log('Images:', images);
 
-  //   // Process hotel data and uploaded images (implementation depends on your backend logic)
+    // Example: Upload images to a cloud storage service (e.g., Firebase Storage)
+    // ... your Firebase storage upload code here
 
-  //   // Send successful response with hotel data
-  //   res.status(200).json({
-  //     message: 'Successfully Uploaded',
-  //     hotel: hotel // Include desired hotel data
-  //   });
-  // } 
-  // catch (error) {
-  //   console.error('Processing error:', error);
-  //   res.status(500).json({ message: 'Internal Server Error' }); // Handle errors appropriately
-  // }
+    res.send('Data and images uploaded successfully!');
 });
 
 
