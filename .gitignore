@@ -26,5 +26,8 @@ yarn-error.log*
 # Local Netlify folder
 .netlify
 /build
-/Client/node_modules
-/Server/node_modules
+Client/node_modules
+Server/node_modules
+
+
+Server/.env

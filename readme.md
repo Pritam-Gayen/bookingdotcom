@@ -7,4 +7,5 @@ to hose back end using RENDER
 so I made 2 separate folder 1 for back-end (Server) and another for front-end (Client)
 at first I used FIREBASE for database but it was difficult to store photos there
 finally I am going to use MONGO DB ATLAS free tire to set the same goal
+to use mongo db we need [node: '>=16.20.]
 lets see what happens next ....
