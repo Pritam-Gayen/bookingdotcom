@@ -27,7 +27,6 @@ function fetchUsers() {
   User.find({})
     .then(users => {
       console.log('Users:', users);
-      mongoose.connection.close(); // Close connection after fetching data
     })
     .catch(error => {
       console.error('Error fetching users:', error);
@@ -49,7 +48,8 @@ app.get('/get-user', async (req, res) => {
     const users = await User.find({});
     res.json(users); // Send users as JSON response
   } catch (error) {
-    res.status(500).json({ error: 'Error fetching users' });
+    console.error('Error fetching users:', error); // Log detailed error
+    res.status(500).json({ error: 'Error fetching users', details: error.message });
   }
 });
 
