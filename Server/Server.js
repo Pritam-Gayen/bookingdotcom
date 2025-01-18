@@ -39,6 +39,24 @@ app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
 
+
+
+
+
+// Route to fetch users
+app.get('/get-user', async (req, res) => {
+  try {
+    const users = await User.find({});
+    res.json(users); // Send users as JSON response
+  } catch (error) {
+    res.status(500).json({ error: 'Error fetching users' });
+  }
+});
+
+
+
+
+
 // Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
