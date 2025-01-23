@@ -1,6 +1,33 @@
+const nodemailer = require('nodemailer');
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+
+// Configure your transporter
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL, // Your Gmail address
+    pass: process.env.EMAIL_PASSWORD // Your App Password or Gmail password
+  }
+});
+
+// Function to send an email
+const sendEmail = async (to, subject, text) => {
+  try {
+    const info = await transporter.sendMail({
+      from: `"Booking.Com App" <${process.env.EMAIL}>`, // Sender address
+      to: to, // List of recipients
+      subject: subject, // Subject line
+      text: text // Plain text body
+    });
+
+    console.log('Email sent:', info.response);
+  } catch (error) {
+    console.error('Error sending email:', error);
+  }
+};
+
 const app = express();
 
 app.use(express.json()); // Middleware for parsing JSON
@@ -62,3 +89,6 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+// Example mail usage
+sendEmail('pritsaccount@gmail.com', 'Test Email', 'Hello! This is a test email from Booking.com App.');
