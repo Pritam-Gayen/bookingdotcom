@@ -14,16 +14,10 @@ const partnerDB = process.env.MONGO_PARTNER_URI;
 const clientDB = process.env.MONGO_CLIENT_URI;
 
 // Connect to "client" database
-const clientConnection = mongoose.createConnection(clientDB, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+const clientConnection = mongoose.createConnection(clientDB);
 
 // Connect to "business_partner" database
-const businessConnection = mongoose.createConnection(partnerDB, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+const businessConnection = mongoose.createConnection(partnerDB);
 
 // Define User Schema (should be defined before using it)
 const UserSchema = new mongoose.Schema({
