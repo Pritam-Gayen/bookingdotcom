@@ -32,11 +32,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "build:client": "react-scripts build",
-    "build:server": "node src/Server.js",
-    "start:client": "npm start",
-    "build": "npm run build:client"
-  },
+  "start": "react-scripts start", 
+  "build": "react-scripts build"  
+},
   "eslintConfig": {
     "extends": [
       "react-app",

@@ -1,52 +1,48 @@
 // src/LoginButton.js
 import React from 'react';
-import { GoogleLogin } from '@react-oauth/google';
-import axios from 'axios';
-import {jwtDecode} from 'jwt-decode';
-import { useNavigate } from 'react-router-dom';
 
-const LoginButton = ({setuserEmail, setloginState, setUserPhoto, setUserName, setshowBottomNav, setshowListYourProperty}) => {
-  const navigate = useNavigate();
-  const onSuccess = (response) => {
-    // console.log('Login Success:', response);
-    // Decode the JWT token to get user details
-    const decodedToken = jwtDecode(response.credential);
-    const userName = decodedToken.name;
-    const userPhoto = decodedToken.picture;
-    const userEmail = decodedToken.email;
-    console.log('User Name:', userName);
-    console.log('User Photo:', userPhoto);
-    console.log('User Email:', userEmail);
-    setloginState(true);
-    localStorage.setItem('userPhoto', userPhoto);
-    localStorage.setItem('userName', userName);
-    setUserPhoto(userPhoto);
-    setUserName(userName);
-    setuserEmail(userEmail);
-    
-    axios.post('https://bookingdotcom-gkgr.onrender.com/register', {token: response.credential,})
-    .then(res => res.data)
-    .then(data => {
-      console.log('User data:', data);
-      setshowBottomNav(true);
-      setshowListYourProperty(true);
-      navigate('/');
-    })
-    .catch(error => {
-      console.error('Login error:', error);
-    });
+import axios from 'axios';
+
+import { useState } from 'react';
+
+
+const LoginButton = ({ setuserEmail, setloginState, setUserPhoto, setUserName, setshowBottomNav, setshowListYourProperty }) => {
+
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const [message, setMessage] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const onFailure = (response) => {
-    console.error('Login Failed:', response);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setMessage("Sending verification code...");
+
+    try {
+      const response = await axios.post("https://bookingdotcom-gkgr.onrender.com/signup", formData);
+      setMessage(response.data.message);
+    } catch (error) {
+      setMessage(error.response?.data?.message || "An error occurred!");
+    }
   };
 
   return (
-  <div class="d-flex justify-content-center align-items-center" style={{ marginTop: '100px', marginBottom: '100px' }}>
-    <GoogleLogin
-      onSuccess={onSuccess}
-      onError={onFailure}
-    />
+    <div class="d-flex justify-content-center align-items-center" style={{ marginTop: '100px', marginBottom: '100px' }}>
+      <form onSubmit={handleSubmit}>
+        <input type="text" name="name" placeholder="Name" onChange={handleChange} required />
+        <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
+        <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
+        <button type="submit">Send Verification Code</button>
+        <p>{message}</p>
+      </form>
+
     </div>
   );
 };

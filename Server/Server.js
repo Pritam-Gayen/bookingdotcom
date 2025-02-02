@@ -2,13 +2,52 @@ const nodemailer = require('nodemailer');
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+const bcrypt = require("bcryptjs");
+const cors = require("cors");
 
-// Configure your transporter
+const app = express();
+app.use(express.json());
+app.use(cors());
+
+// MongoDB connection
+const partnerDB = process.env.MONGO_PARTNER_URI;
+const clientDB = process.env.MONGO_CLIENT_URI;
+
+// Connect to "client" database
+const clientConnection = mongoose.createConnection(clientDB, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+// Connect to "business_partner" database
+const businessConnection = mongoose.createConnection(partnerDB, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+// Define User Schema (should be defined before using it)
+const UserSchema = new mongoose.Schema({
+  name: String,
+  email: { type: String, unique: true },
+  password: String,
+  verificationCode: String,
+  isVerified: { type: Boolean, default: false },
+});
+
+// Create models for client database
+const ClientUser = clientConnection.model("User", UserSchema, "user");
+const TempUserClient = clientConnection.model("TempUser", UserSchema, "temp_user");
+
+// Create models for business partner database
+const BusinessUser = businessConnection.model("User", UserSchema, "user");
+const TempBusiness = businessConnection.model("TempUser", UserSchema, "temp_user");
+
+// Configure Email Transporter
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: process.env.EMAIL, // Your Gmail address
-    pass: process.env.EMAIL_PASSWORD // Your App Password or Gmail password
+    pass: process.env.EMAIL_PASSWORD // Your App Password
   }
 });
 
@@ -16,10 +55,10 @@ const transporter = nodemailer.createTransport({
 const sendEmail = async (to, subject, text) => {
   try {
     const info = await transporter.sendMail({
-      from: `"Booking.Com App" <${process.env.EMAIL}>`, // Sender address
-      to: to, // List of recipients
-      subject: subject, // Subject line
-      text: text // Plain text body
+      from: `"Booking.Com App" <${process.env.EMAIL}>`,
+      to: to,
+      subject: subject,
+      text: text
     });
 
     console.log('Email sent:', info.response);
@@ -28,67 +67,51 @@ const sendEmail = async (to, subject, text) => {
   }
 };
 
-const app = express();
-
-app.use(express.json()); // Middleware for parsing JSON
-
-// MongoDB connection
-const mongoURI = process.env.MONGO_URI; // Connection string from MongoDB Atlas
-
-// Connect to MongoDB Atlas
-mongoose.connect(mongoURI)
-  .then(() => {
-    console.log('Connected to MongoDB Atlas');
-    fetchUsers();
-  })
-  .catch((error) => {
-    console.error('Error connecting to MongoDB Atlas:', error);
-  });
-
-// Define a schema (optional if not modifying the structure)
-const userSchema = new mongoose.Schema({}, { strict: false }); // Flexible schema for dynamic structure
-const User = mongoose.model('User', userSchema, 'users'); // Use 'users' as the collection name
-
-// Fetch and display users
-function fetchUsers() {
-  User.find({})
-    .then(users => {
-      console.log('Users:', users);
-    })
-    .catch(error => {
-      console.error('Error fetching users:', error);
-    });
-}
-
 // Example route
 app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
 
+// Signup Route
+app.post("/signup", async (req, res) => {
+  const { name, email, password } = req.body;
 
-
-
-
-// Route to fetch users
-app.get('/get-user', async (req, res) => {
   try {
-    const users = await User.find({});
-    res.json(users); // Send users as JSON response
+    // Check if user already exists
+    const existingUser = await ClientUser.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ message: "Email already registered!" });
+    }
+
+    // Generate verification code
+    const verificationCode = Math.floor(100000 + Math.random() * 900000).toString();
+
+    // Hash the password
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Store user data (but not verified yet)
+    const newUser = new TempUserClient({ name, email, password: hashedPassword, verificationCode });
+    await newUser.save();
+
+    // Send verification email
+    const mailOptions = {
+      from: process.env.EMAIL,
+      to: email,
+      subject: "Verify Your Email",
+      text: `Your verification code is: ${verificationCode}`,
+    };
+
+    await transporter.sendMail(mailOptions);
+    res.json({ message: "We have sent a verification code to your email, please copy and paste it into the given input box" });
+
   } catch (error) {
-    console.error('Error fetching users:', error); // Log detailed error
-    res.status(500).json({ error: 'Error fetching users', details: error.message });
+    console.error("Error in signup:", error);
+    res.status(500).json({ message: "Internal server error" });
   }
 });
-
-
-
-
 
 // Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
-// Example mail usage
-sendEmail('pritsaccount@gmail.com', 'Test Email', 'Hello! This is a test email from Booking.com App.');
