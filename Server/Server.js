@@ -118,6 +118,47 @@ app.post("/signup", async (req, res) => {
   }
 });
 
+
+// POST /verify
+router.post("/verify", async (req, res) => {
+  const { email, verificationCode } = req.body;
+
+  try {
+    const tempuser = await TempUserClient.findOne({ email });
+
+    if (!tempuser) {
+      return res.status(400).json({ message: "User not found." });
+    }
+
+    if (tempuser.verificationCode !== verificationCode) {
+      return res.status(400).json({ message: "Invalid verification code." });
+    }
+
+    tempuser.isVerified = true;
+    await ClientUser.findOneAndUpdate(
+      { email },
+      {
+        $set: {
+          name: tempuser.name,
+          password: tempuser.hashedPassword
+        }
+      },
+      {
+        upsert: true,
+        new: true,
+        setDefaultsOnInsert: true
+      }
+    );
+
+    res.json({ message: "Email verified successfully!" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Server error during verification." });
+  }
+});
+
+
+
 // Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
