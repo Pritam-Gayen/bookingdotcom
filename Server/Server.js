@@ -84,8 +84,22 @@ app.post("/signup", async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     // Store user data (but not verified yet)
-    const newUser = new TempUserClient({ name, email, password: hashedPassword, verificationCode });
-    await newUser.save();
+    await TempUserClient.findOneAndUpdate(
+      { email },
+      {
+        $set: {
+          name,
+          password: hashedPassword,
+          verificationCode
+        }
+      },
+      {
+        upsert: true,
+        new: true,
+        setDefaultsOnInsert: true
+      }
+    );
+
 
     // Send verification email
     const mailOptions = {
