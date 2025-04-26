@@ -44,7 +44,7 @@ const LoginButton = ({ setuserEmail, setloginState, setUserPhoto, setUserName, s
         verificationCode,
       });
       setMessage(response.data.message);
-      setShowVerification(false);
+      setShowVerification(true);
     } catch (error) {
       setMessage(error.response?.data?.message || "Verification failed!");
     }
