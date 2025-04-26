@@ -120,7 +120,7 @@ app.post("/signup", async (req, res) => {
 
 
 // POST /verify
-router.post("/verify", async (req, res) => {
+app.post("/verify", async (req, res) => {
   const { email, verificationCode } = req.body;
 
   try {
