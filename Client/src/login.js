@@ -31,6 +31,7 @@ const LoginButton = ({ setuserEmail, setloginState, setUserPhoto, setUserName, s
     try {
       const response = await axios.post("https://bookingdotcom-gkgr.onrender.com/signup", formData);
       setMessage(response.data.message);
+      setShowVerification(true);
     } catch (error) {
       setMessage(error.response?.data?.message || "An error occurred!");
     }
@@ -44,7 +45,7 @@ const LoginButton = ({ setuserEmail, setloginState, setUserPhoto, setUserName, s
         verificationCode,
       });
       setMessage(response.data.message);
-      setShowVerification(true);
+      setShowVerification(false);
     } catch (error) {
       setMessage(error.response?.data?.message || "Verification failed!");
     }
