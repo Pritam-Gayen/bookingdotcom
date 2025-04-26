@@ -140,7 +140,7 @@ app.post("/verify", async (req, res) => {
       {
         $set: {
           name: tempuser.name,
-          password: tempuser.hashedPassword
+          password: tempuser.password
         }
       },
       {
