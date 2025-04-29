@@ -53,7 +53,7 @@ const LoginButton = ({ setuserEmail, setloginState, setUserPhoto, setUserName, s
 
   
   return (
-    <div class="d-flex justify-content-center align-items-center " style={{ marginTop: '100px', marginBottom: '100px' }}>
+    <div class="d-flex justify-content-center align-items-center input-holder" style={{ marginTop: '100px', marginBottom: '100px' }}>
       <form onSubmit={handleSubmit} className='input-holder'>
         <input type="text" name="name" placeholder="Name" onChange={handleChange} required />
         <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
