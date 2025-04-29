@@ -1,0 +1,12 @@
+.input-holder{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 300px;
+}
+.verification-btn{
+    background-color: #004299;
+    color: white;
+    border-radius: 5px;
+    height: 40px;
+}

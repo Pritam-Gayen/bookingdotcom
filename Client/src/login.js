@@ -4,7 +4,7 @@ import React from 'react';
 import axios from 'axios';
 
 import { useState } from 'react';
-
+import './login.css';
 
 const LoginButton = ({ setuserEmail, setloginState, setUserPhoto, setUserName, setshowBottomNav, setshowListYourProperty }) => {
 
@@ -53,25 +53,25 @@ const LoginButton = ({ setuserEmail, setloginState, setUserPhoto, setUserName, s
 
   
   return (
-    <div class="d-flex justify-content-center align-items-center" style={{ marginTop: '100px', marginBottom: '100px' }}>
-      <form onSubmit={handleSubmit}>
+    <div class="d-flex justify-content-center align-items-center " style={{ marginTop: '100px', marginBottom: '100px' }}>
+      <form onSubmit={handleSubmit} className='input-holder'>
         <input type="text" name="name" placeholder="Name" onChange={handleChange} required />
         <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
         <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
-        <button type="submit">Send Verification Code</button>
+        <button type="submit" className='verification-btn'>Send Verification Code</button>
         <p>{message}</p>
       </form>
     
 
     {showVerification && (
-        <div style={{ marginTop: "20px" }}>
+        <div className='input-holder'>
           <input
             type="text"
             placeholder="Enter Verification Code"
             value={verificationCode}
             onChange={(e) => setVerificationCode(e.target.value)}
           />
-          <button onClick={handleVerify}>Check Verification Code</button>
+          <button className='verification-btn' onClick={handleVerify}>Check Verification Code</button>
         </div>
       )}
     </div>
