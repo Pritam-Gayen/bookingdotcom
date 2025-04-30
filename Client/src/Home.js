@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './Home.css';
+import userLoginState from './store.js';
 // import DateRangePicker from './DateRangePicker';
 import TabbedDateRangePicker from './TabbedDateRangePicker';
 import CardsDisplay from './CardsDisplay';
@@ -499,7 +500,8 @@ const CitiesDisplay = ({ choice }) => {
   );
 };
 
-const Home = ({ loginState }) => {
+const Home = () => {
+  const clientLoginState = userLoginState((state) => state.user);
   const [dateRange, setDateRange] = useState({ startDate: null, endDate: null, count: '' });
   const [tripPlannerChoice, settripPlannerChoice] = useState({ beach: false, city: true, outdoor: false, romance: false });
   const divRef = document.getElementsByClassName('animated-divs');

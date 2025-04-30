@@ -80,7 +80,7 @@ function App() {
         <div className="App">
           <Navbar showBottomNav={showBottomNav} showListYourProperty={showListYourProperty} showRegister={showRegister} showSignIn={showSignIn} onRegisterClick={handleRegisterClick} onListyourpropertyClick={handleListyourpropertyClick} onHomeClick={handleHomeClick} loginState={loginState} userPhoto={userPhoto} userName={userName} />
           <Routes>
-            <Route path="/" element={<Home loginState={loginState} showRegister={showRegister} showSignIn={showSignIn} />} />
+            <Route path="/" element={<Home showRegister={showRegister} showSignIn={showSignIn} />} />
             <Route path="/register" element={<LoginButton setuserEmail={setuserEmail} setloginState={setloginState} setUserPhoto={setUserPhoto} setUserName={setUserName} setshowBottomNav={setshowBottomNav} setshowListYourProperty={setshowListYourProperty} />} />
             <Route path="/listyourproperty" element={<ListYourProperty setuserEmail={setuserEmail} setloginState={setloginState} setUserPhoto={setUserPhoto} setUserName={setUserName} />} />
             <Route path="/edithotels" element={<EditHotels  userEmail={userEmail}/>} />
