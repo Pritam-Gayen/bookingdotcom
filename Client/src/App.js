@@ -10,6 +10,8 @@ import Footer from './Footer.js';
 import ListYourProperty from './ListYourProperty';
 import EditHotels from './EditHotels.js';
 import HotelForm from './HotelForm.js';
+import ClientLogin from './CientLogin.js';
+
 
 // import LogoutButton from './logout';
 
