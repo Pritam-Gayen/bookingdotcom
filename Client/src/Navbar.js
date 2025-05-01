@@ -12,7 +12,7 @@ function Navbar({ showBottomNav, showListYourProperty, showRegister, showSignIn,
     const user = userLoginState((state) => state.user);
     return (
         <header class="blue-bg">
-            <Tooltip id="my-tooltip" className='tooltip-class'/>
+            <Tooltip id="my-tooltip" className='tooltip-class' />
             <nav class="top-nav">
                 <div class="container d-flex">
                     <div class="top-nav-left d-flex">
@@ -45,13 +45,13 @@ function Navbar({ showBottomNav, showListYourProperty, showRegister, showSignIn,
                                 </a>
                             </div>
                         </div>
-                        {showListYourProperty && 
+                        {showListYourProperty &&
                             <div class="nav-item-custom" data-tooltip-id="my-tooltip" data-tooltip-content="Feature in development" data-tooltip-place="top">
                                 <Link class='no-underline' to="/listyourproperty" onClick={onListyourpropertyClick}>List Your Property</Link>
                             </div>
                         }
                         <div class="d-flex register-sign-in">
-                            {!loginState && showRegister &&
+                            {!clientLogInState &&
                                 <div class="nav-item-white-btn">
                                     <div class="navbar-button">
                                         {/*
@@ -71,12 +71,38 @@ function Navbar({ showBottomNav, showListYourProperty, showRegister, showSignIn,
                                     <div class="navbar-button">
                                         <Link class='no-underline' to="/clientlogin">Sign In</Link>
                                     </div>
-                                </div>):
+                                </div>) :
                                 (
-                                <div className="user-info">
-                                    <img src={user?.photo} alt="User" className="user-avatar" />
-                                    <span>{user?.name}</span>
-                                </div>
+                                    <div className="user-info d-flex">
+                                        <div className="user-avatar" style={{
+                                            width: '40px',
+                                            height: '40px',
+                                            borderRadius: '50%',
+                                            backgroundColor: 'yellow',
+                                            color: 'black',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            fontWeight: 'bold',
+                                            fontSize: '18px',
+                                            textTransform: 'uppercase'
+                                        }}>
+                                            {user?.name?.[0] || '?'}
+                                        </div>
+                                        <div style={{
+                                            height: '40px',
+                                            color: 'white',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            fontWeight: 'bold',
+                                            fontSize: '14px',
+                                            marginLeft: '5px',
+                                        }}>
+                                            {user?.name}
+                                        </div>
+                                    </div>
+
                                 )
                             }
                             {loginState &&
