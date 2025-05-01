@@ -502,6 +502,7 @@ const CitiesDisplay = ({ choice }) => {
 
 const Home = () => {
   const clientLoginState = userLoginState((state) => state.user);
+  console.log('clientLoginState: ',clientLoginState);
   const [dateRange, setDateRange] = useState({ startDate: null, endDate: null, count: '' });
   const [tripPlannerChoice, settripPlannerChoice] = useState({ beach: false, city: true, outdoor: false, romance: false });
   const divRef = document.getElementsByClassName('animated-divs');
