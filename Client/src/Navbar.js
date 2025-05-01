@@ -69,7 +69,7 @@ function Navbar({ showBottomNav, showListYourProperty, showRegister, showSignIn,
                             {!clientLogInState && showSignIn ?
                                 (<div class="nav-item-white-btn">
                                     <div class="navbar-button">
-                                        <Link class='no-underline' to="/clientlogin" onClick={onClientSignInClick}>Sign In</Link>
+                                        <Link class='no-underline' to="/clientlogin">Sign In</Link>
                                     </div>
                                 </div>):
                                 (
