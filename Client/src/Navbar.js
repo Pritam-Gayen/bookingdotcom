@@ -4,12 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import IndiaFlag from "./StaticImages/Indiaflag.png";
 import { Link } from 'react-router-dom';
 import { Tooltip } from 'react-tooltip';
-import userLoginState from './store.js';
+import userLoginState from './store';
 
 
 function Navbar({ showBottomNav, showListYourProperty, showRegister, showSignIn, onRegisterClick, onListyourpropertyClick, onHomeClick, loginState, userPhoto, userName }) {
     const clientLogInState = userLoginState((state) => state.user);
-    const user = clientLogInState((state) => state.user);
+    const user = userLoginState((state) => state.user);
     return (
         <header class="blue-bg">
             <Tooltip id="my-tooltip" className='tooltip-class'/>
