@@ -158,6 +158,31 @@ app.post("/verify", async (req, res) => {
 });
 
 
+app.post("/clientlogin", async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const existingUser = await ClientUser.findOne({ email });
+
+    if (!existingUser) {
+      return res.status(401).json({ message: "Invalid email or password" });
+    }
+
+    const isPasswordMatch = await bcrypt.compare(password, existingUser.password);
+
+    if (!isPasswordMatch) {
+      return res.status(401).json({ message: "Invalid email or password" });
+    }
+
+    // Login successful
+    res.json({ user: existingUser });
+  } catch (error) {
+    console.error("Error in client login:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+
 
 // Start the server
 const PORT = process.env.PORT || 5000;

@@ -19,7 +19,8 @@ const ClientLogin = () => {
     setError('');
     try {
       const response = await axios.post('https://bookingdotcom-gkgr.onrender.com/clientlogin', formData);
-      const { name, email, photo } = response.data;
+      const { name, email, photo } = response.data.user;
+      console.log("name: ", name, "email: ", email, "photo: ", photo);
       setUser({ name, email, photo }); // Updates Zustand store
       navigate('/'); // Redirect after login
     } catch (err) {
