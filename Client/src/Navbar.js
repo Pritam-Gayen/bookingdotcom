@@ -4,8 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import IndiaFlag from "./StaticImages/Indiaflag.png";
 import { Link } from 'react-router-dom';
 import { Tooltip } from 'react-tooltip';
+import userLoginState from './store.js';
+
 
 function Navbar({ showBottomNav, showListYourProperty, showRegister, showSignIn, onRegisterClick, onListyourpropertyClick, onHomeClick, loginState, userPhoto, userName }) {
+    const clientLogInState = userLoginState((state) => state.user);
+    const user = clientLogInState((state) => state.user);
     return (
         <header class="blue-bg">
             <Tooltip id="my-tooltip" className='tooltip-class'/>
@@ -50,16 +54,30 @@ function Navbar({ showBottomNav, showListYourProperty, showRegister, showSignIn,
                             {!loginState && showRegister &&
                                 <div class="nav-item-white-btn">
                                     <div class="navbar-button">
+                                        {/*
+                                        As there are 2 types of account client account and partner account we need 2 types of register and login for the same;
+                                        /clientregister /partnerregister /clientlogin /partnerlogin
+                                        for now we are making /register for client register for simplicity, later we will change it to /clientregister
+                                        */}
                                         <Link class='no-underline' to="/register" onClick={onRegisterClick}>Register</Link>
                                     </div>
                                 </div>
                             }
-                            {!loginState && showSignIn &&
-                                <div class="nav-item-white-btn">
+                            {/*
+                            clientLogInState below is a global state coming from store.js here we used zustand to store global states;
+                             */}
+                            {!clientLogInState && showSignIn ?
+                                (<div class="nav-item-white-btn">
                                     <div class="navbar-button">
-                                        Sign In
+                                        <Link class='no-underline' to="/clientlogin" onClick={onClientSignInClick}>Sign In</Link>
                                     </div>
+                                </div>):
+                                (
+                                <div className="user-info">
+                                    <img src={user?.photo} alt="User" className="user-avatar" />
+                                    <span>{user?.name}</span>
                                 </div>
+                                )
                             }
                             {loginState &&
                                 <div className='show-pic'>

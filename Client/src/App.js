@@ -82,6 +82,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home showRegister={showRegister} showSignIn={showSignIn} />} />
             <Route path="/register" element={<LoginButton setuserEmail={setuserEmail} setloginState={setloginState} setUserPhoto={setUserPhoto} setUserName={setUserName} setshowBottomNav={setshowBottomNav} setshowListYourProperty={setshowListYourProperty} />} />
+            <Route path="/clientlogin" element={<ClientLogin/>}/>
             <Route path="/listyourproperty" element={<ListYourProperty setuserEmail={setuserEmail} setloginState={setloginState} setUserPhoto={setUserPhoto} setUserName={setUserName} />} />
             <Route path="/edithotels" element={<EditHotels  userEmail={userEmail}/>} />
             <Route path="/addproperty" element={<HotelForm  userEmail={userEmail}/>} />
